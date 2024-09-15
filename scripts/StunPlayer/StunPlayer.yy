@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"StunPlayer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"StunPlayer",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
