@@ -23,8 +23,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"sBrick",
-    "path":"sprites/sBrick/sBrick.yy",
+    "name":"spr_brick",
+    "path":"sprites/spr_brick/spr_brick.yy",
   },
   "spriteNoExport":true,
   "textureGroupId":{
