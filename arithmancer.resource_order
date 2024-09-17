@@ -66,6 +66,6 @@
     {"name":"spr_trees","order":9,"path":"sprites/spr_trees/spr_trees.yy",},
     {"name":"spr_trigger","order":7,"path":"sprites/spr_trigger/spr_trigger.yy",},
     {"name":"spr_wall","order":3,"path":"sprites/spr_wall/spr_wall.yy",},
-    {"name":"tBrick","order":1,"path":"tilesets/tBrick/tBrick.yy",},
+    {"name":"ts_brick","order":1,"path":"tilesets/ts_brick/ts_brick.yy",},
   ],
 }
