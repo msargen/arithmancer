@@ -15,26 +15,26 @@ if (menu_control)
 	if (keyboard_check_pressed(vk_down)) || keyboard_check_pressed(ord("S"))
 	{
 		menu_cursor--;
-		if (menu_cursor < 0) menu_cursor = menu_items-1;
+		if (menu_cursor < 0) menu_cursor = menu_items - 1;
 	}
 	
 	if (keyboard_check_pressed(vk_enter))
 	{
-		menu_x_target = gui_width+200;
+		menu_x_target = menu_gui_width + 200;
 		menu_committed = menu_cursor;
-		scr_screen_shake(6,60);
+		scr_screen_shake(6, 60);
 		menu_control = false;
-		audio_play_sound(snd_death,10,false);
+		audio_play_sound(snd_death, 10, false);
 	}
 }
 
-if (menu_x > gui_width+150) && (menu_committed != -1)
+if (menu_x > menu_gui_width + 150) && (menu_committed != -1)
 {
 	switch (menu_committed)
 	{
-		case 4: scr_slide_transition(TRANS_MODE.GOTO,rm_lvl_three); break;
-		case 3: scr_slide_transition(TRANS_MODE.GOTO,rm_lvl_two); break;
-		case 2: scr_slide_transition(TRANS_MODE.GOTO,rm_lvl_one); break;
+		case 4: scr_slide_transition(TRANS_MODE.GOTO, rm_lvl_three); break;
+		case 3: scr_slide_transition(TRANS_MODE.GOTO, rm_lvl_two); break;
+		case 2: scr_slide_transition(TRANS_MODE.GOTO, rm_lvl_one); break;
 		case 1:
 		{
 			if (!file_exists(SAVEFILE))

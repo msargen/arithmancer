@@ -1,35 +1,35 @@
 /// @description Timer countdown
 
-if room = rm_lvl_one
+if (room = rm_lvl_one)
 {
-	timer = timerone --;
+	game_timer = game_timer_one--;
 }
 
-if room = rm_lvl_two
+if (room = rm_lvl_two)
 {
-	timer = timertwo --;
+	game_timer = game_timer_two--;
 }
 
-if room = rm_lvl_three
+if (room = rm_lvl_three)
 {
-	timer = timerthree --;
+	game_timer = game_timer_three--;
 }
 
 
-seconds = floor(timer/60) mod 60;
+game_timer_seconds = floor(game_timer / 60) mod 60;
 
-minutes = floor(timer/3600);
+game_timer_minutes = floor(game_timer / 3600);
 
-if seconds >= 0 && seconds < 10
+if (game_timer_seconds >= 0 && game_timer_seconds < 10)
 {
-	global.time = string(minutes) + ":0" + string(seconds);
+	global.time = string(game_timer_minutes) + ":0" + string(game_timer_seconds);
 }
 else
 {
-	global.time = string(minutes) + ":" + string(seconds);
+	global.time = string(game_timer_minutes) + ":" + string(game_timer_seconds);
 }
 
-if timer == 0
+if (game_timer == 0)
 {
 	game_restart();
 }

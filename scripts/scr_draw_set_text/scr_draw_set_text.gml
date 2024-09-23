@@ -1,19 +1,16 @@
-/// @description scr_draw_set_text(colour,font,halign,valign)
-/// @arg colour
-/// @arg font
-/// @arg halign
-/// @arg valign
-function scr_draw_set_text(argument0, argument1, argument2, argument3) {
+/// @description scr_draw_set_text(_colour, _font, _halign, _valign)
+/// @arg _colour
+/// @arg _font
+/// @arg _halign
+/// @arg _valign
+function scr_draw_set_text(_colour, _font, _halign, _valign) {
 
 	// Allows one line setup of major text drawing vars.
-	// Requiring all four prevents silly coders from forgetting one.
-	// And therefore creating a dumb dependency on oter event calls.
-	// (Then wondering why their text changes later in development.)
 
-	draw_set_colour(argument0);
-	draw_set_font(argument1);
-	draw_set_halign(argument2);
-	draw_set_valign(argument3);
+	draw_set_colour(_colour);
+	draw_set_font(_font);
+	draw_set_halign(_halign);
+	draw_set_valign(_valign);
 
 
 }

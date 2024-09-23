@@ -1,8 +1,8 @@
 /// @description Size variables and mode setup
 
-w = display_get_gui_width();
-h = display_get_gui_height();
-h_half = h * 0.5;
+transition_width = display_get_gui_width();
+transition_height = display_get_gui_height();
+transition_height_half = transition_height * 0.5;
 enum TRANS_MODE
 {
 	OFF,
@@ -11,6 +11,6 @@ enum TRANS_MODE
 	RESTART,
 	INTRO
 }
-mode = TRANS_MODE.INTRO;
-percent = 1;
-target = room;
+transition_mode = TRANS_MODE.INTRO;
+transition_percent = 1;
+transition_target = room;

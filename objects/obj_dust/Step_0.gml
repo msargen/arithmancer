@@ -1,6 +1,6 @@
 /// @description 
-x+=hsp;
-y+=vsp;
+x += dust_horizontal_speed;
+y += dust_vertical_speed;
 
-hsp*=0.9;
-vsp*=0.9;
+dust_horizontal_speed *= 0.9;
+dust_vertical_speed *= 0.9;

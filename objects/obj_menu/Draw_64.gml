@@ -7,7 +7,7 @@ draw_set_valign(fa_bottom);
 for (var _i = 0; _i < menu_items; _i++)
 {
 	var _offset = 2;
-	var _txt = menu[_i];
+	var _txt = menu_menu[_i];
 	var _col = c_white;
 	if (menu_cursor == _i)
 	{
@@ -29,4 +29,4 @@ for (var _i = 0; _i < menu_items; _i++)
 }
 
 draw_set_color(c_black);
-draw_rectangle(gui_width,gui_height-250,gui_width+900,gui_height,false);
+draw_rectangle(menu_gui_width, menu_gui_height - 250, menu_gui_width + 900, menu_gui_height, false);
