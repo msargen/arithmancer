@@ -1,46 +1,46 @@
-vsp = vsp + grv;
+ram_vertical_speed = ram_vertical_speed + ram_gravity;
 
 // Don't wald off edges
-if (grounded) && ( afraidofheights) && (!place_meeting(x+hsp,y+1,obj_wall))
+if (ram_is_grounded) && (!place_meeting(x + ram_horizontal_speed, y + 1, obj_wall))
 {
-	hsp = -hsp;
+	ram_horizontal_speed = -ram_horizontal_speed;
 }
 
 //Horizontal collision
-if (place_meeting(x+hsp,y,obj_wall))
+if (place_meeting(x + ram_horizontal_speed, y, obj_wall))
 {
-	while (!place_meeting(x+sign(hsp),y,obj_wall))
+	while (!place_meeting(x + sign(ram_horizontal_speed), y, obj_wall))
 	{
-		x = x + sign(hsp);
+		x = x + sign(ram_horizontal_speed);
 	}
-	hsp = -hsp;
+	ram_horizontal_speed = -ram_horizontal_speed;
 }
-x = x + hsp;
+x = x + ram_horizontal_speed;
 
 //Vertical collision
-if (place_meeting(x,y+vsp,obj_wall))
+if (place_meeting(x, y + ram_vertical_speed, obj_wall))
 {
-	while (!place_meeting(x,y+sign(vsp),obj_wall))
+	while (!place_meeting(x, y + sign(ram_vertical_speed), obj_wall))
 	{
-		y = y + sign(vsp);
+		y = y + sign(ram_vertical_speed);
 	}
-	vsp = 0;
+	ram_vertical_speed = 0;
 }
-y = y + vsp;
+y = y + ram_vertical_speed;
 
 //Animations
-if (!place_meeting(x,y+1,obj_wall))
+if (!place_meeting(x, y + 1, obj_wall))
 {
-	grounded = false;
+	ram_is_grounded = false;
 	sprite_index = spr_ram;
 	image_speed = 0;
-	if (sign(vsp) > 0) image_index = 1; else image_index = 0;
+	if (sign(ram_vertical_speed) > 0) image_index = 1; else image_index = 0;
 }
 else
 {
-	grounded = true;
+	ram_is_grounded = true;
 	image_speed = 1;
-	if (hsp == 0)
+	if (ram_horizontal_speed == 0)
 	{
 		sprite_index = spr_ram;
 	}
@@ -50,5 +50,5 @@ else
 	}
 }
 
-if (hsp != 0) image_xscale = sign(hsp);
+if (ram_horizontal_speed != 0) image_xscale = sign(ram_horizontal_speed);
 

@@ -1,34 +1,34 @@
 /// @description Update Camera
 
 //Update Destination
-if (instance_exists(follow))
+if (instance_exists(camera_tracking))
 {
-	x_move_to = follow.x;
-	y_move_to = follow.y;
+	camera_x_move_to = camera_tracking.x;
+	camera_y_move_to = camera_tracking.y;
 	
-	if ((follow).object_index == obj_player_dead)
+	if ((camera_tracking).object_index == obj_stunned)
 	{
-		x = x_move_to;
-		y = y_move_to;
+		x = camera_x_move_to;
+		y = camera_y_move_to;
 	}
 }
 
 //Update object position
-x += (x_move_to - x) / 25;
-y += (y_move_to - y) / 25;
+x += (camera_x_move_to - x) / 25;
+y += (camera_y_move_to - y) / 25;
 
 //Keep camera center inside room
-x = clamp(x,view_w_half+buff,room_width-view_w_half-buff);
-y = clamp(y,view_h_half+buff,room_height-view_h_half-buff);
+x = clamp(x, camera_view_width_half + camera_buffer, room_width - camera_view_width_half - camera_buffer);
+y = clamp(y, camera_view_height_half + camera_buffer, room_height - camera_view_height_half - camera_buffer);
 
 //Screen shake
-x += random_range(-shake_remain,shake_remain);
-y += random_range(-shake_remain,shake_remain);
-shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));
+x += random_range(-camera_shake_remain, camera_shake_remain);
+y += random_range(-camera_shake_remain, camera_shake_remain);
+camera_shake_remain = max(0, camera_shake_remain - ((1/camera_shake_length) * camera_shake_magnitude));
 
 
 //Update camera view
-camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
+camera_set_view_pos(camera_view, x - camera_view_width_half, y - camera_view_height_half);
 
 if (room != rm_menu) && (room != rm_ending)
 {

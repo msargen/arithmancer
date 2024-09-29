@@ -2,10 +2,10 @@
 
 with (obj_player)
 {
-	if (hascontrol)
+	if (player_has_control)
 	{
-		hascontrol = false;
-		scr_slide_transition(TRANS_MODE.GOTO,other.target);
+		player_has_control = false;
+		scr_slide_transition(TRANS_MODE.GOTO, other.level_end_target);
 	}
 		
 }

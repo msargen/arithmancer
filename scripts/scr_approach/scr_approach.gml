@@ -1,6 +1,6 @@
-/// scr_approach(a, b, amount,)
-function scr_approach(argument0, argument1, argument2) {
-	// Moves "a" towards "b" by "amount" and returns the result
+/// scr_approach(_object_one, _object_two, amount)
+function scr_approach(_object_one, _object_two, _amount) {
+	// Moves "_object_one" towards "_object_two" by "amount" and returns the result
 	// Nice because it will not overshoot "b", and works in both directions
 	// Examples:
 	//      speed = scr_approach(speed, max_speed, acceleration);
@@ -9,19 +9,19 @@ function scr_approach(argument0, argument1, argument2) {
 	//      x = scr_approach(x, target_x, move_speed);
 	//      y = scr_approach(y, target_y, move_speed);
  
-	if (argument0 < argument1)
+	if (_object_one < _object_two)
 	{
-	    argument0 += argument2;
-	    if (argument0 > argument1)
-	        return argument1;
+	    _object_one += _amount;
+	    if (_object_one > _object_two)
+	        return _object_two;
 	}
 	else
 	{
-	    argument0 -= argument2;
-	    if (argument0 < argument1)
-	        return argument1;
+	    _object_one -= _amount;
+	    if (_object_one < _object_two)
+	        return _object_two;
 	}
-	return argument0;
+	return _object_one;
 
 
 }

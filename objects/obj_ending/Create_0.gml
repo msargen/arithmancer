@@ -1,9 +1,9 @@
 /// @description End Credits
-endtext[0] = "Well mathed\n You completed " + string(global.flagscollected) + " Equations\nWith " + string(global.time) + " Remaining"
+ending_end_text[0] = "Well mathed\n You completed " + string(global.flags_collected) + " Equations\nWith " + string(global.time) + " Remaining"
 
 
-spd = 0.5;
-letters = 0;
-currentline = 0;
-length = string_length(endtext[currentline]);
-text = "";
+ending_text_speed = 0.5;
+ending_letters = 0;
+ending_current_line = 0;
+ending_text_length = string_length(ending_end_text[ending_current_line]);
+ending_text = "";

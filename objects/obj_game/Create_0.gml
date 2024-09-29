@@ -3,19 +3,20 @@
 #macro RES_H 768
 display_set_gui_size(RES_W,RES_H);
 
-global.flagscollected = 0;
+// Globals
+global.flags_collected = 0;
 global.time = "";
-flagtextscale = 1;
-timetextscale = 1;
 
 
-seconds = 0;
-minutes = 0;
+game_flags_collected_text_scale = 1;
 
-timer = 1;
+game_timer_seconds = 0;
+game_timer_minutes = 0;
 
-timerone = 18000;
+game_timer = 1;
 
-timertwo = 18000;
+game_timer_one = 18000;
 
-timerthree = 18000;
+game_timer_two = 18000;
+
+game_timer_three = 18000;

@@ -1,12 +1,12 @@
 /// @description Set Up Camera
-cam = view_camera[0];
-follow = obj_player;
-view_w_half = camera_get_view_width(cam) * 0.5;
-view_h_half = camera_get_view_height(cam) * 0.5;
-x_move_to = xstart;
-y_move_to = ystart;
+camera_view = view_camera[0];
+camera_tracking = obj_player;
+camera_view_width_half = camera_get_view_width(camera_view) * 0.5;
+camera_view_height_half = camera_get_view_height(camera_view) * 0.5;
+camera_x_move_to = xstart;
+camera_y_move_to = ystart;
 
-shake_length = 0;
-shake_magnitude = 0;
-shake_remain = 0;
-buff = 32;
+camera_shake_length = 0;
+camera_shake_magnitude = 0;
+camera_shake_remain = 0;
+camera_buffer = 32;
