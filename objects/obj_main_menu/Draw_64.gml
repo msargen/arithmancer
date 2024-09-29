@@ -4,12 +4,12 @@ draw_set_font(fnt_menu);
 draw_set_halign(fa_right);
 draw_set_valign(fa_bottom);
 
-for (var _i = 0; _i < menu_items; _i++)
+for (var _i = 0; _i < main_menu_items; _i++)
 {
 	var _offset = 2;
-	var _txt = menu_menu[_i];
+	var _txt = main_menu_options[_i];
 	var _col = c_white;
-	if (menu_cursor == _i)
+	if (main_menu_cursor == _i)
 	{
 		_txt = string_insert("> ", _txt, 0);
 	}
@@ -17,8 +17,8 @@ for (var _i = 0; _i < menu_items; _i++)
 	{
 		_col = c_gray;	
 	}
-	var _xx = menu_x;
-	var _yy = menu_y - (menu_itemheight * (_i * 1.5));
+	var _xx = main_menu_x;
+	var _yy = main_menu_y - (main_menu_item_height * (_i * 1.5));
 	draw_set_color(c_black);
 	draw_text(_xx-_offset,_yy,_txt);
 	draw_text(_xx+_offset,_yy,_txt);
@@ -29,4 +29,4 @@ for (var _i = 0; _i < menu_items; _i++)
 }
 
 draw_set_color(c_black);
-draw_rectangle(menu_gui_width, menu_gui_height - 250, menu_gui_width + 900, menu_gui_height, false);
+draw_rectangle(main_menu_gui_width, main_menu_gui_height - 250, main_menu_gui_width + 900, main_menu_gui_height, false);
