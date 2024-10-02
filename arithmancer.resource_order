@@ -27,6 +27,7 @@
     {"name":"obj_main_menu","order":6,"path":"objects/obj_main_menu/obj_main_menu.yy",},
     {"name":"obj_music","order":14,"path":"objects/obj_music/obj_music.yy",},
     {"name":"obj_ram","order":1,"path":"objects/obj_ram/obj_ram.yy",},
+    {"name":"obj_settings_menu","order":15,"path":"objects/obj_settings_menu/obj_settings_menu.yy",},
     {"name":"obj_stunned","order":7,"path":"objects/obj_stunned/obj_stunned.yy",},
     {"name":"obj_transition","order":4,"path":"objects/obj_transition/obj_transition.yy",},
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},

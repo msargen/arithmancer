@@ -4,7 +4,7 @@
 main_menu_x += (main_menu_x_target - main_menu_x) / main_menu_speed;
 
 //Keyboard Controls
-if (main_menu_control)
+if (main_menu_control && !global.in_settings_menu)
 {
 	if (keyboard_check_pressed(vk_up)) || keyboard_check_pressed(ord("W"))
 	{
@@ -20,11 +20,19 @@ if (main_menu_control)
 	
 	if (keyboard_check_pressed(vk_enter))
 	{
-		main_menu_x_target = main_menu_gui_width + 200;
-		main_menu_committed = main_menu_cursor;
-		scr_screen_shake(6, 60);
-		main_menu_control = false;
-		audio_play_sound(snd_death, 10, false);
+		if (main_menu_cursor == 5)
+		{
+			global.settings_menu_cursor_position = 0;
+			global.in_settings_menu = true;
+		}
+		else
+		{
+			main_menu_x_target = main_menu_gui_width + 200;
+			main_menu_committed = main_menu_cursor;
+			scr_screen_shake(6, 60);
+			main_menu_control = false;
+			audio_play_sound(snd_death, 10, false, 0.69);
+		}
 	}
 }
 

@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_foot1",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"audiogroup2",
+    "path":"audiogroups/audiogroup2",
   },
   "bitDepth":1,
   "bitRate":128,

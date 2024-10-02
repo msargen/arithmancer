@@ -14,6 +14,7 @@ main_menu_item_height = font_get_size(fnt_menu);
 main_menu_committed = -1;
 main_menu_control = true;
 
+main_menu_options[5] = "Settings";
 main_menu_options[4] = "Level 3";
 main_menu_options[3] = "Level 2";
 main_menu_options[2] = "Level 1";
