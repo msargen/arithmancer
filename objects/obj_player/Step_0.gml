@@ -1,6 +1,6 @@
 #region //Get player input
 
-if (global.player_has_control)
+if (player_has_control)
 {
 	player_key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 	player_key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));

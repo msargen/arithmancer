@@ -3,8 +3,8 @@
   "%Name":"arithmancer",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"audiogroup1","name":"audiogroup1","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"audiogroup2","name":"audiogroup2","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"audiogroup_music","name":"audiogroup_music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"audiogroup_sfx","name":"audiogroup_sfx","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -60,9 +60,11 @@
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"scr_approach","path":"scripts/scr_approach/scr_approach.yy",},},
     {"id":{"name":"scr_draw_set_text","path":"scripts/scr_draw_set_text/scr_draw_set_text.yy",},},
+    {"id":{"name":"scr_enums","path":"scripts/scr_enums/scr_enums.yy",},},
     {"id":{"name":"scr_screen_shake","path":"scripts/scr_screen_shake/scr_screen_shake.yy",},},
     {"id":{"name":"scr_slide_transition","path":"scripts/scr_slide_transition/scr_slide_transition.yy",},},
     {"id":{"name":"scr_stun_player","path":"scripts/scr_stun_player/scr_stun_player.yy",},},
+    {"id":{"name":"scr_volume_adjustment","path":"scripts/scr_volume_adjustment/scr_volume_adjustment.yy",},},
     {"id":{"name":"snd_death","path":"sounds/snd_death/snd_death.yy",},},
     {"id":{"name":"snd_foot1","path":"sounds/snd_foot1/snd_foot1.yy",},},
     {"id":{"name":"snd_foot2","path":"sounds/snd_foot2/snd_foot2.yy",},},

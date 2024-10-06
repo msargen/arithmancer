@@ -1,5 +1,5 @@
 /// @description Equations Completed Counter (and time eventually)
-if (room != rm_menu) && (instance_exists(obj_player))
+if ((room != rm_menu) && (instance_exists(obj_player)) && !obj_settings_menu.in_settings_menu)
 {
 	{
 		game_flags_collected_text_scale = max(game_flags_collected_text_scale * 0.95, 1.25);

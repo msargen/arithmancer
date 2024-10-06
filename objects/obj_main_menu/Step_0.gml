@@ -4,7 +4,7 @@
 main_menu_x += (main_menu_x_target - main_menu_x) / main_menu_speed;
 
 //Keyboard Controls
-if (main_menu_control && !global.in_settings_menu)
+if (main_menu_control && !obj_settings_menu.in_settings_menu)
 {
 	if (keyboard_check_pressed(vk_up)) || keyboard_check_pressed(ord("W"))
 	{
@@ -22,8 +22,8 @@ if (main_menu_control && !global.in_settings_menu)
 	{
 		if (main_menu_cursor == 5)
 		{
-			global.settings_menu_cursor_position = 0;
-			global.in_settings_menu = true;
+			obj_settings_menu.settings_menu_cursor_position = 0;
+			obj_settings_menu.in_settings_menu = true;
 		}
 		else
 		{

@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_music_lvl_three",
   "audioGroupId":{
-    "name":"audiogroup1",
-    "path":"audiogroups/audiogroup1",
+    "name":"audiogroup_music",
+    "path":"audiogroups/audiogroup_music",
   },
   "bitDepth":1,
   "bitRate":128,

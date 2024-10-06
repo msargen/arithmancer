@@ -1,6 +1,6 @@
 /// @description Draw Settings Menu
 
-if (global.in_settings_menu)
+if (in_settings_menu)
 {
 	// draw blue background
 	draw_set_color(c_blue);
@@ -23,7 +23,7 @@ if (global.in_settings_menu)
 		var _menu_entry_color = c_grey;
 		
 		// hightlight selected menu option
-		if (global.settings_menu_cursor_position == _i)
+		if (settings_menu_cursor_position == _i)
 		{
 			_menu_entry_color = c_white;
 			_menu_x_offset = _menu_x_offset - _font_size;

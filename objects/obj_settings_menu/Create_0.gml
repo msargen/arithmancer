@@ -1,6 +1,6 @@
 /// @description Initialize Settings Menu
 
-global.in_settings_menu = false;
+in_settings_menu = false;
 
 main_volume = 70;  // we can change these to pull from a file at load
 music_volume = 70;
@@ -9,8 +9,8 @@ sfx_volume = 70;
 // set music and sfx volume
 adjusted_music_volume = main_volume * music_volume / 10000;
 adjusted_sfx_volume = main_volume * sfx_volume / 10000;
-audio_group_set_gain(audiogroup1, adjusted_music_volume, 0);
-audio_group_set_gain(audiogroup2, adjusted_sfx_volume, 0);
+audio_group_set_gain(audiogroup_music, adjusted_music_volume, 0);
+audio_group_set_gain(audiogroup_sfx, adjusted_sfx_volume, 0);
 
 // menu options
 settings_menu_option[0] = "Main Volume: ";
@@ -22,7 +22,7 @@ settings_menu_option[5] = "Other setting: "
 settings_menu_option[6] = ""
 settings_menu_option[7] = "Exit Settings";
 
-global.settings_menu_cursor_position = 0;
+settings_menu_cursor_position = 0;
 
 // strings for menu option values
 settings_menu_value[0] = "00" + string(main_volume) + "%";

@@ -21,7 +21,7 @@ player_dust = 0;
 
 player_jump_buffer = 0;
 
-global.player_has_control = true;
+player_has_control = true;
 
 player_gravity = 0.3;
 player_gravity_wall = 0.1;

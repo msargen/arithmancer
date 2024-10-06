@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_foot3",
   "audioGroupId":{
-    "name":"audiogroup2",
-    "path":"audiogroups/audiogroup2",
+    "name":"audiogroup_sfx",
+    "path":"audiogroups/audiogroup_sfx",
   },
   "bitDepth":1,
   "bitRate":128,
