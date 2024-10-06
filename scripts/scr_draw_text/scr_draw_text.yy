@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_draw_set_text",
+  "%Name":"scr_draw_text",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_draw_set_text",
+  "name":"scr_draw_text",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
