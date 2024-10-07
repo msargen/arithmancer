@@ -45,6 +45,7 @@
     {"id":{"name":"obj_level_end","path":"objects/obj_level_end/obj_level_end.yy",},},
     {"id":{"name":"obj_main_menu","path":"objects/obj_main_menu/obj_main_menu.yy",},},
     {"id":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},},
+    {"id":{"name":"obj_pause","path":"objects/obj_pause/obj_pause.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_ram","path":"objects/obj_ram/obj_ram.yy",},},
     {"id":{"name":"obj_stunned","path":"objects/obj_stunned/obj_stunned.yy",},},
