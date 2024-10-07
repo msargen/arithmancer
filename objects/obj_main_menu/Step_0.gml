@@ -31,7 +31,7 @@ if (main_menu_control && !obj_settings_menu.in_settings_menu)
 			main_menu_committed = main_menu_cursor;
 			scr_screen_shake(6, 60);
 			main_menu_control = false;
-			audio_play_sound(snd_death, 10, false);
+			audio_play_sound(snd_death, 10, false, 0.69);
 		}
 	}
 }
