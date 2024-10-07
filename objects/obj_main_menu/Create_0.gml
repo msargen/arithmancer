@@ -11,7 +11,6 @@ main_menu_x = main_menu_gui_width + main_menu_offscreen_slide_in;
 main_menu_y = main_menu_gui_height - main_menu_gui_margin;
 main_menu_x_target = main_menu_gui_width - main_menu_gui_margin;
 main_menu_speed = 25; //lower is faster
-main_menu_font = fnt_menu;
 main_menu_item_height = font_get_size(fnt_menu);
 main_menu_committed = -1;
 
