@@ -1,7 +1,7 @@
 /// @description 
-//Move player towards center
 
-layer_x("TitleAssets", min(layer_get_x("TitleAssets") + 1, RES_W * 0.5 - 32));
+//Move player towards center
+layer_x("TitleAssets", min(layer_get_x("TitleAssets") + 1, RES_W * 0.5 - global.margin_buffer));
 
 //Progress Text
 ending_letters += ending_text_speed;
