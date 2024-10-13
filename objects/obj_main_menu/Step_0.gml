@@ -45,32 +45,10 @@ if (main_menu_x > main_menu_gui_width + 150) && (main_menu_committed != -1)
 		case 2: scr_slide_transition(TRANS_MODE.GOTO, rm_lvl_one); break;
 		case 1:
 		{
-			if (!file_exists(SAVEFILE))
-			{
-				scr_slide_transition(TRANS_MODE.NEXT);	
-			}
-			else
-			{
-				var _file = file_text_open_read(SAVEFILE);
-				var _target = file_text_read_string(_file);
-				var _room = rm_menu;
-				
-				if (_target == room_get_name(rm_lvl_one))
-				{
-					_room = rm_lvl_one;
-				}
-				else if (_target == room_get_name(rm_lvl_two))
-				{
-					_room = rm_lvl_two;
-				}
-				else if (_target == room_get_name(rm_lvl_three))
-				{
-					_room = rm_lvl_three;
-				}
-				
-				file_text_close(_file);
-				scr_slide_transition(TRANS_MODE.GOTO,_room);
-			}
+			ini_open("settings.ini");
+			var _last_level = ini_read_string("Level", "Last Completed", "new_game");
+			ini_close();
+			scr_level_mapping(_last_level);
 		}
 		break;
 		case 0: game_end(); break;

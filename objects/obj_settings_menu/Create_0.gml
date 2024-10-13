@@ -2,11 +2,14 @@
 
 in_settings_menu = false;
 
-main_volume = 70;  // we can change these to pull from a file at load
-music_volume = 70;
-sfx_volume = 70;
+// load settings from ini file
+ini_open("settings.ini");
+main_volume = ini_read_real("Volume", "Main", 70);
+music_volume = ini_read_real("Volume", "Music", 70);
+sfx_volume = ini_read_real("Volume", "SFX", 70);
+ini_close();
 
-// 
+// UI adjustments based on display and font size
 settings_menu_font_size = font_get_size(fnt_menu);
 settings_menu_menu_y_offset = floor(display_get_gui_height()/10.0);
 settings_menu_menu_x_offset = floor(display_get_gui_width()/10.0);
@@ -21,10 +24,10 @@ audio_group_set_gain(audiogroup_sfx, adjusted_sfx_volume, 0);
 settings_menu_option[0] = "Main Volume: ";
 settings_menu_option[1] = "Music Volume: ";
 settings_menu_option[2] = "Sound Effects: ";
-settings_menu_option[3] = ""
-settings_menu_option[4] = "Display: "
-settings_menu_option[5] = "Other setting: "
-settings_menu_option[6] = ""
+settings_menu_option[3] = "";
+settings_menu_option[4] = "Display: ";
+settings_menu_option[5] = "Other setting: ";
+settings_menu_option[6] = "";
 settings_menu_option[7] = "Exit Settings";
 
 settings_menu_cursor_position = 0;

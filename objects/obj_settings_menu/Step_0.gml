@@ -94,6 +94,8 @@ if (in_settings_menu)
 			if (keyboard_check_pressed(vk_enter))
 			{
 				in_settings_menu = false;
+				scr_save_settings_to_file();
+				
 				var _room = room_get_name(room);
 				if ((_room != "rm_menu") && (_room != "rm_ending"))
 				{
