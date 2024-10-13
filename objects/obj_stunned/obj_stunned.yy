@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_dead",
-    "path":"sprites/spr_player_dead/spr_player_dead.yy",
+    "name":"spr_player_stunned",
+    "path":"sprites/spr_player_stunned/spr_player_stunned.yy",
   },
   "spriteMaskId":null,
   "visible":true,
