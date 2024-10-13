@@ -1,5 +1,5 @@
 //Disable alpha blending (Drawing just RGB)
-gpu_set_blendenable(false);
+//gpu_set_blendenable(false);
 
 if (pause_is_paused)  //draw frozen image to screen while paused
 {
@@ -21,6 +21,7 @@ if (keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape)) //Tog
 		
 		//deactivate anything other than this instance
 		instance_deactivate_all(true);
+		instance_activate_object(obj_settings_menu);
 		
 		//capture game moment
 		pause_surface = surface_create(RES_W,RES_H);
@@ -43,5 +44,5 @@ if (keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape)) //Tog
 }
 
 //Enable alpha blending
-gpu_set_blendenable(true);
+//gpu_set_blendenable(true);
 		
