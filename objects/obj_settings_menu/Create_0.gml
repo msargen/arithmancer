@@ -2,9 +2,12 @@
 
 in_settings_menu = false;
 
-main_volume = 70;  // we can change these to pull from a file at load
-music_volume = 70;
-sfx_volume = 70;
+// load settings from ini file
+ini_open("settings.ini");
+main_volume = ini_read_real("Volume", "Main", 70);
+music_volume = ini_read_real("Volume", "Music", 70);
+sfx_volume = ini_read_real("Volume", "SFX", 70);
+ini_close();
 
 // 
 settings_menu_font_size = font_get_size(fnt_menu);

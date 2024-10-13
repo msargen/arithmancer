@@ -63,6 +63,7 @@
     {"id":{"name":"scr_enums","path":"scripts/scr_enums/scr_enums.yy",},},
     {"id":{"name":"scr_global_variables","path":"scripts/scr_global_variables/scr_global_variables.yy",},},
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},
+    {"id":{"name":"scr_save_to_file","path":"scripts/scr_save_to_file/scr_save_to_file.yy",},},
     {"id":{"name":"scr_screen_shake","path":"scripts/scr_screen_shake/scr_screen_shake.yy",},},
     {"id":{"name":"scr_slide_transition","path":"scripts/scr_slide_transition/scr_slide_transition.yy",},},
     {"id":{"name":"scr_stun_player","path":"scripts/scr_stun_player/scr_stun_player.yy",},},

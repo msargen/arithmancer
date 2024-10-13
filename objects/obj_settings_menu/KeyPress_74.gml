@@ -2,6 +2,7 @@
 
 settings_menu_cursor_position = 0;
 in_settings_menu = !in_settings_menu;
+scr_save_settings_to_file();
 
 
 
