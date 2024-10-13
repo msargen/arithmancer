@@ -18,8 +18,3 @@ display_set_gui_size(RES_W, RES_H);
 // For maximizing things, but I don't think we want to do this
 //#macro RES_W display_get_width()
 //#macro RES_H display_get_height()
-
-
-
-// Default game save filename
-#macro SAVEFILE "Save.sav"
