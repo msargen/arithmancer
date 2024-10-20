@@ -1,8 +1,9 @@
 // Location for all macro definitions
 
-// Current screen resolution
-#macro RES_W 1024
-#macro RES_H 768
+// For a simple and easy to add to/expand screen resolution. A 16:9 aspect ratio.
+#macro RES_W 320
+#macro RES_H 180
+
 
 // This will set up the player window when the game loads and scale everything according to the set resolution
 window_set_size(RES_W, RES_H);

@@ -1,12 +1,13 @@
 /// @description Destroy Door
 
+// TODO: this is horrific. Needs to be updated
 //Level 1
-if (global.flags_collected == 4)
+if (global.flags_collected == 1)
 {
 	instance_destroy(inst_13ECB37F);
 }
 
-if (global.flags_collected == 10)
+if (global.flags_collected == 2)
 {
 	instance_destroy(inst_2F06D50F);
 }

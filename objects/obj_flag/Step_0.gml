@@ -41,15 +41,15 @@ else if (flag_operation == 4)
 
 
 
-
+// TODO: proximity radius should be a global and set to 32 probably
 //Proximity
-if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y, x, y, 64)) && (!instance_exists(obj_equation_text)))
+if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y, x, y, 32)) && (!instance_exists(obj_equation_text)))
 {
 	flag_player_nearby = true;
 	if ((keyboard_check_pressed(vk_up)) || keyboard_check_pressed(ord("W")))
 	{
 		flag_id = instance_nearest(obj_player.x, obj_player.y, obj_flag)
-		with (instance_create_layer(x, y - 64, layer, obj_equation_text))
+		with (instance_create_layer(x, y - 32, layer, obj_equation_text))
 		{
 			equation_text_flag_id = other.flag_id;
 			equation_text_equation_solution = other.flag_equation_solution;

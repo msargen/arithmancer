@@ -24,6 +24,6 @@ if (in_settings_menu)
 	
 		// draw menu option
 		var _text_y_location = settings_menu_menu_y_offset + _i * settings_menu_font_size * 1.5;
-		scr_draw_text_outline(_text_x_position, _text_y_location, _menu_entry_color, c_black, global.text_offset, _display_text);
+		scr_draw_text_outline(_text_x_position, _text_y_location, _menu_entry_color, c_black, global.text_offset, _display_text, 0.5);
 	}
 }
