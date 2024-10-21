@@ -36,7 +36,8 @@ if (main_menu_control && !obj_settings_menu.in_settings_menu)
 	}
 }
 
-if (main_menu_x > main_menu_gui_width + 150) && (main_menu_committed != -1)
+// TODO: this check is really stupid and should be changed
+if (main_menu_x > main_menu_gui_width + 50) && (main_menu_committed != -1)
 {
 	switch (main_menu_committed)
 	{

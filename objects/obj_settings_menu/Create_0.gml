@@ -14,6 +14,11 @@ settings_menu_font_size = font_get_size(fnt_menu);
 settings_menu_menu_y_offset = floor(display_get_gui_height()/10.0);
 settings_menu_menu_x_offset = floor(display_get_gui_width()/10.0);
 
+// 
+settings_menu_font_size = font_get_size(fnt_menu);
+settings_menu_menu_y_offset = floor(display_get_gui_height()/10.0);
+settings_menu_menu_x_offset = floor(display_get_gui_width()/10.0);
+
 // set music and sfx volume
 adjusted_music_volume = main_volume * music_volume / 10000;
 adjusted_sfx_volume = main_volume * sfx_volume / 10000;
