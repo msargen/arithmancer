@@ -1,5 +1,5 @@
 /// @description End Credits
-ending_end_text[0] = "Well mathed\n You completed " + string(global.flags_collected) + " Equations\nWith " + string(global.time) + " Remaining"
+ending_end_text[0] = "Well mathed\n You completed " + string(global.flags_collected) + " Equations\nIn only " + string(global.time) + "!"
 
 
 ending_text_speed = 0.5;
