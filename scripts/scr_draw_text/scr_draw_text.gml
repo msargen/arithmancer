@@ -21,15 +21,24 @@ function scr_draw_set_text(_colour, _font, _halign, _valign)
 /// @arg _outline_color The color of the text outine
 /// @arg _offset The thickness of the outline
 /// @arg _text The text to draw
-function scr_draw_text_outline(_location_x, _locaction_y, _text_color, _outline_color, _offset, _text)
+/// @arg _size_scale The size scale for the text
+function scr_draw_text_outline(_location_x, _locaction_y, _text_color, _outline_color, _offset, _text, _size_scale)
 {
+	//draw_set_color(_outline_color);
+	//draw_text(_location_x - _offset, _locaction_y, _text);
+	//draw_text(_location_x + _offset, _locaction_y, _text);
+	//draw_text(_location_x, _locaction_y + _offset, _text);
+	//draw_text(_location_x, _locaction_y - _offset, _text);
+	//draw_set_color(_text_color);
+	//draw_text(_location_x, _locaction_y, _text);
+	
 	draw_set_color(_outline_color);
-	draw_text(_location_x - _offset, _locaction_y, _text);
-	draw_text(_location_x + _offset, _locaction_y, _text);
-	draw_text(_location_x, _locaction_y + _offset, _text);
-	draw_text(_location_x, _locaction_y - _offset, _text);
+	draw_text_transformed(_location_x - _offset, _locaction_y, _text, _size_scale, _size_scale, 0);
+	draw_text_transformed(_location_x + _offset, _locaction_y, _text, _size_scale, _size_scale, 0);
+	draw_text_transformed(_location_x, _locaction_y + _offset, _text, _size_scale, _size_scale, 0);
+	draw_text_transformed(_location_x, _locaction_y - _offset, _text, _size_scale, _size_scale, 0);
 	draw_set_color(_text_color);
-	draw_text(_location_x, _locaction_y, _text);
+	draw_text_transformed(_location_x, _locaction_y, _text, _size_scale, _size_scale, 0);
 }
 
 /// @description Draws the passed text with a shadow to the right and down

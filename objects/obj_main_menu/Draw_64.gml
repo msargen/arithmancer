@@ -12,8 +12,8 @@ for (var _i = 0; _i < main_menu_items; _i++)
 		_col = c_white;
 	}
 	
-	var _yy = main_menu_y - (main_menu_item_height * (_i * 1.5));
-	scr_draw_text_outline(main_menu_x, _yy, _col, c_black, global.text_offset, _txt);
+	var _yy = main_menu_y - (main_menu_item_height * (_i * 1));
+	scr_draw_text_outline(main_menu_x, _yy, _col, c_black, global.text_offset, _txt, 0.5);
 }
 
 // Prevents the menu options slide it from being seen
