@@ -16,13 +16,7 @@ function scr_save_settings_to_file()
 /// @arg _level_name the name of the most recently completed level
 function scr_save_level_completion_to_file(_level_name)
 {
-	with(obj_settings_menu)
-	
-	//switch
-	
-	{
-		ini_open("settings.ini");
-		ini_write_string("Level", "Last Completed", _level_name);
-		ini_close();
-	}
+	ini_open("settings.ini");
+	ini_write_string("Level", "Last Completed", _level_name);
+	ini_close();
 }
