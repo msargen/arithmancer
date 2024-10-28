@@ -18,10 +18,11 @@ if (keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape)) //Tog
 	if (!pause_is_paused) //pause now
 	{
 		pause_is_paused = true;
-		
+		pause_in_menu = true;
 		//deactivate anything other than this instance
 		instance_deactivate_all(true);
 		instance_activate_object(obj_settings_menu);
+		
 		
 		//capture game moment
 		pause_surface = surface_create(RES_W,RES_H);
@@ -34,12 +35,9 @@ if (keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape)) //Tog
 		pause_surface_buffer = buffer_create(RES_W * RES_H * 4, buffer_fixed, 1);
 		buffer_get_surface(pause_surface_buffer,pause_surface,0);
 	}
-	else //unpause now
+	else if(!obj_settings_menu.in_settings_menu) //unpause now
 	{
-		pause_is_paused = false;
-		instance_activate_all();
-		if (surface_exists(pause_surface)) surface_free(pause_surface);
-		if (buffer_exists(pause_surface_buffer)) buffer_delete(pause_surface_buffer);
+		scr_unpause();
 	}
 }
 
