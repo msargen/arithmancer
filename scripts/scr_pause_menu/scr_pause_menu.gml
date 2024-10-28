@@ -31,7 +31,9 @@ function scr_pause_menu_draw(){
 		draw_text_transformed(_text_x_position, _text_y_position, _display_text, global.text_scale, global.text_scale, 0);
 	}
 }
-/// @description This function unpauses and activatese objects 
+
+
+/// @description This function unpauses and activates objects 
 function scr_unpause(){
 	pause_is_paused = false;
 	pause_in_menu = false;
