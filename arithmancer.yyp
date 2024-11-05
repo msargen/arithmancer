@@ -69,7 +69,7 @@
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},
     {"id":{"name":"scr_pause_menu","path":"scripts/scr_pause_menu/scr_pause_menu.yy",},},
     {"id":{"name":"scr_room_creation","path":"scripts/scr_room_creation/scr_room_creation.yy",},},
-    {"id":{"name":"scr_save_to_file","path":"scripts/scr_save_to_file/scr_save_to_file.yy",},},
+    {"id":{"name":"scr_save_to_ini","path":"scripts/scr_save_to_ini/scr_save_to_ini.yy",},},
     {"id":{"name":"scr_savestate_save_load","path":"scripts/scr_savestate_save_load/scr_savestate_save_load.yy",},},
     {"id":{"name":"scr_screen_shake","path":"scripts/scr_screen_shake/scr_screen_shake.yy",},},
     {"id":{"name":"scr_slide_transition","path":"scripts/scr_slide_transition/scr_slide_transition.yy",},},
