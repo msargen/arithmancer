@@ -30,8 +30,7 @@ function scr_load_from_ini() {
 		settings_menu_value[1] = string_delete(settings_menu_value[1], 1, (string_length(string(music_volume))-1));
 		settings_menu_value[2] = "00" + string(sfx_volume) + "%";
 		settings_menu_value[2] = string_delete(settings_menu_value[2], 1, (string_length(string(sfx_volume))-1));
-		if (bool(is_fullscreen)) {settings_menu_value[4] = "True";};
-		if (!bool(is_fullscreen)) {settings_menu_value[4] = "False";};
+		settings_menu_value[4] = bool(is_fullscreen) ? "True" : "False";
 		settings_menu_value[5] = string(resolution) + "p";
 	}
 	
