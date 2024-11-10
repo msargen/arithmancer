@@ -13,34 +13,36 @@ if (pause_is_paused)  //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if (keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape)) //Toggle Pause
+if (keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape))//Toggle Pause
 {
-	if (!pause_is_paused) //pause now
+	if (room != rm_title_screen && room != rm_menu && room != rm_ending)
 	{
-		pause_is_paused = true;
-		pause_in_menu = true;
-		//deactivate anything other than this instance
-		instance_deactivate_all(true);
-		instance_activate_object(obj_settings_menu);
+		if (!pause_is_paused) //pause now
+		{
+			pause_is_paused = true;
+			pause_in_menu = true;
+			//deactivate anything other than this instance
+			instance_deactivate_all(true);
+			instance_activate_object(obj_settings_menu);
 		
 		
-		//capture game moment
-		pause_surface = surface_create(RES_W,RES_H);
-		surface_set_target(pause_surface);
+			//capture game moment
+			pause_surface = surface_create(RES_W,RES_H);
+			surface_set_target(pause_surface);
 			draw_surface(application_surface,0,0);
-		surface_reset_target();
+			surface_reset_target();
 		
-		//Back up surface to buffer in case we lose it (screen focus, ect)
-		if (buffer_exists(pause_surface_buffer)) buffer_delete(pause_surface_buffer);
-		pause_surface_buffer = buffer_create(RES_W * RES_H * 4, buffer_fixed, 1);
-		buffer_get_surface(pause_surface_buffer,pause_surface,0);
-	}
-	else if(!obj_settings_menu.in_settings_menu) //unpause now
-	{
-		scr_unpause();
+			//Back up surface to buffer in case we lose it (screen focus, ect)
+			if (buffer_exists(pause_surface_buffer)) buffer_delete(pause_surface_buffer);
+			pause_surface_buffer = buffer_create(RES_W * RES_H * 4, buffer_fixed, 1);
+			buffer_get_surface(pause_surface_buffer,pause_surface,0);
+		}
+		else if(!obj_settings_menu.in_settings_menu) //unpause now
+		{
+			scr_unpause();
+		}
 	}
 }
-
 //Enable alpha blending
 //gpu_set_blendenable(true);
 		
