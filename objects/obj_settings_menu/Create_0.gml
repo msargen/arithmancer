@@ -1,3 +1,6 @@
+//Set visual priority
+depth = -1500
+
 /// @description Initialize Settings Menu
 
 in_settings_menu = false;
@@ -10,11 +13,6 @@ sfx_volume = ini_read_real("Volume", "SFX", 70);
 ini_close();
 
 // UI adjustments based on display and font size
-settings_menu_font_size = font_get_size(fnt_menu);
-settings_menu_menu_y_offset = floor(display_get_gui_height()/10.0);
-settings_menu_menu_x_offset = floor(display_get_gui_width()/10.0);
-
-// 
 settings_menu_font_size = font_get_size(fnt_menu);
 settings_menu_menu_y_offset = floor(display_get_gui_height()/10.0);
 settings_menu_menu_x_offset = floor(display_get_gui_width()/10.0);

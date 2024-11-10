@@ -13,6 +13,9 @@ global.margin_buffer = 8;
 // For giving outlines/shadow/outline to text
 global.text_offset = floor(font_get_size(fnt_menu)/10.0);
 
+// Sets text scaling across the GUI
+global.text_scale = 0.5;
+
 // Time source that counts seconds to track time in levels
 //     Is not a simple variable to assign a base value to here
 // global.level_time_source
