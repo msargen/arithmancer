@@ -96,11 +96,7 @@ if (in_settings_menu)
 				in_settings_menu = false;
 				scr_save_settings_to_file();
 				
-				var _room = room_get_name(room);
-				if ((_room != "rm_menu") && (_room != "rm_ending"))
-				{
-					obj_player.player_has_control = true;
-				}
+				if(obj_pause.pause_is_paused){obj_pause.pause_in_menu = true;};
 			}
 			break;
 	}

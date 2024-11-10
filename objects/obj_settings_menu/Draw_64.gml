@@ -18,12 +18,12 @@ if (in_settings_menu)
 		if (settings_menu_cursor_position == _i)
 		{
 			_menu_entry_color = c_white;
-			_text_x_position = settings_menu_menu_x_offset - settings_menu_font_size;
+			_text_x_position = settings_menu_menu_x_offset - settings_menu_font_size * global.text_scale;
 			_display_text = "> " + settings_menu_option[_i] + settings_menu_value[_i] + " <";
 		}
 	
 		// draw menu option
-		var _text_y_location = settings_menu_menu_y_offset + _i * settings_menu_font_size * 1.5;
-		scr_draw_text_outline(_text_x_position, _text_y_location, _menu_entry_color, c_black, global.text_offset, _display_text, 0.5);
+		var _text_y_position = settings_menu_menu_y_offset + _i * settings_menu_font_size * 1.5 * global.text_scale;
+		scr_draw_text_outline(_text_x_position, _text_y_position, _menu_entry_color, c_black, global.text_offset, _display_text, global.text_scale);
 	}
 }
