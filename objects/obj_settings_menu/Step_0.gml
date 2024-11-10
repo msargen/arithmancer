@@ -81,12 +81,44 @@ if (in_settings_menu)
 			}
 			break;
 		
-		// display
-		case SETTINGS_MENU.DISPLAY:
+		// fullscreen toggle
+		case SETTINGS_MENU.FULLSCREEN:
+			if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D")))
+			{
+				if (bool(is_fullscreen))
+				{
+					// Toggle fullscreen off
+					settings_menu_value[4] = "False";
+					is_fullscreen = 0;
+					window_set_fullscreen(false);
+					window_set_size(resolution * 16/9, resolution);
+				}
+				else
+				{
+					// Toggle fullscreen on
+					settings_menu_value[4] = "True";
+					is_fullscreen = 1;
+					window_set_fullscreen(true);
+				}
+			}
 			break;
 		
-		// other
-		case SETTINGS_MENU.OTHER:
+		// display resolution
+		case SETTINGS_MENU.RESOLUTION:
+			if (((keyboard_check_pressed(vk_left)) || keyboard_check_pressed(ord("A"))) && (resolution > 361))
+			{
+				// adjust resolution down
+				resolution = resolution - RES_H;
+				settings_menu_value[5] = string(resolution) + "p"
+				window_set_size(resolution * 16/9, resolution);
+			}
+			if (((keyboard_check_pressed(vk_right)) || keyboard_check_pressed(ord("D"))) && (resolution < 2159))
+			{
+				// adjust resolution up
+				resolution = resolution + RES_H;
+				settings_menu_value[5] = string(resolution) + "p"
+				window_set_size(resolution * 16/9, resolution);
+			}
 			break;
 		
 		// exit menu
