@@ -1,4 +1,4 @@
-/// @description A persisten object throughout the game
+/// @description A persistent object throughout the game
 
 game_timer = 0;
 
