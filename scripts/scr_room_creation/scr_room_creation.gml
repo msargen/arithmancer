@@ -1,5 +1,5 @@
 /// @description actions to perform at room creation
-/// @arg _loading_from_savestate flag to indicate whether addition savestate code needs to be run
+/// @arg _savestate_index flag to indicate whether to load room defaults (0) or a savestate (1-3)
 function scr_room_creation(_savestate_index)
 {
 	// function to increment timer and update global.time for display

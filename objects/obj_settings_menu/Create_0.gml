@@ -1,5 +1,8 @@
 /// @description Initialize Settings Menu
 
+//Set visual priority
+depth = -1500
+
 // variables
 in_settings_menu = false;
 main_volume = 70;

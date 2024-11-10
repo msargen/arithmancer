@@ -1,3 +1,6 @@
+//Set priority when this item appears in front of others
+depth  = -1337
+
 //Create Pause Variable
 pause_is_paused = false;
 pause_surface = -1;
