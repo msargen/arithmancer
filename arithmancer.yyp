@@ -64,6 +64,7 @@
     {"id":{"name":"scr_draw_text","path":"scripts/scr_draw_text/scr_draw_text.yy",},},
     {"id":{"name":"scr_enums","path":"scripts/scr_enums/scr_enums.yy",},},
     {"id":{"name":"scr_global_variables","path":"scripts/scr_global_variables/scr_global_variables.yy",},},
+    {"id":{"name":"scr_keybinds","path":"scripts/scr_keybinds/scr_keybinds.yy",},},
     {"id":{"name":"scr_level_mapping","path":"scripts/scr_level_mapping/scr_level_mapping.yy",},},
     {"id":{"name":"scr_load_from_ini","path":"scripts/scr_load_from_ini/scr_load_from_ini.yy",},},
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},

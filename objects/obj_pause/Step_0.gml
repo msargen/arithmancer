@@ -1,8 +1,9 @@
 /// @description Move Cursor in Menu
+
 if(!pause_in_menu){exit;}
 
 // move up
-if ((keyboard_check_pressed(vk_up)) || keyboard_check_pressed(ord("W")))
+if (global.key_up)
 {
 	if (pause_menu_cursor_position > 0)
 	{
@@ -11,7 +12,7 @@ if ((keyboard_check_pressed(vk_up)) || keyboard_check_pressed(ord("W")))
 }
 	
 // move down
-if ((keyboard_check_pressed(vk_down)) || keyboard_check_pressed(ord("S")))
+if (global.key_down)
 {
 	if (pause_menu_cursor_position < (array_length(pause_menu_option) - 1))
 	{
@@ -19,7 +20,7 @@ if ((keyboard_check_pressed(vk_down)) || keyboard_check_pressed(ord("S")))
 	}
 }
 
-if (keyboard_check_pressed(vk_enter))
+if (global.key_select)
 {
 	switch(pause_menu_cursor_position)
 	{

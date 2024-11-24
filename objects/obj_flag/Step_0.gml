@@ -1,5 +1,4 @@
 /// @description Sign text
-
 //Equation Generator
 flag_operation = floor(random_range(1, 4.99));
 if (flag_operation == 1)
@@ -46,7 +45,7 @@ else if (flag_operation == 4)
 if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y, x, y, 32)) && (!instance_exists(obj_equation_text)))
 {
 	flag_player_nearby = true;
-	if ((keyboard_check_pressed(vk_up)) || keyboard_check_pressed(ord("W")))
+	if (global.key_up)
 	{
 		flag_id = instance_nearest(obj_player.x, obj_player.y, obj_flag)
 		with (instance_create_layer(x, y - 32, layer, obj_equation_text))
