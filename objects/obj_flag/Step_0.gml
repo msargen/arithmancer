@@ -1,5 +1,8 @@
 /// @description Sign text
 
+//set keybindings
+keybind();
+
 //Equation Generator
 flag_operation = floor(random_range(1, 4.99));
 if (flag_operation == 1)

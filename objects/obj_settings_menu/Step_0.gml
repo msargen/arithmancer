@@ -1,5 +1,8 @@
 /// @description Control Settings Menu
 
+//set keybindings
+keybind();
+
 if (in_settings_menu)
 {
 	// move up
@@ -83,7 +86,7 @@ if (in_settings_menu)
 		
 		// fullscreen toggle
 		case SETTINGS_MENU.FULLSCREEN:
-			if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D")))
+			if (global.key_left || global.key_right)
 			{
 				if (bool(is_fullscreen))
 				{
@@ -105,14 +108,14 @@ if (in_settings_menu)
 		
 		// display resolution
 		case SETTINGS_MENU.RESOLUTION:
-			if (((keyboard_check_pressed(vk_left)) || keyboard_check_pressed(ord("A"))) && (resolution > 361))
+			if (global.key_left && (resolution > 361))
 			{
 				// adjust resolution down
 				resolution = resolution - RES_H;
 				settings_menu_value[5] = string(resolution) + "p"
 				window_set_size(resolution * 16/9, resolution);
 			}
-			if (((keyboard_check_pressed(vk_right)) || keyboard_check_pressed(ord("D"))) && (resolution < 2159))
+			if (global.key_right && (resolution < 2159))
 			{
 				// adjust resolution up
 				resolution = resolution + RES_H;

@@ -1,4 +1,8 @@
 /// @description Move Cursor in Menu
+
+//set keybindings
+keybind();
+
 if(!pause_in_menu){exit;}
 
 // move up

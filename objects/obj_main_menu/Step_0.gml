@@ -1,5 +1,8 @@
 /// @description Control Menu
 
+//Setting the keybindings
+keybind();
+
 //Item ease in
 main_menu_x += (main_menu_x_target - main_menu_x) / main_menu_speed;
 

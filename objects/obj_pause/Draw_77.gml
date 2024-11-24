@@ -13,7 +13,7 @@ if (pause_is_paused)  //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if (global.key_pause))//Toggle Pause
+if (global.key_pause)//Toggle Pause
 {
 	if (room != rm_title_screen && room != rm_menu && room != rm_ending)
 	{
@@ -44,18 +44,10 @@ if (global.key_pause))//Toggle Pause
 		else if(!obj_settings_menu.in_settings_menu) //unpause now
 		{
 			scr_unpause();
-		}
-			//Back up surface to buffer in case we lose it (screen focus, ect)
-			if (buffer_exists(pause_surface_buffer)) buffer_delete(pause_surface_buffer);
-			pause_surface_buffer = buffer_create(RES_W * RES_H * 4, buffer_fixed, 1);
-			buffer_get_surface(pause_surface_buffer,pause_surface,0);
-		}
-		else if(!obj_settings_menu.in_settings_menu) //unpause now
-		{
-			scr_unpause();
-		}
+		}		
 	}
 }
+
 //Enable alpha blending
 //gpu_set_blendenable(true);
 		

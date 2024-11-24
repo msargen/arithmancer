@@ -1,9 +1,12 @@
 #region //Get player input
 
+//set keybindings
+keybind();
+
 if (player_has_control)
 {
-	player_key_left = global.key_left;
-	player_key_right =global.key_right;
+	player_key_left = global.key_hold_left;
+	player_key_right = global.key_hold_right;
 	player_key_jump = global.key_jump;
 }
 else
