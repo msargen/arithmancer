@@ -25,15 +25,10 @@ if (global.key_pause)//Toggle Pause
 			instance_deactivate_all(true);
 			instance_activate_object(obj_settings_menu);
 		
-		
-			//capture game moment
-			pause_surface = surface_create(RES_W,RES_H);
-			surface_set_target(pause_surface);
 			//capture game moment
 			pause_surface = surface_create(RES_W,RES_H);
 			surface_set_target(pause_surface);
 			draw_surface(application_surface,0,0);
-			surface_reset_target();
 			surface_reset_target();
 		
 			//Back up surface to buffer in case we lose it (screen focus, ect)
