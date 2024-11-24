@@ -128,6 +128,7 @@ if (in_settings_menu)
 		case SETTINGS_MENU.EXIT_SETTINGS:
 			if (global.key_select)
 			{
+				global.key_select = false;
 				in_settings_menu = false;
 				scr_save_settings_to_file();
 				

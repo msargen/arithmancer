@@ -1,8 +1,4 @@
 /// @description Progress text
-
-//set keybindings
-keybind();
-
 // TODO: this never stops growing (should have a cap)
 equation_text_letters += equation_text_speed;
 equation_text_input = string_digits(keyboard_string);

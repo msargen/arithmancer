@@ -1,8 +1,5 @@
 #region //Get player input
 
-//set keybindings
-keybind();
-
 if (player_has_control)
 {
 	player_key_left = global.key_hold_left;
