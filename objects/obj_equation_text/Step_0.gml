@@ -1,5 +1,4 @@
 /// @description Progress text
-
 // TODO: this never stops growing (should have a cap)
 equation_text_letters += equation_text_speed;
 equation_text_input = string_digits(keyboard_string);
@@ -11,7 +10,7 @@ if (equation_text_display_height == 0) equation_text_display_height = string_hei
 equation_text_display_width = string_width(equation_text_text_current);
 
 //Destroy when done
-if (equation_text_letters >= equation_text_length) && (keyboard_check_pressed(vk_enter)) && equation_text_equation_solution == real(equation_text_input)
+if (equation_text_letters >= equation_text_length) && global.key_select && equation_text_equation_solution == real(equation_text_input)
 {
 	keyboard_string = "";
 	instance_destroy();

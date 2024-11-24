@@ -1,9 +1,12 @@
 /// @description Control Settings Menu
 
+//set keybindings
+keybind();
+
 if (in_settings_menu)
 {
 	// move up
-	if ((keyboard_check_pressed(vk_up)) || keyboard_check_pressed(ord("W")))
+	if (global.key_up)
 	{
 		if (settings_menu_cursor_position > 0)
 		{
@@ -20,7 +23,7 @@ if (in_settings_menu)
 	}
 	
 	// move down
-	if ((keyboard_check_pressed(vk_down)) || keyboard_check_pressed(ord("S")))
+	if (global.key_down)
 	{
 		if (settings_menu_cursor_position < (array_length(settings_menu_option) - 1))
 		{
@@ -41,12 +44,12 @@ if (in_settings_menu)
 	{
 		// main volume
 		case SETTINGS_MENU.MAIN_VOLUME:
-			if (((keyboard_check_pressed(vk_left)) || keyboard_check_pressed(ord("A"))) && (main_volume > 0))
+			if (global.key_left && (main_volume > 0))
 			{
 				// adjust volume level down
 				scr_main_volume_adjustment(-10);
 			}
-			if (((keyboard_check_pressed(vk_right)) || keyboard_check_pressed(ord("D"))) && (main_volume < 100))
+			if (global.key_right && (main_volume < 100))
 			{
 				// adjust volume level up
 				scr_main_volume_adjustment(10);
@@ -55,12 +58,12 @@ if (in_settings_menu)
 		
 		// music volume
 		case SETTINGS_MENU.MUSIC_VOLUME:
-			if (((keyboard_check_pressed(vk_left)) || keyboard_check_pressed(ord("A"))) && (music_volume > 0))
+			if (global.key_left && (music_volume > 0))
 			{
 				// adjust volume level down
 				scr_music_volume_adjustment(-10);
 			}
-			if (((keyboard_check_pressed(vk_right)) || keyboard_check_pressed(ord("D"))) && (music_volume < 100))
+			if (global.key_right && (music_volume < 100))
 			{
 				// adjust volume level up
 				scr_music_volume_adjustment(10);
@@ -69,12 +72,12 @@ if (in_settings_menu)
 		
 		// sfx volume
 		case SETTINGS_MENU.SFX_VOLUME:
-			if (((keyboard_check_pressed(vk_left)) || keyboard_check_pressed(ord("A"))) && (sfx_volume > 0))
+			if (global.key_left && (sfx_volume > 0))
 			{
 				// adjust volume level down
 				scr_sfx_volume_adjustment(-10);
 			}
-			if (((keyboard_check_pressed(vk_right)) || keyboard_check_pressed(ord("D"))) && (sfx_volume < 100))
+			if (global.key_right && (sfx_volume < 100))
 			{
 				// adjust volume level up
 				scr_sfx_volume_adjustment(10);
@@ -83,7 +86,7 @@ if (in_settings_menu)
 		
 		// fullscreen toggle
 		case SETTINGS_MENU.FULLSCREEN:
-			if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D")))
+			if (global.key_left || global.key_right)
 			{
 				if (bool(is_fullscreen))
 				{
@@ -105,14 +108,14 @@ if (in_settings_menu)
 		
 		// display resolution
 		case SETTINGS_MENU.RESOLUTION:
-			if (((keyboard_check_pressed(vk_left)) || keyboard_check_pressed(ord("A"))) && (resolution > 361))
+			if (global.key_left && (resolution > 361))
 			{
 				// adjust resolution down
 				resolution = resolution - RES_H;
 				settings_menu_value[5] = string(resolution) + "p"
 				window_set_size(resolution * 16/9, resolution);
 			}
-			if (((keyboard_check_pressed(vk_right)) || keyboard_check_pressed(ord("D"))) && (resolution < 2159))
+			if (global.key_right && (resolution < 2159))
 			{
 				// adjust resolution up
 				resolution = resolution + RES_H;
@@ -123,8 +126,9 @@ if (in_settings_menu)
 		
 		// exit menu
 		case SETTINGS_MENU.EXIT_SETTINGS:
-			if (keyboard_check_pressed(vk_enter))
+			if (global.key_select)
 			{
+				global.key_select = false;
 				in_settings_menu = false;
 				scr_save_settings_to_file();
 				

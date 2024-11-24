@@ -1,24 +1,23 @@
 /// @description Control Menu
-
 //Item ease in
 main_menu_x += (main_menu_x_target - main_menu_x) / main_menu_speed;
 
 //Keyboard Controls
 if (main_menu_control && !obj_settings_menu.in_settings_menu)
 {
-	if (keyboard_check_pressed(vk_up)) || keyboard_check_pressed(ord("W"))
+	if (global.key_up)
 	{
 		main_menu_cursor++;
 		if (main_menu_cursor >= main_menu_items) main_menu_cursor = 0;
 	}
 	
-	if (keyboard_check_pressed(vk_down)) || keyboard_check_pressed(ord("S"))
+	if (global.key_down)
 	{
 		main_menu_cursor--;
 		if (main_menu_cursor < 0) main_menu_cursor = main_menu_items - 1;
 	}
 	
-	if (keyboard_check_pressed(vk_enter))
+	if (global.key_select)
 	{
 		if (main_menu_cursor == 5)
 		{

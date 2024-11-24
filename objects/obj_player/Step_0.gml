@@ -2,9 +2,9 @@
 
 if (player_has_control)
 {
-	player_key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
-	player_key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-	player_key_jump = keyboard_check_pressed(vk_space);
+	player_key_left = global.key_hold_left;
+	player_key_right = global.key_hold_right;
+	player_key_jump = global.key_jump;
 }
 else
 {

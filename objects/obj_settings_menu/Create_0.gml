@@ -1,3 +1,6 @@
+//Set visual priority
+depth = -1500
+
 /// @description Initialize Settings Menu
 
 //Set visual priority
