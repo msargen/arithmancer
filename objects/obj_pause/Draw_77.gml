@@ -13,7 +13,7 @@ if (pause_is_paused)  //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if (keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape))//Toggle Pause
+if (global.key_pause))//Toggle Pause
 {
 	if (room != rm_title_screen && room != rm_menu && room != rm_ending)
 	{
