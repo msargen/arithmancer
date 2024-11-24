@@ -29,9 +29,22 @@ if (global.key_pause))//Toggle Pause
 			//capture game moment
 			pause_surface = surface_create(RES_W,RES_H);
 			surface_set_target(pause_surface);
+			//capture game moment
+			pause_surface = surface_create(RES_W,RES_H);
+			surface_set_target(pause_surface);
 			draw_surface(application_surface,0,0);
 			surface_reset_target();
+			surface_reset_target();
 		
+			//Back up surface to buffer in case we lose it (screen focus, ect)
+			if (buffer_exists(pause_surface_buffer)) buffer_delete(pause_surface_buffer);
+			pause_surface_buffer = buffer_create(RES_W * RES_H * 4, buffer_fixed, 1);
+			buffer_get_surface(pause_surface_buffer,pause_surface,0);
+		}
+		else if(!obj_settings_menu.in_settings_menu) //unpause now
+		{
+			scr_unpause();
+		}
 			//Back up surface to buffer in case we lose it (screen focus, ect)
 			if (buffer_exists(pause_surface_buffer)) buffer_delete(pause_surface_buffer);
 			pause_surface_buffer = buffer_create(RES_W * RES_H * 4, buffer_fixed, 1);

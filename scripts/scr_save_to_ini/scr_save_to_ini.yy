@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_save_to_file",
+  "%Name":"scr_save_to_ini",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_save_to_file",
+  "name":"scr_save_to_ini",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
