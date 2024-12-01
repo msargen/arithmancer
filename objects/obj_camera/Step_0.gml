@@ -14,8 +14,8 @@ if (instance_exists(camera_tracking))
 }
 
 //Update object position
-x += (camera_x_move_to - x) / 25;
-y += (camera_y_move_to - y) / 25;
+x += (camera_x_move_to - x) / 8;
+y += (camera_y_move_to - y) / 8;
 
 //Keep camera center inside room
 x = clamp(x, camera_view_width_half + camera_buffer, room_width - camera_view_width_half - camera_buffer);
