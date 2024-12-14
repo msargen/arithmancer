@@ -108,14 +108,14 @@ if (in_settings_menu)
 		
 		// display resolution
 		case SETTINGS_MENU.RESOLUTION:
-			if (global.key_left && (resolution > 361))
+			if (global.key_left && (resolution > 361)) //360p, the lowest resolution at 2X base of 180X320
 			{
 				// adjust resolution down
 				resolution = resolution - RES_H;
 				settings_menu_value[5] = string(resolution) + "p"
 				window_set_size(resolution * 16/9, resolution);
 			}
-			if (global.key_right && (resolution < 2159))
+			if (global.key_right && (resolution < 2159)) //4k, the highest resolution for people who want windowed 4k for some reason?
 			{
 				// adjust resolution up
 				resolution = resolution + RES_H;
