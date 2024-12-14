@@ -6,9 +6,8 @@ global.flags_collected = 0;
 // The current time remaining in the level
 global.time = "";
 
-// Margin for the border of visuals (will need to be updated to 8 I believe if we change our tile size to 8x8 instead of 32x32)
-//global.margin_buffer = 32;
-global.margin_buffer = 8;
+// Margin for the border of camera visuals
+global.camera_buffer = 8;
 
 // For giving outlines/shadow/outline to text
 global.text_offset = floor(font_get_size(fnt_menu)/10.0);
