@@ -2,7 +2,7 @@
 
 main_menu_gui_width = display_get_gui_width();
 main_menu_gui_height = display_get_gui_height();
-main_menu_gui_margin = global.margin_buffer;
+main_menu_gui_margin = 8;
 
 // Determines from where offscreen the menu items start/end
 main_menu_offscreen_slide_in = main_menu_gui_width / 5;
