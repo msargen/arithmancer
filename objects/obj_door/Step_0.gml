@@ -24,7 +24,7 @@ if (global.flags_collected == 3)
 	instance_destroy(inst_17C2CB84);
 }
 
-if (global.flags_collected == 14)
+if (global.flags_collected == 7)
 {
 	instance_destroy(inst_18ED2B30);
 }
