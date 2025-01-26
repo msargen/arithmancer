@@ -1,7 +1,7 @@
 ram_vertical_speed = ram_vertical_speed + ram_gravity;
 
-// Don't wald off edges
-if (ram_is_grounded) && (!place_meeting(x + ram_horizontal_speed, y + 1, obj_wall))
+// Don't walk off edges
+if (ram_is_grounded) && (!place_meeting(x + sign(ram_horizontal_speed)*sprite_get_width(spr_ram), y + 1, obj_wall))
 {
 	ram_horizontal_speed = -ram_horizontal_speed;
 }
