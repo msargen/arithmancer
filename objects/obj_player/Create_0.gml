@@ -32,3 +32,5 @@ player_wall_jump_delay_max = 5;
 player_key_right = 0;
 player_key_left = 0;
 player_key_jump = 0;
+
+holding_gem = false;
