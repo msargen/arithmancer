@@ -1,5 +1,5 @@
 /// @description Live Timer and Equations Completed Counter
-if ((room != rm_menu) && (instance_exists(obj_player)) && !obj_settings_menu.in_settings_menu)
+if (room != rm_menu && !obj_settings_menu.in_settings_menu)
 {
 	{
 		scr_draw_set_text(c_black, fnt_menu, fa_right, fa_top);

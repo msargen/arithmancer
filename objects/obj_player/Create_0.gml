@@ -34,3 +34,5 @@ player_key_left = 0;
 player_key_jump = 0;
 
 holding_gem = false;
+
+depth = -200;
