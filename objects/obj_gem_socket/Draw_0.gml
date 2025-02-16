@@ -4,23 +4,21 @@
 draw_self();
 
 // draw equation above socket
-if(near_socket && instance_exists(obj_player) && obj_player.holding_gem)
+if(instance_exists(obj_player) && obj_player.holding_gem && obj_player.near_socket)
 {
 	// insert held gem value into equation text
-	closest_socket.equation_text = string(addend_one) + "+" + string(addend_two) + "=" + string(obj_gem.held_gem.answer) + "?";
+	obj_player.closest_socket.socket_equation_text = string(socket_variable_one) + "+" + string(socket_variable_two) + "=" + string(obj_player.held_gem.gem_answer) + "?";
 }
 else
 {
 	// equation text without gem value
-	equation_text = string(addend_one) + "+" + string(addend_two) + "=?";
+	socket_equation_text = string(socket_variable_one) + "+" + string(socket_variable_two) + "=?";
 }
 
-// only draw above inactive sockets
-if(sum != 0)
+// only draw above sockets that don't have gems in them
+if(socket_answer != 0)
 {
-	// set text color and position
-	scr_draw_set_text(c_white, fnt_menu, fa_center, fa_bottom);
-	
 	// draw equation above socket
-	draw_text(x - text_x_offset, y - text_y_offset, equation_text);
+	scr_draw_set_text(c_white, fnt_menu, fa_center, fa_bottom);
+	draw_text(x - socket_text_x_offset, y - socket_text_y_offset, socket_equation_text);
 }

@@ -2,16 +2,8 @@
 
 depth = -199;
 
-answer = 0;
+gem_answer = 0;
+gem_answer_text = "";
 
-closest_gem = 0;
-held_gem = 0;
-
-text_x_offset = 1;
-text_y_offset = 5;
-
-gem_x_target = 0;
-gem_y_target = 0;
-gem_float_offset = 17;
-
-answer_text = "";
+gem_text_x_offset = 1;
+gem_text_y_offset = 5;

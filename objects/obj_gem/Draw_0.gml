@@ -3,12 +3,17 @@
 // draw sprite before drawing text
 draw_self();
 
-// set text color and position
-scr_draw_set_text(c_white, fnt_menu, fa_center, fa_bottom);
-
 // set text to answer unless close to socket
-answer_text = string(answer);
-if(obj_gem_socket.near_socket && instance_exists(obj_player) && obj_player.holding_gem) {closest_gem.answer_text = "";}
+if(instance_exists(obj_player) && obj_player.near_socket && obj_player.holding_gem) 
+{
+	obj_player.held_gem.gem_answer_text = "";
+}
+else
+{
+	// set text color and position
+	scr_draw_set_text(c_white, fnt_menu, fa_center, fa_bottom);
+	gem_answer_text = string(gem_answer);
+}
 
 // draw gem value above gem
-draw_text(x - text_x_offset, y - text_y_offset, answer_text);
+draw_text(x - gem_text_x_offset, y - gem_text_y_offset, gem_answer_text);

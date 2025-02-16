@@ -166,3 +166,67 @@ else
 if (player_horizontal_speed != 0) image_xscale = sign(player_horizontal_speed);
 
 #endregion
+
+
+// get information on closest gem and socket
+closest_gem = instance_nearest(x, y, obj_gem);
+if(closest_gem) {near_gem = point_in_circle(x, y, closest_gem.x, closest_gem.y, global.interact_distance);}
+closest_socket = instance_nearest(x, y, obj_gem_socket);
+if(closest_socket) {near_socket = point_in_circle(x, y, closest_socket.x, closest_socket.y, global.interact_distance);}
+
+// pick up closest gem if not holding one
+if(near_gem && !holding_gem)
+{
+	// pick up gem when select or up button is pressed
+	if(global.key_select || global.key_up)
+	{
+		held_gem = closest_gem;
+		holding_gem = true;
+		global.key_select = false;
+		global.key_up = false;
+	}
+}
+
+// move the gem to float above the player
+if(holding_gem)
+{
+    // set target as above player head
+	held_gem_x_target = obj_player.x;
+	held_gem_y_target = obj_player.y - gem_float_offset;
+	
+	// update object position
+	held_gem.x += (held_gem_x_target - held_gem.x) / 5;
+	held_gem.y += (held_gem_y_target - held_gem.y) / 5;
+}
+
+// drop a gem if holding one
+if(holding_gem)
+{
+	if(global.key_down)
+	{
+		held_gem = 0;
+		holding_gem = false;
+	}
+}
+
+// attempt to socket a gem
+if(holding_gem && near_socket && (global.key_up || global.key_select))
+{
+	// check if the right gem is at the right socket
+	if(closest_socket.socket_answer == held_gem.gem_answer)
+	{
+		// destroy carried gem
+		holding_gem = false;
+		instance_destroy(held_gem);
+		
+		// activate socket
+		closest_socket.socket_answer = 0;
+		closest_socket.image_index = 1;
+		global.flags_collected++
+	}
+	else
+	{
+		// stun player for incorrect attempt
+		scr_stun_player();
+	}
+}
