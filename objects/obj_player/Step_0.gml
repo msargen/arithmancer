@@ -194,7 +194,7 @@ if(holding_gem)
 	held_gem_x_target = obj_player.x;
 	held_gem_y_target = obj_player.y - gem_float_offset;
 	
-	// update object position
+	// update object position using same smoothing formula as camera
 	held_gem.x += (held_gem_x_target - held_gem.x) / 5;
 	held_gem.y += (held_gem_y_target - held_gem.y) / 5;
 }
