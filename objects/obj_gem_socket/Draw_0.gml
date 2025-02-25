@@ -4,10 +4,10 @@
 draw_self();
 
 // draw equation above socket
-if(instance_exists(obj_player) && obj_player.holding_gem && obj_player.near_socket)
+if(instance_exists(obj_player) &&  (id == obj_player.player_closest_socket) && obj_player.player_holding_gem && obj_player.player_near_socket)
 {
 	// insert held gem value into equation text
-	obj_player.closest_socket.socket_equation_text = string(socket_variable_one) + "+" + string(socket_variable_two) + "=" + string(obj_player.held_gem.gem_answer) + "?";
+	obj_player.player_closest_socket.socket_equation_text = string(socket_variable_one) + "+" + string(socket_variable_two) + "=" + string(obj_player.player_held_gem.gem_answer) + "?";
 }
 else
 {

@@ -35,13 +35,13 @@ player_key_right = 0;
 player_key_left = 0;
 player_key_jump = 0;
 
-closest_gem = 0;
-near_gem = false;
-holding_gem = false;
-held_gem = 0;
-held_gem_x_target = 0;
-held_gem_y_target = 0;
-gem_float_offset = 17;
+player_closest_gem = 0;
+player_near_gem = false;
+player_holding_gem = false;
+player_held_gem = 0;
+player_held_gem_x_target = 0;
+player_held_gem_y_target = 0;
+player_gem_float_offset = 17;
 
-closest_socket = 0;
-near_socket = false;
+player_closest_socket = 0;
+player_near_socket = false;
