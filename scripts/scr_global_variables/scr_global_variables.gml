@@ -18,3 +18,6 @@ global.text_scale = 0.5;
 // Time source that counts seconds to track time in levels
 //     Is not a simple variable to assign a base value to here
 // global.level_time_source
+
+// Distance between player character and interactable items
+global.interact_distance = 32;

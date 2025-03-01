@@ -40,9 +40,8 @@ else if (flag_operation == 4)
 
 
 
-// TODO: proximity radius should be a global and set to 32 probably
 //Proximity
-if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y, x, y, 32)) && (!instance_exists(obj_equation_text)))
+if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y, x, y, global.interact_distance)) && (!instance_exists(obj_equation_text)))
 {
 	flag_player_nearby = true;
 	if (global.key_up)

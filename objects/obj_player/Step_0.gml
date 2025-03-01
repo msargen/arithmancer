@@ -166,3 +166,67 @@ else
 if (player_horizontal_speed != 0) image_xscale = sign(player_horizontal_speed);
 
 #endregion
+
+
+// get information on closest gem and socket
+player_closest_gem = instance_nearest(x, y, obj_gem);
+if(player_closest_gem) {player_near_gem = point_in_circle(x, y, player_closest_gem.x, player_closest_gem.y, global.interact_distance);}
+player_closest_socket = instance_nearest(x, y, obj_gem_socket);
+if(player_closest_socket) {player_near_socket = point_in_circle(x, y, player_closest_socket.x, player_closest_socket.y, global.interact_distance) && (player_closest_socket.socket_answer != 0);}
+
+// pick up closest gem if not holding one
+if(player_near_gem && !player_holding_gem)
+{
+	// pick up gem when select or up button is pressed
+	if(global.key_select || global.key_up)
+	{
+		player_held_gem = player_closest_gem;
+		player_holding_gem = true;
+		global.key_select = false;
+		global.key_up = false;
+	}
+}
+
+// move the gem to float above the player
+if(player_holding_gem)
+{
+    // set target as above player head
+	player_held_gem_x_target = x;
+	player_held_gem_y_target = y - player_gem_float_offset;
+	
+	// update object position using same smoothing formula as camera
+	player_held_gem.x += (player_held_gem_x_target - player_held_gem.x) / 5;
+	player_held_gem.y += (player_held_gem_y_target - player_held_gem.y) / 5;
+}
+
+// drop a gem if holding one
+if(player_holding_gem)
+{
+	if(global.key_down)
+	{
+		player_held_gem = 0;
+		player_holding_gem = false;
+	}
+}
+
+// attempt to socket a gem
+if(player_holding_gem && player_near_socket && (global.key_up || global.key_select))
+{
+	// check if the right gem is at the right socket
+	if(player_closest_socket.socket_answer == player_held_gem.gem_answer)
+	{
+		// destroy carried gem
+		player_holding_gem = false;
+		instance_destroy(player_held_gem);
+		
+		// activate socket
+		player_closest_socket.socket_answer = 0;
+		player_closest_socket.image_index = 1;
+		global.flags_collected++
+	}
+	else
+	{
+		// stun player for incorrect attempt
+		scr_stun_player();
+	}
+}
