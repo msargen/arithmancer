@@ -31,6 +31,7 @@ player_gravity_wall = 0.1;
 player_wall_jump_delay = 0;
 player_wall_jump_delay_max = 5;
 
+// Keep track of the player movements
 player_key_right = 0;
 player_key_left = 0;
 player_key_jump = 0;
@@ -45,3 +46,6 @@ player_gem_float_offset = 17;
 
 player_closest_socket = 0;
 player_near_socket = false;
+// For where to respawn the player if they fall off the map
+player_x_spawn = x;
+player_y_spawn = y;

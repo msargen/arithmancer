@@ -10,7 +10,7 @@ if (equation_text_display_height == 0) equation_text_display_height = string_hei
 equation_text_display_width = string_width(equation_text_text_current);
 
 //Destroy when done
-if (equation_text_letters >= equation_text_length) && global.key_select && equation_text_equation_solution == real(equation_text_input)
+if (equation_text_letters >= equation_text_length) && global.key_select && string_length(equation_text_input) > 0 && equation_text_equation_solution == real(equation_text_input)
 {
 	keyboard_string = "";
 	instance_destroy();
