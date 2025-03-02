@@ -1,5 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Destroy the player instance and respawn them at the original spawn location
 
 instance_destroy();
-instance_create_layer(player_x_spawn, player_y_spawn, layer, obj_stunned);
+// Note, we need to ensure that the layer the player is on for each room is called "Player"
+instance_create_layer(player_x_spawn, player_y_spawn, "Player", obj_stunned);
