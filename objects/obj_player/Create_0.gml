@@ -1,3 +1,5 @@
+depth = -200;
+
 player_horizontal_speed = 0;
 player_vertical_speed = 0;
 player_horizontal_speed_frac = 0;
@@ -32,3 +34,14 @@ player_wall_jump_delay_max = 5;
 player_key_right = 0;
 player_key_left = 0;
 player_key_jump = 0;
+
+player_closest_gem = 0;
+player_near_gem = false;
+player_holding_gem = false;
+player_held_gem = 0;
+player_held_gem_x_target = 0;
+player_held_gem_y_target = 0;
+player_gem_float_offset = 17;
+
+player_closest_socket = 0;
+player_near_socket = false;
