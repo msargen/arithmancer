@@ -227,6 +227,6 @@ if(player_holding_gem && player_near_socket && (global.key_up || global.key_sele
 	else
 	{
 		// stun player for incorrect attempt
-		scr_stun_player();
+		scr_stun_player(player_closest_socket);
 	}
 }

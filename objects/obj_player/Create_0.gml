@@ -49,3 +49,6 @@ player_near_socket = false;
 // For where to respawn the player if they fall off the map
 player_x_spawn = x;
 player_y_spawn = y;
+
+// The id for the enter button on the stage
+player_enter_button = 0;

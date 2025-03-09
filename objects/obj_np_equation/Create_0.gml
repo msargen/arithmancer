@@ -24,3 +24,5 @@ np_equation_all_text = "";
 np_equation_equation_solution = 0;
 
 np_equation_np_flag_id = id;
+
+np_equation_bad_answer = false;
