@@ -12,7 +12,7 @@ enum SETTINGS_MENU
 }
 
 // Enum for orrientation. The values are the angles of the object within the room.
-enum ORRIENTATION
+enum ORIENTATION
 {
 	UP = 0,
 	DOWN = 180,

@@ -4,17 +4,17 @@ np_button_can_input = !np_button_player_on_top;
 
 switch (image_angle)
 {
-	case ORRIENTATION.DOWN:
+	case ORIENTATION.DOWN:
 		np_button_player_on_top = place_meeting(x, y + 3, obj_player);
 	break;
 	
-	case ORRIENTATION.LEFT:
+	case ORIENTATION.LEFT:
 		// TODO: there is an issue with the left and right facing buttons where if the player is standing
 		// on the buttons top and walks off, the button will be pressed
 		np_button_player_on_top = place_meeting(x - 3, y, obj_player);
 	break;
 	
-	case ORRIENTATION.RIGHT:
+	case ORIENTATION.RIGHT:
 		np_button_player_on_top = place_meeting(x + 3, y, obj_player);
 	break;
 	
