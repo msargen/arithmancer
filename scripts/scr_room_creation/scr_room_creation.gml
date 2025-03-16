@@ -14,7 +14,7 @@ function scr_room_creation(_savestate_index)
 			
 			// populate global.time with padding and then trim
 			global.time = string(game_timer_minutes) + ":0" + string(game_timer_seconds);
-			global.time = string_delete(global.time, 3, (string_length(string(game_timer_seconds))-1));
+			global.time = string_delete(global.time, string_length(string(game_timer_minutes))+2, (string_length(string(game_timer_seconds))-1));
 		}
 	}
 	
