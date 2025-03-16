@@ -16,6 +16,6 @@ for (var _i = 0; _i < main_menu_items; _i++)
 	scr_draw_text_outline(main_menu_x, _yy, _col, c_black, global.text_offset, _txt, 0.5);
 }
 
-// Prevents the menu options slide it from being seen
+// Prevents the menu options slide in from being seen
 draw_set_color(c_black);
 draw_rectangle(main_menu_gui_width, 0, main_menu_gui_width + main_menu_gui_width, main_menu_gui_height, false);

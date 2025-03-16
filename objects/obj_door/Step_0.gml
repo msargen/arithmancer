@@ -30,12 +30,7 @@ if (global.flags_collected == 7)
 }
 
 //Level 3
-if (global.flags_collected == 10)
+if (global.flags_collected == 1)
 {
-	instance_destroy(inst_4DA085C5);
-}
-
-if (global.flags_collected == 18)
-{
-	instance_destroy(inst_F8CB299);
+	instance_destroy(inst_6FE29F91);
 }
