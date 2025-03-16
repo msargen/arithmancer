@@ -21,3 +21,6 @@ global.text_scale = 0.5;
 
 // Distance between player character and interactable items
 global.interact_distance = 32;
+
+// Monotype font drawn for better looking equations
+global.monotype_font = font_add_sprite(spr_monotype_font, ord("!"), false, 0)
