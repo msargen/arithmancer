@@ -3,4 +3,4 @@
 draw_self();
 
 scr_draw_set_text(c_white, fnt_menu, fa_center, fa_bottom);
-draw_text(x, y, string(switch_val));
+draw_text(x, y, string(bubble_val));

@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_switch",
+  "%Name":"obj_flag_float_num",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_switch",
+  "name":"obj_flag_float_num",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -17,7 +18,7 @@
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
-  "physicsGroup":1,
+  "physicsGroup":0,
   "physicsKinematic":false,
   "physicsLinearDamping":0.1,
   "physicsObject":false,
@@ -31,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_switch",
-    "path":"sprites/spr_switch/spr_switch.yy",
+    "name":"spr_flag",
+    "path":"sprites/spr_flag/spr_flag.yy",
   },
   "spriteMaskId":null,
   "visible":true,

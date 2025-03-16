@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-switch_val=0;
+bubble_val=0;
