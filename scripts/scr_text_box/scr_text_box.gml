@@ -3,8 +3,8 @@
 /// @arg _direction the side of the object the box will be on (UP, DOWN, LEFT, or RIGHT)
 /// @arg _x_coordinate the x coordinate the box will point at
 /// @arg _y_coordinate the y coordinate the box will point at
-/// @arg _offset the distance in pixels from the target coordinate to the arrow tip
-function scr_text_box(_text, _direction, _x_coordinate, _y_coordinate, _offset)
+/// @arg {real} _offset (optional) the distance in pixels from the target coordinate to the arrow tip
+function scr_text_box(_text, _direction, _x_coordinate, _y_coordinate, _offset=0)
 {
 	// string_width() doesn't adjust for different fonts, so I'm using the number of characters times the width of my monospace font
 	// the 2 is extra padding for the sides so that the bubble looks better around the text

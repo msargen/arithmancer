@@ -3,8 +3,8 @@
 // Proximity
 np_flag_player_nearby = false;
 
-// Defaults to 5 for a randome assignment of an equation type
-np_flag_operation = 5;
+// Defaults to 0 for a random assignment of an equation type
+np_flag_operation = 0;
 
 // Generate equation
 var _equation_results = scr_generate_equation(np_flag_operation);
