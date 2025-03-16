@@ -1,0 +1,1 @@
+np_flag_tot_eq = 3;
