@@ -23,4 +23,4 @@ global.text_scale = 0.5;
 global.interact_distance = 32;
 
 // Monotype font drawn for better looking equations
-global.monotype_font = font_add_sprite(spr_monotype_font, ord("!"), false, 0)
+global.monotype_font = font_add_sprite(spr_monotype_font, ord("!"), false, 0);

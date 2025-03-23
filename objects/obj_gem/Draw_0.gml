@@ -11,5 +11,5 @@ if(instance_exists(obj_player) && (id == obj_player.player_held_gem) && obj_play
 else
 {
 	//draw gem value above gem
-	scr_text_box(string(gem_answer), ORIENTATION.UP, x, y, gem_text_offset)
+	scr_text_box(string(gem_answer), ORIENTATION.UP, x, y, gem_text_offset);
 }
