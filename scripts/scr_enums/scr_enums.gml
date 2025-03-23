@@ -11,11 +11,21 @@ enum SETTINGS_MENU
 	EXIT_SETTINGS = 7
 }
 
-// Enum for orrientation. The values are the angles of the object within the room.
+// Enum for orientation. The values are the angles of the object within the room.
 enum ORIENTATION
 {
 	UP = 0,
 	DOWN = 180,
 	LEFT = 90,
 	RIGHT = -90
+}
+
+// Enum for equation generation.
+enum EQUATION_TYPE
+{
+	RANDOM = 0,
+	ADDITION = 1,
+	SUBTRACTION = 2,
+	MULTIPLICATION = 3,
+	DIVISION = 4,
 }
