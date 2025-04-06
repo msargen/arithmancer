@@ -8,7 +8,7 @@ ending_letters += ending_text_speed;
 ending_text = string_copy(ending_end_text[ending_current_line], 1, floor(ending_letters));
 
 //Next Line
-if (ending_letters >= ending_text_length) && (keyboard_check_pressed(vk_anykey))
+if (ending_letters >= ending_text_length) && (keyboard_check_pressed(vk_anykey) || global.key_backspace || global.key_jump || global.key_pause || global.key_select)
 {
 	if (ending_current_line + 1 == array_length(ending_end_text))
 	{

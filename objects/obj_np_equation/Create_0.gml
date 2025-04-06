@@ -1,28 +1,28 @@
-/// @description The numpad equation text (tmp)
-// TODO: better comment these variables once we chose what we are going to use
+/// @description The numpad equation text
 
-np_equation_speed = 0.5;
-np_equation_letters = 0;
-// TODO: need to have a cap for not only shown values, but actually adding the values to the equation answer. 
-// Because right now they might not show up, but they are still added so that when enter is selected, it wont 
-// count even though it looks like it should
-np_equation_letters_cap = 15;
-np_equation_text = "";
-np_equation_length = string_length(np_equation_text);
+// Allows for a smooth reveal of the equation text (instead of just putting it all on the screen in one frame)
+np_equation_reveal_speed = 0.5;
+// The current number of letters to display
+np_equation_num_shown_letters = 0;
+// The maximum number of letters to diaplay
+np_equation_shown_letters_cap = 15;
+// The current text shown in the equation bubble
 np_equation_text_current = "";
-np_equation_display_width = 0;
-np_equation_display_height = 0;
-np_equation_display_border = 5;
-
 
 //Player input
 np_equation_input = "";
 
+// All the entered equation value. Base + player input
 np_equation_all_text = "";
 
+// Below variables are set by the creating object upon instance creation
 
+// The nummeric answer to the equation text
 np_equation_equation_solution = 0;
-
+// The object id of the calling object
 np_equation_np_flag_id = id;
-
-np_equation_bad_answer = false;
+// The actual equation being solved
+np_equation_text_base = "";
+// The length of the base equation (prevents too early anwers from being entered when the equation hasn't been
+// fully displayed yet)
+np_equation_base_length = string_length(np_equation_text_base);

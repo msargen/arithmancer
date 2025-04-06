@@ -51,7 +51,12 @@ if (np_button_can_input && np_button_pressed && instance_exists(obj_np_equation)
 	{
 		with (obj_np_equation)
 		{
-			np_equation_input += string_digits(other.np_button_key_value);
+			// Prevents the diplayed text from being cut off due too there being more player input
+			// than what can be displayed
+			if (string_length(np_equation_text_current) < np_equation_shown_letters_cap)
+			{
+				np_equation_input += string_digits(other.np_button_key_value);
+			}
 		}
 	}
 	np_button_can_input = false;

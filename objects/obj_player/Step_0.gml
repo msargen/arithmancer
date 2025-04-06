@@ -220,7 +220,7 @@ if(player_holding_gem && player_near_socket && (global.key_up || global.key_sele
 		instance_destroy(player_held_gem);
 		
 		// activate socket
-		player_closest_socket.socket_answer = 0;
+		player_closest_socket.socket_answer = global.over_9000;
 		player_closest_socket.image_index = 1;
 		global.flags_collected++
 	}
