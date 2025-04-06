@@ -15,7 +15,7 @@ else
 }
 
 // only draw above sockets that don't have gems in them
-if(socket_answer != -9001)
+if(socket_answer != global.over_9000)
 {
 	// draw equation above socket
 	scr_text_box(socket_equation_text, ORIENTATION.UP, x, y, socket_text_offset);

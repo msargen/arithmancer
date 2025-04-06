@@ -24,3 +24,6 @@ global.interact_distance = 32;
 
 // Monotype font drawn for better looking equations
 global.monotype_font = font_add_sprite(spr_monotype_font, ord("!"), false, 0);
+
+// Vegeta number for completed sockets
+global.over_9000 = -9001

@@ -4,9 +4,9 @@
 draw_self();
 
 // set text to answer unless close to socket
-if(instance_exists(obj_player) && (id == obj_player.player_held_gem) && obj_player.player_near_socket && obj_player.player_holding_gem) 
+if(instance_exists(obj_player) && (id == obj_player.player_held_gem) && obj_player.player_near_socket && (obj_player.player_closest_socket.socket_answer > global.over_9000))
 {
-	// don't display the text above a gem close to a socket
+	// don't display the text above a gem close to an empty socket
 }
 else
 {
