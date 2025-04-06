@@ -1,19 +1,18 @@
 /// @description Progress text
 
-if (np_equation_letters < np_equation_letters_cap)
+if (np_equation_num_shown_letters < np_equation_shown_letters_cap)
 {
-	np_equation_letters += np_equation_speed;
+	np_equation_num_shown_letters += np_equation_reveal_speed;
 }
-//np_equation_input = string_digits(keyboard_string);
-np_equation_all_text = np_equation_text + np_equation_input;
-np_equation_text_current = string_copy(np_equation_all_text, 1, floor(np_equation_letters));
 
-draw_set_font(fnt_sign);
-if (np_equation_display_height == 0) np_equation_display_height = string_height(np_equation_all_text);
-np_equation_display_width = string_width(np_equation_text_current);
 
-//Destroy when done
-if ((np_equation_letters >= np_equation_length) && global.key_select && string_length(np_equation_input) > 0)
+// We can also probably clean up all the text variables and code
+np_equation_all_text = string_insert(string(np_equation_input), np_equation_text_base, np_equation_base_length);
+
+np_equation_text_current = string_copy(np_equation_all_text, 1, floor(np_equation_num_shown_letters));
+
+// Destroy the equation text bubble when the correct answer has been entered
+if ((np_equation_num_shown_letters >= np_equation_base_length) && global.key_select && string_length(np_equation_input) > 0)
 {
 	if (np_equation_equation_solution == real(np_equation_input))
 	{
