@@ -99,6 +99,10 @@ if (place_meeting(x, y + player_vertical_speed, obj_wall))
 	while (!place_meeting(x, y + _onepixel, obj_wall)) y += _onepixel;
 	player_vertical_speed = 0;
 	player_vertical_speed_frac = 0;
+	
+	// Update the player spawn location (only if they are on the ground)
+	player_x_spawn = x;
+	player_y_spawn = y;
 }
 //Veritcal Move
 y += player_vertical_speed;
