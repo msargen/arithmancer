@@ -7,4 +7,4 @@ if (savestate[1].level == -1) {exit;};
 savestate_load_number = 1;
 
 // go to savestate room
-room_goto(asset_get_index(savestate[1].level));
+room_goto(savestate[1].level);
