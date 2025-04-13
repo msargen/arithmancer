@@ -35,4 +35,6 @@ stunned_timer --;
 if stunned_timer == 0
 {
 	instance_change(obj_player, true)
+	obj_player.player_x_spawn = stunned_player_spawn_x;
+	obj_player.player_y_spawn = stunned_player_spawn_y;
 }
