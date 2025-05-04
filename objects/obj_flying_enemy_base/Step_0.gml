@@ -1,6 +1,7 @@
 //Horizontal collision
 if (place_meeting(x + flying_enemy_base_horizontal_speed, y, obj_wall))
 {
+	// Note, I'm not sure this works properly at higher speeds
 	while (!place_meeting(x + sign(flying_enemy_base_horizontal_speed), y, obj_wall))
 	{
 		x = x + sign(flying_enemy_base_horizontal_speed);

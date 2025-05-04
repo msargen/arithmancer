@@ -31,8 +31,8 @@ if (stunned_done == 0)
 	y = y + stunned_vertical_speed;
 }
 
-stunned_timer --;
-if stunned_timer == 0
+stunned_timer--;
+if (stunned_timer == 0)
 {
 	instance_change(obj_player, true)
 	obj_player.player_x_spawn = stunned_player_spawn_x;

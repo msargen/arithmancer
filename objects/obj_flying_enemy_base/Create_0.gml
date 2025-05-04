@@ -2,7 +2,7 @@
 
 // Movement speeds: Default speed is 1.0. 
 // Set one or the other depending on how you want the enemy to fly (in a specific direction). 
-// Set both for randome flight
+// Set both for random flight
 flying_enemy_base_vertical_speed = 0;
 flying_enemy_base_horizontal_speed = 0;
 

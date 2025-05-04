@@ -1,5 +1,7 @@
 #region //Get player input
 
+// TODO: the player can still jump WAAAAAAAAAAAAAY after they have "fallen" might want to reduce that
+
 if (player_has_control)
 {
 	player_key_left = global.key_hold_left;
@@ -83,6 +85,7 @@ player_vertical_speed -= player_vertical_speed_frac
 if (place_meeting(x+player_horizontal_speed, y, obj_wall))
 {
 	var _onepixel = sign(player_horizontal_speed);
+	// Not sure if this check is doing anything
 	while (!place_meeting(x + _onepixel, y, obj_wall)) x += _onepixel;
 	player_horizontal_speed = 0;
 	player_horizontal_speed_frac = 0;
@@ -100,9 +103,12 @@ if (place_meeting(x, y + player_vertical_speed, obj_wall))
 	player_vertical_speed = 0;
 	player_vertical_speed_frac = 0;
 	
-	// Update the player spawn location (only if they are on the ground)
-	player_x_spawn = x;
-	player_y_spawn = y;
+	// Update the player spawn location (only if they are on the ground and not on a flying object)
+	if (!place_meeting(x, y + 1, obj_flying_object_base))
+	{
+		player_x_spawn = x;
+		player_y_spawn = y;
+	}
 }
 //Veritcal Move
 y += player_vertical_speed;
