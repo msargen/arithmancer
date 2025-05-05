@@ -1,10 +1,7 @@
 // Is the player touching the platform in any way
 fob_player_contact = place_meeting(x, y - 1, obj_player) || place_meeting(x, y + 1, obj_player) || place_meeting(x + 1, y, obj_player) || place_meeting(x - 1, y, obj_player);
 
-// TODO: Smooth out movement (look at the fraction handling in player movement)
-//     - Frac movements help a lot, but they make the extremes of the movement path jumpy. Need to fix that
-//     - Rounding seems to work pretty well
-//     - Talk with the guys about it
+
 // TODO: Figure out what we want to happen if the player gets caught between a moving platform and the ground, or a wall
 //     - Does the player die? The platform stops? The player get teleported to the other side of the wall and thus maybe off of the map?
 
