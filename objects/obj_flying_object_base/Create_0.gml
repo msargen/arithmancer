@@ -33,9 +33,6 @@ fob_change_direction = false;
 // Denotes when the moving platform is already where it should change direction and should not be moved any further
 fob_at_change = false;
 
-// TODO: ???
-fob_horizontal_speed_frac = 0;
-fob_vertical_speed_frac = 0;
 
 // Keeps track if the player is in contact with the moving platform
 fob_player_contact = false;

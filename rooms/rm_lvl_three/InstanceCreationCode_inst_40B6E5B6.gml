@@ -1,1 +1,0 @@
-flying_object_base_horizontal_speed = 1;

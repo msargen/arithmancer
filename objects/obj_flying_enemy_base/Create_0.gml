@@ -6,5 +6,5 @@
 flying_enemy_base_vertical_speed = 0;
 flying_enemy_base_horizontal_speed = 0;
 
-// TODO: change this to an is flying type thing for flying animations (this will need to be in the children object)
+// TODO: change this to an "is-flying" type thing for flying animations (this will need to be in the children object)
 //flying_enemy_base_is_flying = false;
