@@ -12,3 +12,6 @@ game_set_speed(60, gamespeed_fps);
 with (obj_camera) camera_tracking = other.id;
 
 stunned_timer = 180;
+
+stunned_player_spawn_x = 0;
+stunned_player_spawn_y = 0;
