@@ -79,29 +79,36 @@ player_vertical_speed -= player_vertical_speed_frac
 
 #endregion
 
-#region //Horizontal Collision
-if (place_meeting(x+player_horizontal_speed, y, obj_wall))
+#region // Horizontal + Vertical Collision
+var _horizontal_collision = place_meeting(x + player_horizontal_speed, y, obj_wall)
+var _vertical_collision = place_meeting(x, y + player_vertical_speed, obj_wall)
+var _diagonal_collision = place_meeting(x + player_horizontal_speed, y + player_vertical_speed, obj_wall)
+if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 {
-	var _onepixel = sign(player_horizontal_speed);
-	while (!place_meeting(x + _onepixel, y, obj_wall)) x += _onepixel;
-	player_horizontal_speed = 0;
-	player_horizontal_speed_frac = 0;
+	// move 1/10 of the distance at a time until collision
+	for (var _i = 0; _i < 10; _i++)
+	{
+		if (!place_meeting(x + player_horizontal_speed/10.0, y, obj_wall)) {x += player_horizontal_speed/10.0;}
+		if (!place_meeting(x, y + player_vertical_speed/10.0, obj_wall)) {y += player_vertical_speed/10.0;}
+	}
+	// set horizontal and/or vertical speed to 0 if collision was reached
+	if (place_meeting(x + player_horizontal_speed/10.0, y, obj_wall))
+	{
+		player_horizontal_speed = 0;
+		player_horizontal_speed_frac = 0;
+	}
+	if (place_meeting(x, y + player_vertical_speed/10.0, obj_wall))
+	{
+		player_vertical_speed = 0;
+		player_vertical_speed_frac = 0;
+	}
 }
-//Horizontal Move
-x += player_horizontal_speed;
-
-#endregion
-
-#region //Vertical Collision
-if (place_meeting(x, y + player_vertical_speed, obj_wall))
+else
 {
-	var _onepixel = sign(player_vertical_speed);
-	while (!place_meeting(x, y + _onepixel, obj_wall)) y += _onepixel;
-	player_vertical_speed = 0;
-	player_vertical_speed_frac = 0;
+	// move normally
+	x += player_horizontal_speed;
+	y += player_vertical_speed;
 }
-//Veritcal Move
-y += player_vertical_speed;
 
 #endregion
 
