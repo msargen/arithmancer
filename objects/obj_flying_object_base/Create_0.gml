@@ -12,26 +12,19 @@ fob_min_y = global.over_9000;
 // Set both for diagonal movement (not fully implemented yet)
 // Note: Set both base and actual speed in instance creation code
 fob_horizontal_speed = 0;
-fob_horizontal_speed_base = 0;
 fob_vertical_speed = 0;
-fob_vertical_speed_base = 0;
 
 // Indicates a varying speed path for the platform. Only min/max x/y need to be set when these are true.
 // Set both to true for circular/ellipsoid movement
-fob_sin_move_x = false;
-fob_cos_move_y = false;
+fob_cos_move_x = false;
+fob_sin_move_y = false;
 
-// The direction circular movement should travel in. -1 = clockwise, +1 = counterclockwise. Default is clockwise.
-fob_circle_direction = -1;
+// The direction circular movement should travel in. +1 = clockwise, -1 = counterclockwise. Default is clockwise.
+fob_circle_direction = 1;
 // Can't be zero (division by zero). The smaller the absolute number, the faster the movement.
 fob_sin_frequency = 1;
 
 // <-- throuch here in object creation code
-
-// Indicates if the platform should change direction
-fob_change_direction = false;
-// Denotes when the moving platform is already where it should change direction and should not be moved any further
-fob_at_change = false;
 
 
 // Keeps track if the player is in contact with the moving platform

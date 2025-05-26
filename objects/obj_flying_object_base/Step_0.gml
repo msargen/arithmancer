@@ -6,7 +6,7 @@ fob_player_contact = place_meeting(x, y - 1, obj_player) || place_meeting(x, y +
 //     - Does the player die? The platform stops? The player get teleported to the other side of the wall and thus maybe off of the map?
 
 // Sinusoidal movement (in either/both x/y directions)
-if (fob_sin_move_x || fob_cos_move_y)
+if (fob_cos_move_x || fob_sin_move_y)
 {
 	// Fps tracker
 	fob_sin_time_tracker++;
@@ -14,14 +14,22 @@ if (fob_sin_move_x || fob_cos_move_y)
 	// Fps to seconds
 	var _time = fob_sin_time_tracker / 60.0;
 	
-	// Vertical movement. Cosine is used to allow for circular movement (aka shift the phase 90 degrees or pi/2)
+	// This prevents fob_sin_time_tracker from growing endlessly
+	if (_time > 2 * pi)
+	{
+		fob_sin_time_tracker = 0;
+	}
+	
+	show_debug_message("time: [" + string(_time) + "] : time_tracker: [" + string(fob_sin_time_tracker) + "]");
+	
+	// Vertical movement. Sine is used to allow for circular movement (aka shift the phase 90 degrees or pi/2)
 	// when both sinusoidal movements are set
-	if (fob_cos_move_y)
+	if (fob_sin_move_y)
 	{
 		var _amp_y = (fob_max_y - fob_min_y) / 2;
 		var _y_start = _amp_y + fob_min_y;
 		var _old_y = y;
-		var _y_move = fob_circle_direction * _amp_y*cos(_time/fob_sin_frequency);
+		var _y_move = fob_circle_direction * _amp_y*sin(_time/fob_sin_frequency);
 		fob_vertical_speed = round((_y_start + _y_move) - _old_y);
 		
 		if (fob_player_contact) obj_player.y += fob_vertical_speed;
@@ -29,12 +37,12 @@ if (fob_sin_move_x || fob_cos_move_y)
 	}
 	
 	// Horizontal movement
-	if (fob_sin_move_x)
+	if (fob_cos_move_x)
 	{
 		var _amp_x = (fob_max_x - fob_min_x) / 2;
 		var _x_start = _amp_x + fob_min_x;
 		var _old_x = x;
-		var _x_move =  _amp_x*sin(_time/fob_sin_frequency);
+		var _x_move =  _amp_x*cos(_time/fob_sin_frequency);
 		fob_horizontal_speed = round((_x_start + _x_move) - _old_x);
 		
 		if (fob_player_contact) obj_player.x += fob_horizontal_speed;
@@ -46,39 +54,22 @@ else
 	// Horizontal movement
 	if (x + fob_horizontal_speed > fob_max_x || x + fob_horizontal_speed < fob_min_x)
 	{
-		var _distance_to_change = sign(fob_horizontal_speed);
-		while (x + _distance_to_change <= fob_max_x && x + _distance_to_change >= fob_min_x)
+		var _distance_to_change = 0;
+		if (sign(fob_horizontal_speed > 0))
 		{
-			// Find the actual distance too the max/min x pixel
-			_distance_to_change += sign(fob_horizontal_speed);
-		}
-	
-		if (fob_change_direction)
-		{
-			// Change the platform to the base speed, but in the other direction of current movement
-			fob_at_change = false;
-			fob_change_direction = false;
-			fob_horizontal_speed = -fob_horizontal_speed_base * sign(fob_horizontal_speed);
+			_distance_to_change = fob_max_x - x;
 		}
 		else
 		{
-			// Check if the moving platform is already where it should change direction and thus should not move any further
-			if (abs(_distance_to_change) == 1)
-			{
-				fob_at_change = true;
-			}
-			else
-			{
-				// Offsetting by one from the determined distance prevents the platform from going one pixel past where it should
-				_distance_to_change -= sign(fob_horizontal_speed);
-			}
+			_distance_to_change = fob_min_x - x;
+		}	
 		
-			fob_change_direction = true;
-			fob_horizontal_speed = _distance_to_change;
-		}
+		if (fob_player_contact) obj_player.x += _distance_to_change;
+		x += _distance_to_change;
+		
+		fob_horizontal_speed *= -1;
 	}
-
-	if (!fob_at_change)
+	else
 	{
 		if (fob_player_contact) obj_player.x += fob_horizontal_speed;
 		x += fob_horizontal_speed;
@@ -87,39 +78,22 @@ else
 	// Vertical movement
 	if (y + fob_vertical_speed > fob_max_y || y + fob_vertical_speed < fob_min_y)
 	{
-		var _distance_to_change = sign(fob_vertical_speed);
-		while (y + _distance_to_change <= fob_max_y && y + _distance_to_change >= fob_min_y)
+		var _distance_to_change = 0;
+		if (sign(fob_vertical_speed > 0))
 		{
-			// Find the actual distance too the min/max y pixel
-			_distance_to_change += sign(fob_vertical_speed);
-		}
-	
-		if (fob_change_direction)
-		{
-			// Change the platform to the base speed, but in the other direction of current movement
-			fob_at_change = false;
-			fob_change_direction = false;
-			fob_vertical_speed = -fob_vertical_speed_base * sign(fob_vertical_speed);
+			_distance_to_change = fob_max_y - y;
 		}
 		else
 		{
-			// Check if the moving platform is already where it should change direction and thus should not move any further
-			if (abs(_distance_to_change) == 1)
-			{
-				fob_at_change = true;
-			}
-			else
-			{
-				// Offsetting by one from the determined distance prevents the platform from going one pixel past where it should
-				_distance_to_change -= sign(fob_vertical_speed);
-			}
+			_distance_to_change = fob_min_y - y;
+		}	
 		
-			fob_change_direction = true;
-			fob_vertical_speed = _distance_to_change;
-		}
+		if (fob_player_contact) obj_player.y += _distance_to_change;
+		y += _distance_to_change;
+		
+		fob_vertical_speed *= -1;
 	}
-
-	if (!fob_at_change)
+	else
 	{
 		if (fob_player_contact) obj_player.y += fob_vertical_speed;
 		y += fob_vertical_speed;
