@@ -81,37 +81,37 @@ player_vertical_speed -= player_vertical_speed_frac
 
 #endregion
 
-#region //Horizontal Collision
-if (place_meeting(x+player_horizontal_speed, y, obj_wall))
+#region // Horizontal + Vertical Collision
+var _horizontal_collision = place_meeting(x + player_horizontal_speed, y, obj_wall)
+var _vertical_collision = place_meeting(x, y + player_vertical_speed, obj_wall)
+var _diagonal_collision = place_meeting(x + player_horizontal_speed, y + player_vertical_speed, obj_wall)
+if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 {
-	var _onepixel = sign(player_horizontal_speed);
-	// Not sure if this check is doing anything
-	while (!place_meeting(x + _onepixel, y, obj_wall)) x += _onepixel;
-	player_horizontal_speed = 0;
-	player_horizontal_speed_frac = 0;
-}
-//Horizontal Move
-x += player_horizontal_speed;
-
-#endregion
-
-#region //Vertical Collision
-if (place_meeting(x, y + player_vertical_speed, obj_wall))
-{
-	var _onepixel = sign(player_vertical_speed);
-	while (!place_meeting(x, y + _onepixel, obj_wall)) y += _onepixel;
-	player_vertical_speed = 0;
-	player_vertical_speed_frac = 0;
-	
-	// Update the player spawn location (only if they are on the ground and not on a flying object)
-	if (!place_meeting(x, y + 1, obj_flying_object_base))
+	// move 1/10 of the distance at a time until collision
+	// iteration of 10 chosen to move player by less than 1 pixel per loop with buffer against things that might cause the player to move faster than max speed of 6
+	for (var _i = 0; _i < 10; _i++)
 	{
-		player_x_spawn = x;
-		player_y_spawn = y;
+		if (!place_meeting(x + player_horizontal_speed/10.0, y, obj_wall)) {x += player_horizontal_speed/10.0;}
+		if (!place_meeting(x, y + player_vertical_speed/10.0, obj_wall)) {y += player_vertical_speed/10.0;}
+	}
+	// set horizontal and/or vertical speed to 0 if collision was reached
+	if (place_meeting(x + player_horizontal_speed/10.0, y, obj_wall))
+	{
+		player_horizontal_speed = 0;
+		player_horizontal_speed_frac = 0;
+	}
+	if (place_meeting(x, y + player_vertical_speed/10.0, obj_wall))
+	{
+		player_vertical_speed = 0;
+		player_vertical_speed_frac = 0;
 	}
 }
-//Veritcal Move
-y += player_vertical_speed;
+else
+{
+	// move normally
+	x += player_horizontal_speed;
+	y += player_vertical_speed;
+}
 
 #endregion
 
@@ -119,6 +119,13 @@ y += player_vertical_speed;
 player_on_ground = place_meeting(x, y + 1, obj_wall);
 player_on_wall = place_meeting(x + 1, y, obj_wall) - place_meeting(x - 1, y, obj_wall);
 if (player_on_ground) player_jump_buffer = 6;
+
+// Update the player spawn location (only if they are on the ground and not on a flying object)
+if (player_on_ground && !place_meeting(x, y + 1, obj_flying_object_base))
+{
+	player_x_spawn = x;
+	player_y_spawn = y;
+}
 
 #endregion
 
