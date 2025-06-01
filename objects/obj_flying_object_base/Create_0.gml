@@ -14,6 +14,11 @@ fob_min_y = global.over_9000;
 fob_horizontal_speed = 0;
 fob_vertical_speed = 0;
 
+// The base speed for linear movement. Need to set this for when the platform changes direction is might not move the full
+// speed and thus will need to be set back to the base speed when it starts moving in the opposite direction
+fob_horizontal_speed_base = 0;
+fob_vertical_speed_base = 0;
+
 // Indicates a varying speed path for the platform. Only min/max x/y need to be set when these are true.
 // Set both to true for circular/ellipsoid movement
 fob_cos_move_x = false;
@@ -33,3 +38,7 @@ fob_player_contact = false;
 // Tracks the amount of frames that have gone by for sinusoidal movement of platforms
 // Fixes the issue of using current_time that would cause platorms to jump around when pausing/unpausing
 fob_sin_time_tracker = 0.0;
+
+// Keeps track of when the platorm is changing directions for linear movement
+fob_change_direction_x = false;
+fob_change_direction_y = false;

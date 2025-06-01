@@ -1,7 +1,7 @@
 /// @description To ensure the player does not get "stuck" in a wall
 
-// If the player is not within a wall, exit
-if (!place_meeting(x, y, obj_wall))
+// If the player is not within a wall, or currently pinched, exit
+if (!place_meeting(x, y, obj_wall) || player_pinched)
 {
 	return;
 }
