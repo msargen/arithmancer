@@ -1,5 +1,7 @@
 #region //Get player input
 
+// TODO: the player can still jump WAAAAAAAAAAAAAY after they have "fallen" might want to reduce that
+
 if (player_has_control)
 {
 	player_key_left = global.key_hold_left;
@@ -117,6 +119,13 @@ else
 player_on_ground = place_meeting(x, y + 1, obj_wall);
 player_on_wall = place_meeting(x + 1, y, obj_wall) - place_meeting(x - 1, y, obj_wall);
 if (player_on_ground) player_jump_buffer = 6;
+
+// Update the player spawn location (only if they are on the ground and not on a flying object)
+if (player_on_ground && !place_meeting(x, y + 1, obj_flying_object_base))
+{
+	player_x_spawn = x;
+	player_y_spawn = y;
+}
 
 #endregion
 
