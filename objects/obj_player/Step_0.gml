@@ -86,6 +86,7 @@ var _diagonal_collision = place_meeting(x + player_horizontal_speed, y + player_
 if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 {
 	// move 1/10 of the distance at a time until collision
+	// iteration of 10 chosen to move player by less than 1 pixel per loop with buffer against things that might cause the player to move faster than max speed of 6
 	for (var _i = 0; _i < 10; _i++)
 	{
 		if (!place_meeting(x + player_horizontal_speed/10.0, y, obj_wall)) {x += player_horizontal_speed/10.0;}
