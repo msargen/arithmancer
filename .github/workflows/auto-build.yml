@@ -77,11 +77,11 @@ jobs:
       - name: Download Python Script
         uses: actions/checkout@v4
         with:
-          path: gmtl_to_junit.py
+          path: .github
       - name: Download test_results
         uses: actions/download-artifact@v4
         with:
           name: test_results
           path: .
       - name: Process Files
-        run: type python3
+        run: python3 .github/scripts/gmtl_to_junit.py
