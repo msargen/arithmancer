@@ -33,7 +33,7 @@ jobs:
         run: |
           cd ${{ steps.build.outputs.out-dir }}
           tar -xf arithmancer.zip
-          dir
+          dir .
           cd arithmancer
           ./Arithmancer.exe > output.log
           type output.log
