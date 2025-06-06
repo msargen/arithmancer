@@ -52,10 +52,11 @@ jobs:
           Set-Location ./ci_tests
           Expand-Archive -Path ./arithmancer.zip -DestinationPath ./arithmancer
           Set-Location ./arithmancer
+          New-Item -ItemType Directory -Path "./console_output"
           $proc = Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
-            -RedirectStandardOutput ./output.log `
-            -RedirectStandardError ./errors.log `
+            -RedirectStandardOutput ./console_output/output.log `
+            -RedirectStandardError ./console_output/errors.log `
             -PassThru
           $proc.WaitForExit(30000)
           try {
@@ -67,5 +68,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: ./ci_tests/arithmancer/output.log
+          path: ./ci_tests/arithmancer/console_output
           retention-days: 1
