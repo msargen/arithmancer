@@ -55,5 +55,5 @@ jobs:
           Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
             -RedirectStandardOutput ./output.log `
-            -RedirectStandardError ./errors.log `
+            -RedirectStandardError ./errors.log
           Get-Child .
