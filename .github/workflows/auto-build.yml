@@ -53,5 +53,4 @@ jobs:
           cd igor-build-windows
           tar -xf arithmancer.zip
           cd arithmancer
-          ./arithmancer.exe > output.log
-          type output.log
+          dir .
