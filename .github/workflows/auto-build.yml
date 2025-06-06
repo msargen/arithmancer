@@ -58,4 +58,8 @@ jobs:
             -RedirectStandardError ./errors.log `
             -PassThru
           $proc.WaitForExit(30000)
-          Get-Content ./output.log
+          try {
+            Get-Content ./output.log
+          } catch {
+            Write-Error "Failed to read log: $_"
+          }
