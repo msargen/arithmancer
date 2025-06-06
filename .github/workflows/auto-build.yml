@@ -74,7 +74,8 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - name: actions/checkout@v4
+      - name: Download Python Script
+        uses: actions/checkout@v4
         with:
           path: gmtl_to_junit.py
       - name: Download test_results
