@@ -49,5 +49,6 @@ jobs:
       - name: Run Executable
         shell: pwsh
         run: |
-          cd ci_tests
-          dir .
+          Set-Location ./ci_tests
+          Expand-Archive -Path ./arithmancer.zip -DestinationPath ./arithmancer
+          Get-ChildItem .
