@@ -54,20 +54,13 @@ jobs:
           Set-Location ./arithmancer
           Get-ChildItem .
 
-          $proc = Start-Process -FilePath ./Arithmancer.exe `
+          Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
             -RedirectStandardOutput output.log `
             -RedirectStandardError output.log `
-            -PassThru
 
-          $proc.WaitForExit(30000)
+          Start-Sleep -Seconds 30
 
-          if (-not $proc.HasExited) {
-            Write-Output "Process has timed out. Killing Arithmancer.exe"
-            $proc.Kill()
-            $proc.WaitForExit()
-          } else {
-            Write-Output "Process has exited within timeout"
-          }
-
+          Get-Process Arithmancer -ErrorAction SilentlyContinue | ForEach-Object { $_.Kill() }
+          
           Get-Content output.log
