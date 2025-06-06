@@ -53,3 +53,21 @@ jobs:
           Expand-Archive -Path ./arithmancer.zip -DestinationPath ./arithmancer
           Set-Location ./arithmancer
           Get-ChildItem .
+
+          $proc = Start-Process -FilePath ./Arithmancer.exe `
+            -NoNewWindow `
+            -RedirectStandardOutput output.log `
+            -RedirectStandardError output.log `
+            -PassThru
+
+          $proc.WaitForExit(30000)
+
+          if (-not $proc.HasExited) {
+            Write-Output "Process has timed out. Killing Arithmancer.exe"
+            $proc.Kill()
+            $proc.WaitForExit()
+          } else {
+            Write-Output "Process has exited within timeout"
+          }
+
+          Get-Content output.log
