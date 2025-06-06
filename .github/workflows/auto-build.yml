@@ -58,4 +58,4 @@ jobs:
             -RedirectStandardError ./errors.log `
             -PassThru
           $proc.WaitForExit(30000)
-          Get-ChildItem .
+          Get-Content ./output.log
