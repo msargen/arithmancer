@@ -32,6 +32,11 @@ jobs:
       - name: Run Built Executable
         run: |
           dir ${{ steps.build.outputs.out-dir }}
+          cd ${{ steps.build.outputs.out-dir }}
+          tar -xf arithmancer.zip
+          cd arithmancer
+          ./Arithmancer.exe > output.log
+          type output.log
       - name: upload-build # This step is required for igor-setup@v2 to find Igor.exe for whatever reason.
         uses: actions/upload-artifact@v4
         with:
