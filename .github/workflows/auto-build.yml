@@ -52,10 +52,7 @@ jobs:
           Set-Location ./ci_tests
           Expand-Archive -Path ./arithmancer.zip -DestinationPath ./arithmancer
           Set-Location ./arithmancer
-          Get-ChildItem .
           Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
             -RedirectStandardOutput output.log `
             -RedirectStandardError output.log `
-          Start-Sleep 30      
-          Get-Content output.log
