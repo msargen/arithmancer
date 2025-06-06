@@ -50,5 +50,4 @@ jobs:
         shell: pwsh
         run: |
           cd ci_tests
-          Expand-Archive -Path ./arithmancer.zip -DestinationPath ./arithmancer
           ls .
