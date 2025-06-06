@@ -85,4 +85,5 @@ jobs:
           path: .
       - name: Process Files
         run: |
+          ls .
           python3 ./gmtl_to_junit.py
