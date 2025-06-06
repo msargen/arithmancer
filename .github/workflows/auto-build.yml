@@ -21,7 +21,7 @@ jobs:
         id: igor
         with:
           target-yyp: ${{ steps.find_yyp.outputs.yyp-path }}
-          access-key: ${{ secrets.ACCESS_KEY }}
+          access-key: ${{ secrets.GM_ACCESS_KEY }}
       - name: use Igor Build
         uses: bscotch/igor-build@v1
         id: build
