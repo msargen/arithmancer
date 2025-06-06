@@ -54,5 +54,5 @@ jobs:
           Set-Location ./arithmancer
           Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
-            -RedirectStandardOutput output.log `
-            -RedirectStandardError output.log `
+            -RedirectStandardOutput ./output.log `
+            -RedirectStandardError ./output.log `
