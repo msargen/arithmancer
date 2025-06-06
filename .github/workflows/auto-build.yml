@@ -36,3 +36,22 @@ jobs:
           name: igor-build-windows
           path: ${{ steps.build.outputs.out-dir }}
           retention-days: 1
+  run-tests:
+    name: Run Executable
+    needs: build
+    runs-on: windows-2022
+    steps:
+      - name: Download Igor Build
+        uses: actions/download-artifact@v4
+        with:
+          name: igor-build-windows
+          path: ./ci_tests
+      - name: Run Executable
+        run: |
+          cd ci_tests
+          tar -xf igor-build-windows.zip
+          cd igor-build-windows
+          tar -xf arithmancer.zip
+          cd arithmancer
+          ./arithmancer.exe > output.log
+          type output.log
