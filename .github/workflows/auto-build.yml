@@ -55,4 +55,6 @@ jobs:
           Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
             -RedirectStandardOutput ./output.log `
-            -RedirectStandardError ./output.log `
+            -RedirectStandardError ./errors.log `
+          Start-Sleep 30
+          Get-Content ./output.log
