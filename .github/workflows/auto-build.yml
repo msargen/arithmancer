@@ -56,4 +56,5 @@ jobs:
             -NoNewWindow `
             -RedirectStandardOutput ./output.log `
             -RedirectStandardError ./errors.log
-          Get-Child .
+          Start-Sleep 30
+          Get-ChildItem .
