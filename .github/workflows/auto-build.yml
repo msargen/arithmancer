@@ -57,4 +57,4 @@ jobs:
             -RedirectStandardOutput ./output.log `
             -RedirectStandardError ./errors.log `
           Start-Sleep 30
-          Get-Content ./output.log
+          Get-Child .
