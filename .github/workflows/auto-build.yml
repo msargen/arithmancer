@@ -50,4 +50,4 @@ jobs:
         shell: pwsh
         run: |
           cd ci_tests
-          ls .
+          dir .
