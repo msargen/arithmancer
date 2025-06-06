@@ -55,6 +55,7 @@ jobs:
           $proc = Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
             -RedirectStandardOutput ./output.log `
-            -RedirectStandardError ./errors.log
+            -RedirectStandardError ./errors.log `
+            -PassThru
           $proc.WaitForExit(30000)
           Get-ChildItem .
