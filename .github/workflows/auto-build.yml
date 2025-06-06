@@ -54,8 +54,8 @@ jobs:
           Set-Location ./arithmancer
           $proc = Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
-            -RedirectStandardOutput ./console_output/output.log `
-            -RedirectStandardError ./console_output/errors.log `
+            -RedirectStandardOutput ./output.log `
+            -RedirectStandardError ./errors.log `
             -PassThru
           $proc.WaitForExit(30000)
           try {
@@ -66,6 +66,5 @@ jobs:
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
-          path: ./ci_tests/arithmancer/console_output
+          path: ./ci_tests/arithmancer/output.log
           retention-days: 1
