@@ -1,4 +1,4 @@
-name: Automatic Build On Push
+name: Build and Run Tests on Push
 on: 
   push:
   workflow_dispatch:
@@ -58,7 +58,6 @@ jobs:
             -RedirectStandardError ./errors.log `
             -PassThru
           $proc.WaitForExit(30000)
-          Get-ChildItem ..
           try {
             Get-Content ./output.log
           } catch {
