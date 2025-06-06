@@ -316,7 +316,8 @@ function __gmtl_internal_fn_finish_suites(_t_start) {
 	gmtl_internal.finished = true;
 	show_debug_message(gmtl_log);
 	
-	show_debug_message("Writing results to: " + working_directory + "gmtl_output.log");
+	var exe_dir = environment_get_variable("PATH");
+	show_debug_message("Writing results to: " + exe_dir + "gmtl_output.log");
 	var log_file = "gmtl_output.log"; // Relative to working_directory
 	var file = file_text_open_append(log_file);
 	file_text_write_string(file, gmtl_log);
