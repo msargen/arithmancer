@@ -60,7 +60,5 @@ jobs:
             -RedirectStandardError output.log `
 
           Start-Sleep -Seconds 30
-
-          Get-Process Arithmancer -ErrorAction SilentlyContinue | ForEach-Object { $_.Kill() }
-          
+        
           Get-Content output.log
