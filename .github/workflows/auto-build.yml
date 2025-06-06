@@ -31,9 +31,9 @@ jobs:
           user-dir: ${{ steps.igor.outputs.user-dir }}
       - name: Run Built Executable
         run: |
-          dir ${{ steps.build.outputs.out-dir }}
           cd ${{ steps.build.outputs.out-dir }}
           tar -xf arithmancer.zip
+          dir
           cd arithmancer
           ./Arithmancer.exe > output.log
           type output.log
