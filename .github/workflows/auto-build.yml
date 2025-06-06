@@ -49,5 +49,4 @@ jobs:
       - name: Run Executable
         run: |
           cd ci_tests
-          tar -xf igor-build-windows.zip
           dir .
