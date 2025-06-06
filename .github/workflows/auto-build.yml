@@ -56,4 +56,5 @@ jobs:
             -NoNewWindow `
             -RedirectStandardOutput ./output.log `
             -RedirectStandardError ./errors.log
+          $proc.WaitForExit(30000)
           Get-ChildItem .
