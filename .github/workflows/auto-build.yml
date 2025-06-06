@@ -79,8 +79,7 @@ jobs:
         with:
           name: test_results
           path: .
-      - name: Unzip artifact
-        run: |
-          ls .
-          unzip test_results.zip
-          ls .
+      - name: Convert to JUnit XML
+        uses: ./gmtl_to_junit
+        with:
+          results-path: ./output.log

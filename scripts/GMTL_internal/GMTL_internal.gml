@@ -315,13 +315,6 @@ function __gmtl_internal_fn_finish_suites(_t_start) {
 	__gmtl_internal_fn_log($"All tests finished in {_time}.\n");
 	gmtl_internal.finished = true;
 	show_debug_message(gmtl_log);
-	
-	var exe_dir = environment_get_variable("PATH");
-	show_debug_message("Writing results to: " + exe_dir + "gmtl_output.log");
-	var log_file = "gmtl_output.log"; // Relative to working_directory
-	var file = file_text_open_append(log_file);
-	file_text_write_string(file, gmtl_log);
-	file_text_close(file);
 }
 
 /// @func	__gmtl_internal_fn_find_coverage_files()
