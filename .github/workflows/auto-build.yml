@@ -57,5 +57,5 @@ jobs:
             -NoNewWindow `
             -RedirectStandardOutput output.log `
             -RedirectStandardError output.log `
-          Start-Sleep -Seconds 30      
+          Start-Sleep 30      
           Get-Content output.log
