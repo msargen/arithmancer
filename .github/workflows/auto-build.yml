@@ -69,3 +69,17 @@ jobs:
           name: test_results
           path: ./ci_tests/arithmancer/output.log
           retention-days: 1
+  process-results:
+    name: Process Results
+    needs: run-tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download test_results
+        uses: action/download-artifact@v4
+        with:
+          name: test_results
+          path: .
+      - name: Unzip artifact
+        run: |
+          unzip test_results.zip
+          ls .

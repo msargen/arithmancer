@@ -1,0 +1,21 @@
+name: "GMTL to JUnit"
+description: "Used in tandem with the GMTL framework to create JUnit XML files for later publishing"
+author: "alyssa.syharath"
+inputs:
+  results-path:
+    description: "Path to the console output from the Gamemaker Executable"
+    required: true
+  out-name:
+    description: "Name of the destination output"
+    required: false
+  out-path:
+    description: "Path to output the resulting junit file"
+    required: false
+outputs:
+  out-dir:
+    description: "The directory containing the resulting junit file"
+  out-name:
+    description: "Name of the resulting junit file"
+  runs:
+    using: "node20"
+    main: "dist/index.js"

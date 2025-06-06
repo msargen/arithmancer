@@ -1,0 +1,20 @@
+{
+  "name": "gmtl_to_junit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "alyssa.syharath",
+  "license": "ISC",
+  "description": "Custom Github Action to Process GM Console for GMTL",
+  "devDependencies": {
+    "@types/node": "^22.15.30"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.1"
+  }
+}
