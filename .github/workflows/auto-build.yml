@@ -5,6 +5,7 @@ on:
   workflow_call:
 jobs:
   build:
+    name: Build Windows Executable
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
