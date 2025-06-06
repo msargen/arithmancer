@@ -31,8 +31,8 @@ jobs:
           user-dir: ${{ steps.igor.outputs.user-dir }}
       - name: Run Built Executable
         run: |
-          dir ${{ steps.igor.outputs.user-dir }}
-      - name: upload-build
+          dir ${{ steps.build.outputs.out-dir }}
+      - name: upload-build # This step is required for igor-setup@v2 to find Igor.exe for whatever reason.
         uses: actions/upload-artifact@v4
         with:
           name: igor-build-windows
