@@ -52,7 +52,6 @@ jobs:
           Set-Location ./ci_tests
           Expand-Archive -Path ./arithmancer.zip -DestinationPath ./arithmancer
           Set-Location ./arithmancer
-          New-Item -ItemType Directory -Path "./console_output"
           $proc = Start-Process -FilePath ./Arithmancer.exe `
             -NoNewWindow `
             -RedirectStandardOutput ./console_output/output.log `
