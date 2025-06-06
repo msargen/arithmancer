@@ -81,5 +81,6 @@ jobs:
           path: .
       - name: Unzip artifact
         run: |
+          ls .
           unzip test_results.zip
           ls .
