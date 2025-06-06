@@ -74,8 +74,14 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
+      - name: actions/checkout@v4
+        with:
+          path: gmtl_to_junit.py
       - name: Download test_results
         uses: actions/download-artifact@v4
         with:
           name: test_results
           path: .
+      - name: Process Files
+        run: |
+          python3 gmtl_to_junit.py
