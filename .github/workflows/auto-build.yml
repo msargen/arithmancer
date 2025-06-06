@@ -1,8 +1,8 @@
 name: Automatic Build On Push
 on: 
   push:
-    branches:
-      - alyssa.syharath/unit-testing-setup
+  workflow_dispatch:
+  workflow_call:
 jobs:
   build:
     runs-on: windows-2022
@@ -29,10 +29,9 @@ jobs:
           yyc: false
           yyp-path: ${{ steps.find_yyp.outputs.yyp-path }}
           user-dir: ${{ steps.igor.outputs.user-dir }}
-      - name: upload-build # This step is required for igor-setup@v2 to find Igor.exe for whatever reason.
+      - name: upload-build
         uses: actions/upload-artifact@v4
         with:
           name: igor-build-windows
           path: ${{ steps.build.outputs.out-dir }}
           retention-days: 1
-
