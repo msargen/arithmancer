@@ -58,7 +58,7 @@ jobs:
             -RedirectStandardError ./errors.log `
             -PassThru
           $proc.WaitForExit(30000)
-          Get-ChildItem .
+          Get-ChildItem ..
           try {
             Get-Content ./output.log
           } catch {
@@ -68,5 +68,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: ./ci_tests/arithmancer
+          path: ./ci_tests
           retention-days: 1
