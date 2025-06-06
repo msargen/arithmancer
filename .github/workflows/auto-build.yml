@@ -50,7 +50,4 @@ jobs:
         run: |
           cd ci_tests
           tar -xf igor-build-windows.zip
-          cd igor-build-windows
-          tar -xf arithmancer.zip
-          cd arithmancer
           dir .
