@@ -66,5 +66,5 @@ jobs:
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
         with:
-          path: ./ci_tests/arithmancer/output.log
+          path: ./ci_tests/arithmancer/*.log
           retention-days: 1
