@@ -77,7 +77,6 @@ jobs:
       - name: Download Python Script
         uses: actions/checkout@v4
         with:
-          ref: alyssa.syharath/unit-testing-setup
           sparse-checkout: .github/scripts/gmtl_to_junit.py
       - name: Download console_output
         uses: actions/download-artifact@v4
