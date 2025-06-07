@@ -6,6 +6,7 @@ checkmark = "✔"
 skipped = "⚠"
 failed = "❌"
 suite_delimiter = "-------"
+describe_delimiter = "================================================================"
 completion_marker = "All tests finished"
 extraction_regex = r'^(.*?)\s+\(([\d.]+)ms\)$'
 
@@ -60,6 +61,22 @@ for line in test_output_lines:
         current_suite = ET.SubElement(test_suites, "testsuite", {
             "name": suite_name
         })
+
+    elif describe_delimiter in line:
+        if is_capturing_error:
+            is_capturing_error = False
+            test_case.append(ET.Element("failure", { "message": "\n".join(error_lines) }))
+        if current_suite is not None:
+            current_suite.set("tests", str(suite_test_count))
+            current_suite.set("failures", str(suite_failures))
+            current_suite.set("skipped", str(suite_skipped))
+            current_suite.set("time", str(suite_time))
+            suite_test_count = 0
+            suite_failures = 0
+            suite_skipped = 0
+            suite_time = 0.0
+        continue
+            
     elif completion_marker in line:
         if is_capturing_error:
             test_case.append(ET.Element("failure", { "message": "\n".join(error_lines) }))
