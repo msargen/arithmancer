@@ -45,7 +45,7 @@ for line in test_output_lines:
     if (suite_delimiter in line):
         if is_capturing_error:
             is_capturing_error = False
-            test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+            test_case.append(ET.Element("failure", { "message": "\n".join(error_lines) }))
         if current_suite is not None: # before we setup the next suite, we should add the remaining properties to the old suite
             current_suite.set("tests", str(suite_test_count))
             current_suite.set("failures", str(suite_failures))
@@ -62,7 +62,7 @@ for line in test_output_lines:
         })
     elif completion_marker in line:
         if is_capturing_error:
-            test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+            test_case.append(ET.Element("failure", { "message": "\n".join(error_lines) }))
         if current_suite is not None:            
             current_suite.set("tests", str(suite_test_count))
             current_suite.set("failures", str(suite_failures))
@@ -73,7 +73,7 @@ for line in test_output_lines:
         if checkmark in line: # This is a success
             if is_capturing_error:
                 is_capturing_error = False
-                test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+                test_case.append(ET.Element("failure", { "message": "\n".join(error_lines) }))
             
             line = line.strip().removeprefix(checkmark).strip()
             match = re.match(extraction_regex, line)
@@ -88,7 +88,7 @@ for line in test_output_lines:
         elif skipped in line: # This is a skip
             if is_capturing_error:
                 is_capturing_error = False
-                test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+                test_case.append(ET.Element("failure", { "message": "\n".join(error_lines) }))
 
             line = line.strip().removeprefix(skipped).strip()
             test_case = ET.SubElement(current_suite, "testcase", {
@@ -101,7 +101,7 @@ for line in test_output_lines:
         elif failed in line: # This is a failed test
             if is_capturing_error:
                 is_capturing_error = False
-                test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+                test_case.append(ET.Element("failure", { "message": "\n".join(error_lines) }))
 
             line = line.strip().removeprefix(failed).strip()
             match = re.match(extraction_regex, line)
@@ -117,10 +117,7 @@ for line in test_output_lines:
             suite_test_count += 1
             
         elif is_capturing_error:
-            if len(error_lines) > 0:
-                error_lines.append("\n" + line.strip())
-            else:
-                error_lines.append(line.strip())
+            error_lines.append(line.strip())
 
 tree = ET.ElementTree(test_suites)
 tree.write(args.out_file_path, encoding="utf-8", xml_declaration=True)
