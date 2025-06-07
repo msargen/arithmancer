@@ -92,6 +92,7 @@ jobs:
           path: ./results.xml
           retention-days: 1
       - name: Generate Test Report
+        uses: dorny/test-reporter@v2
         if: ${{ !cancelled() }}
         with:
           name: GMTL Tests
