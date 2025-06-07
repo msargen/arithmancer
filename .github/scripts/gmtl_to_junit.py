@@ -11,3 +11,6 @@ args = parser.parse_args()
 with open(args.results_file_path) as f:
     contents = f.read()
     print(contents)
+
+with open(args.out_file_path, "w") as w:
+    w.write(contents)
