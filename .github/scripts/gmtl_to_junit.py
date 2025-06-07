@@ -117,7 +117,10 @@ for line in test_output_lines:
             suite_test_count += 1
             
         elif is_capturing_error:
-            error_lines.append(line.strip() + "\n")
+            if len(error_lines) > 0:
+                error_lines.append("\n" + line.strip())
+            else:
+                error_lines.append(line.strip())
 
 tree = ET.ElementTree(test_suites)
 tree.write(args.out_file_path, encoding="utf-8", xml_declaration=True)
