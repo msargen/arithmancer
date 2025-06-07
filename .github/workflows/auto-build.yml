@@ -85,4 +85,4 @@ jobs:
           name: test_results
           path: .
       - name: Process Files
-        run: python3 .github/scripts/gmtl_to_junit.py
+        run: python3 .github/scripts/gmtl_to_junit.py output.log results.xml
