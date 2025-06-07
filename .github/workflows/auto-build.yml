@@ -66,7 +66,7 @@ jobs:
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
         with:
-          name: test_results
+          name: console_output
           path: ./ci_tests/arithmancer/output.log
           retention-days: 1
   process-results:
@@ -79,10 +79,16 @@ jobs:
         with:
           ref: alyssa.syharath/unit-testing-setup
           sparse-checkout: .github/scripts/gmtl_to_junit.py
-      - name: Download test_results
+      - name: Download console_output
         uses: actions/download-artifact@v4
         with:
-          name: test_results
+          name: console_output
           path: .
       - name: Process Files
         run: python3 .github/scripts/gmtl_to_junit.py output.log results.xml
+      - name: Upload Results.xml
+        uses: actions/upload-artifact@v4
+        with:
+          name: test_results
+          path: ./results.xml
+          retention-days: 1
