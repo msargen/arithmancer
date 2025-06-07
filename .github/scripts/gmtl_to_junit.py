@@ -1,5 +1,6 @@
-def main():
-    print("hi hi from gmtl to junit")
+import argparse
+print("hi hi from gmtl to junit")
 
-if __name__ == "__main__":
-    main()
+parser = argparse.ArgumentParser()
+parser.add_argument('results_file_path')
+    .add_argument('out_file_path')
