@@ -53,7 +53,7 @@ for line in test_output_lines:
             suite_skipped = 0
             suite_time = 0.0
         
-        suite_name = line.replace(suite_delimiter, "").trim()
+        suite_name = line.replace(suite_delimiter, "").strip()
         current_suite = ET.SubElement(test_suites, "testsuite", {
             "name": suite_name
         })
