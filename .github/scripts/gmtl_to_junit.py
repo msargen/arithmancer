@@ -12,6 +12,8 @@ args = parser.parse_args()
 
 with open(args.results_file_path) as f:
     test_output_lines = []
+    capturing = False
+
     for line in f:
         if line.strip().startswith("-------"):
             capturing = True
@@ -19,6 +21,7 @@ with open(args.results_file_path) as f:
             test_output_lines.append(line)
         if capturing and "All tests finished" in line:
             break
+
     test_output = "".join(test_output_lines)
     print(test_output)
 
