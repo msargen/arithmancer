@@ -91,3 +91,9 @@ jobs:
           name: test_results
           path: ./results.xml
           retention-days: 1
+      - name: Generate Test Report
+        if: ${{ !cancelled() }}
+        with:
+          name: GMTL Tests
+          path: results.xml
+          reporter: java-junit

@@ -42,6 +42,7 @@ test_case = None
 current_suite = None
 
 for line in test_output_lines:
+    print("Processing line:" + line)
     # This is where the heart of the processing lives
     if (suite_delimiter in line):      
         if current_suite is not None: # before we setup the next suite, we should add the remaining properties to the old suite
