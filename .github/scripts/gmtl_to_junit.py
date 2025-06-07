@@ -28,7 +28,6 @@ with open(args.results_file_path) as f:
             break
 
     test_output = "".join(test_output_lines)
-    print(test_output)
 
 test_suites = ET.Element("testsuites")
 
@@ -47,11 +46,11 @@ for line in test_output_lines:
         if is_capturing_error:
             is_capturing_error = False
             test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
-            
         if current_suite is not None: # before we setup the next suite, we should add the remaining properties to the old suite
             current_suite.set("tests", str(suite_test_count))
             current_suite.set("failures", str(suite_failures))
             current_suite.set("skipped", str(suite_skipped))
+            current_suite.set("time", str(suite_time))
             suite_test_count = 0
             suite_failures = 0
             suite_skipped = 0
@@ -62,6 +61,13 @@ for line in test_output_lines:
             "name": suite_name
         })
     elif completion_marker in line:
+        if is_capturing_error:
+            test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+        if current_suite is not None:            
+            current_suite.set("tests", str(suite_test_count))
+            current_suite.set("failures", str(suite_failures))
+            current_suite.set("skipped", str(suite_skipped))
+            current_suite.set("time", str(suite_time))
         break # Shouldn't be necessary but better more correct than sorry
     else:
         if checkmark in line: # This is a success
@@ -76,6 +82,7 @@ for line in test_output_lines:
                     "name": match.group(1),
                     "time": match.group(2)
                 })
+                suite_time += float(match.group(2))
             suite_test_count += 1
 
         elif skipped in line: # This is a skip
@@ -102,14 +109,15 @@ for line in test_output_lines:
                 test_case = ET.SubElement(current_suite, "testcase", {
                     "name": match.group(1),
                     "time": match.group(2)
-                })
+                })                
+                suite_time += float(match.group(2))
             is_capturing_error = True
             error_lines = []
             suite_failures += 1
             suite_test_count += 1
             
         elif is_capturing_error:
-            error_lines.append(line)
+            error_lines.append("  " + line.strip())
 
 tree = ET.ElementTree(test_suites)
 tree.write(args.out_file_path, encoding="utf-8", xml_declaration=True)
