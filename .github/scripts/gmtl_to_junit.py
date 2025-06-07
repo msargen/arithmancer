@@ -42,9 +42,12 @@ test_case = None
 current_suite = None
 
 for line in test_output_lines:
-    print("Processing line:" + line)
     # This is where the heart of the processing lives
-    if (suite_delimiter in line):      
+    if (suite_delimiter in line):
+        if is_capturing_error:
+            is_capturing_error = False
+            test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+            
         if current_suite is not None: # before we setup the next suite, we should add the remaining properties to the old suite
             current_suite.set("tests", str(suite_test_count))
             current_suite.set("failures", str(suite_failures))
@@ -67,7 +70,6 @@ for line in test_output_lines:
                 test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
             
             line = line.strip().removeprefix(checkmark).strip()
-            print("success line: " + line)
             match = re.match(extraction_regex, line)
             if match:
                 test_case = ET.SubElement(current_suite, "testcase", {
@@ -77,6 +79,10 @@ for line in test_output_lines:
             suite_test_count += 1
 
         elif skipped in line: # This is a skip
+            if is_capturing_error:
+                is_capturing_error = False
+                test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+
             line = line.strip().removeprefix(skipped).strip()
             test_case = ET.SubElement(current_suite, "testcase", {
                 "name": line,
@@ -86,6 +92,10 @@ for line in test_output_lines:
             suite_test_count += 1
 
         elif failed in line: # This is a failed test
+            if is_capturing_error:
+                is_capturing_error = False
+                test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
+
             line = line.strip().removeprefix(failed).strip()
             match = re.match(extraction_regex, line)
             if match:
