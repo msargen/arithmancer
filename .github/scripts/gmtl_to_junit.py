@@ -66,7 +66,8 @@ for line in test_output_lines:
                 is_capturing_error = False
                 test_case.append(ET.Element("failure", { "message": "".join(error_lines) }))
             
-            line = line.lstrip(checkmark).strip()
+            line = line.strip().removeprefix(checkmark).strip()
+            print("success line: " + line)
             match = re.match(extraction_regex, line)
             if match:
                 test_case = ET.SubElement(current_suite, "testcase", {
@@ -76,19 +77,16 @@ for line in test_output_lines:
             suite_test_count += 1
 
         elif skipped in line: # This is a skip
-            line = line.lstrip(skipped).strip()
-            match = re.match(extraction_regex, line)
-            if match:
-                test_case = ET.SubElement(current_suite, "testcase", {
-                    "name": match.group(1),
-                    "time": match.group(2)
-                }).append(ET.Element("skipped"))
+            line = line.strip().removeprefix(skipped).strip()
+            test_case = ET.SubElement(current_suite, "testcase", {
+                "name": line,
+            }).append(ET.Element("skipped"))
             is_capturing_error = False
             suite_skipped += 1
             suite_test_count += 1
 
         elif failed in line: # This is a failed test
-            line = line.lstrip(failed).strip()
+            line = line.strip().removeprefix(failed).strip()
             match = re.match(extraction_regex, line)
             if match:
                 test_case = ET.SubElement(current_suite, "testcase", {
