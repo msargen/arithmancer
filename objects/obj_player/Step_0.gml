@@ -247,3 +247,43 @@ if(player_holding_gem && player_near_socket && (global.key_up))
 		scr_stun_player(player_closest_socket);
 	}
 }
+
+// If the player is recovering from a stunned condition. Count down their invincibility timer
+if (player_invincible)
+{
+	
+	player_invincible_timer--;
+	
+	// Flicker the player until they are no longer invincible
+	// The mod 3 sets the flicker to a good pace
+	// The minimum opacity is 0.5
+	if (player_invincible_timer % 3 == 0)
+	{
+		if (player_flicker_up)
+		{
+			image_alpha += 0.1;
+		}
+		else
+		{
+			image_alpha -= 0.1;
+		}
+		
+		if (image_alpha == 0.5)
+		{
+			player_flicker_up = true;
+		}
+		else if (image_alpha == 0.9)
+		{
+			player_flicker_up = false;
+		}
+	
+	}
+	
+	if (player_invincible_timer == 0)
+	{
+		// End the players invincibility and reset the player opacity to normal
+		player_invincible = false;
+		player_invincible_timer = player_invincible_timer_base;
+		image_alpha = 1;
+	}
+}

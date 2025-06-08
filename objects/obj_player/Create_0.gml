@@ -55,3 +55,12 @@ player_enter_button = 0;
 
 // Keeps track if the player is currently pinched between two walls/moving platforms
 player_pinched = false;
+
+// The base duration of invincibility
+player_invincible_timer_base = 180;
+// The current infincibility timer once invicibility is gained
+player_invincible_timer = 0;
+// Denotes if the player is currently invincible
+player_invincible = false;
+// For when the player is flickering after being stunned. So that the opacity goes up and down
+player_flicker_up = false;
