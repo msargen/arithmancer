@@ -55,6 +55,7 @@
     {"name":"rm_lvl_three","order":3,"path":"rooms/rm_lvl_three/rm_lvl_three.yy",},
     {"name":"rm_lvl_two","order":1,"path":"rooms/rm_lvl_two/rm_lvl_two.yy",},
     {"name":"rm_title_screen","order":5,"path":"rooms/rm_title_screen/rm_title_screen.yy",},
+    {"name":"FeatherIgnore","order":4,"path":"scripts/FeatherIgnore/FeatherIgnore.yy",},
     {"name":"GMTL_core_test_setup","order":1,"path":"scripts/GMTL_core_test_setup/GMTL_core_test_setup.yy",},
     {"name":"GMTL_core_TestCase","order":2,"path":"scripts/GMTL_core_TestCase/GMTL_core_TestCase.yy",},
     {"name":"GMTL_demo_tests","order":1,"path":"scripts/GMTL_demo_tests/GMTL_demo_tests.yy",},

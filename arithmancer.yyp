@@ -79,6 +79,7 @@
     {"id":{"name":"rm_lvl_two","path":"rooms/rm_lvl_two/rm_lvl_two.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_title_screen","path":"rooms/rm_title_screen/rm_title_screen.yy",},},
+    {"id":{"name":"FeatherIgnore","path":"scripts/FeatherIgnore/FeatherIgnore.yy",},},
     {"id":{"name":"GMTL_core_test_events","path":"scripts/GMTL_core_test_events/GMTL_core_test_events.yy",},},
     {"id":{"name":"GMTL_core_test_setup","path":"scripts/GMTL_core_test_setup/GMTL_core_test_setup.yy",},},
     {"id":{"name":"GMTL_core_TestCase","path":"scripts/GMTL_core_TestCase/GMTL_core_TestCase.yy",},},
