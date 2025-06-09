@@ -4,14 +4,16 @@
 	Release date: 2024-07-19
 	Author:	DAndrëwBox
 */
-gml_pragma("global", "GMTL_init()");
-gml_pragma("global", "GMTL_definitions()");
-gml_pragma("global", "GMTL_internal()");
-gml_pragma("global", "GMTL_core_test_setup()");
-gml_pragma("global", "GMTL_core_test_events()");
-gml_pragma("global", "GMTL_core_TestCase()");
+if (ENABLE_TESTS) {
+	gml_pragma("global", "GMTL_init()");
+	gml_pragma("global", "GMTL_definitions()");
+	gml_pragma("global", "GMTL_internal()");
+	gml_pragma("global", "GMTL_core_test_setup()");
+	gml_pragma("global", "GMTL_core_test_events()");
+	gml_pragma("global", "GMTL_core_TestCase()");
 
-gml_pragma("global", "__gmtl_init()");
+	gml_pragma("global", "__gmtl_init()");
+}
 
 /// @func __gmtl_init()
 function __gmtl_init() {

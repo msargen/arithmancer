@@ -1,5 +1,7 @@
 // Location for all macro definitions
 
+#macro ENABLE_TESTS true // Set to false to remove tests from build
+
 // For a simple and easy to add to/expand screen resolution. A 16:9 aspect ratio.
 #macro RES_W 320
 #macro RES_H 180
