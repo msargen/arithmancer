@@ -17,13 +17,13 @@ function scr_text_box_bubbles(_equation_solution, _x_coordinate, _y_coordinate)
 	}
 	until(_equation_answer_offset_sign != 0);
 	
-	with (instance_create_layer(_x_coordinate + 20, _y_coordinate, layer, obj_bubble))
+	with (instance_create_layer(_x_coordinate + 20, _y_coordinate - sprite_get_height(spr_even_marker), layer, obj_bubble))
 	{
 		bubble_val = _equation_solution;
 		
 	}
 	
-	with (instance_create_layer(_x_coordinate - 20, _y_coordinate, layer, obj_bubble))
+	with (instance_create_layer(_x_coordinate - 20, _y_coordinate - sprite_get_height(spr_even_marker), layer, obj_bubble))
 	{
 		
 		//Set the Bubble Fields

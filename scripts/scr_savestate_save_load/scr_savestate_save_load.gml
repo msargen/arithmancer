@@ -2,7 +2,7 @@
 /// @arg _index the savestate index being saved to (1, 2, or 3)
 function scr_save_to_savestate(_index){
 	// room name
-	savestate[_index].level = room_get_name(room);
+	savestate[_index].level = room;
 	
 	// camera position
 	savestate[_index].camera.x_position = obj_camera.x;

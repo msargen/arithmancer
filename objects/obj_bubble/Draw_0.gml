@@ -1,6 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-draw_self();
+/// @description Drawing Bubbles
 
-scr_draw_set_text(c_white, fnt_menu, fa_center, fa_bottom);
-draw_text(x, y, string(bubble_val));
+scr_text_box(string(bubble_val), ORIENTATION.UP, x, y + sprite_get_height(spr_even_marker), 0, false);
+image_xscale = (string_length(bubble_val) * 8 + 12)/26;

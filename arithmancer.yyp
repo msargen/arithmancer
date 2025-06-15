@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"arithmancer",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -27,11 +27,12 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"arithmancer",
   "resources":[
@@ -59,6 +60,7 @@
     {"id":{"name":"obj_savestate_data","path":"objects/obj_savestate_data/obj_savestate_data.yy",},},
     {"id":{"name":"obj_settings_menu","path":"objects/obj_settings_menu/obj_settings_menu.yy",},},
     {"id":{"name":"obj_stunned","path":"objects/obj_stunned/obj_stunned.yy",},},
+    {"id":{"name":"obj_test_bubble","path":"objects/obj_test_bubble/obj_test_bubble.yy",},},
     {"id":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"rm_ending","path":"rooms/rm_ending/rm_ending.yy",},},

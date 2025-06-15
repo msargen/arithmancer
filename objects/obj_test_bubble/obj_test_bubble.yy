@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bubble",
+  "%Name":"obj_test_bubble",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_bubble",
+  "name":"obj_test_bubble",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_wall",
+    "path":"objects/obj_wall/obj_wall.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,9 +36,6 @@
     "name":"spr_bubble",
     "path":"sprites/spr_bubble/spr_bubble.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_bubble",
-    "path":"sprites/spr_bubble/spr_bubble.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }
