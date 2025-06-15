@@ -52,3 +52,6 @@ player_y_spawn = y;
 
 // The id for the enter button on the stage
 player_enter_button = 0;
+
+// Keeps track if the player is currently pinched between two walls/moving platforms
+player_pinched = false;
