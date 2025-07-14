@@ -24,10 +24,16 @@ fob_vertical_speed_base = 0;
 fob_cos_move_x = false;
 fob_sin_move_y = false;
 
-// The direction circular movement should travel in. +1 = clockwise, -1 = counterclockwise. Default is clockwise.
-fob_circle_direction = 1;
 // Can't be zero (division by zero). The smaller the absolute number, the faster the movement.
 fob_sin_frequency = 1;
+
+// The direction circular/diagonal sinusoidal movement should travel in. 
+// For circualar movement: +1 = clockwise, -1 = counterclockwise. Default is clockwise.
+// For diagonal movement: +1 = top left to bottom right. -1 = bottom left to top right. Default is +1.
+fob_movement_direction = 1;
+
+// Used for indicating if combined x/y sinusoidal movement should be circular or diagonal
+fob_diagonal_movement = false;
 
 // <-- throuch here in object creation code
 

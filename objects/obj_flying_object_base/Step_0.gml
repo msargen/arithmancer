@@ -29,7 +29,7 @@ if (fob_cos_move_x || fob_sin_move_y)
 		var _amp_y = (fob_max_y - fob_min_y) / 2;
 		var _y_start = _amp_y + fob_min_y;
 		var _old_y = y;
-		var _y_move = fob_circle_direction * _amp_y*sin(_time/fob_sin_frequency);
+		var _y_move = fob_movement_direction * _amp_y*sin(_time/fob_sin_frequency);
 		fob_vertical_speed = round((_y_start + _y_move) - _old_y);
 	}
 	
@@ -39,7 +39,17 @@ if (fob_cos_move_x || fob_sin_move_y)
 		var _amp_x = (fob_max_x - fob_min_x) / 2;
 		var _x_start = _amp_x + fob_min_x;
 		var _old_x = x;
-		var _x_move =  _amp_x*cos(_time/fob_sin_frequency);
+		var _x_move = 0;
+		// When both vertical and horizontal movement are desired, this will control whether or not the platform
+		// moves in a circular, or diagonal, movement pattern
+		if (fob_diagonal_movement)
+		{
+			_x_move = _amp_x*sin(_time/fob_sin_frequency);
+		}
+		else
+		{
+			_x_move = _amp_x*cos(_time/fob_sin_frequency);
+		}
 		fob_horizontal_speed = round((_x_start + _x_move) - _old_x);
 	}
 }

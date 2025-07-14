@@ -1,0 +1,2 @@
+this exists to include the datafiles folder on github
+when pulling from github, this folder was missing and caused a crash when trying to open the project in gamemaker
