@@ -4,7 +4,8 @@
 /// @arg _x_coordinate the x coordinate the box will point at
 /// @arg _y_coordinate the y coordinate the box will point at
 /// @arg {real} _offset (optional) the distance in pixels from the target coordinate to the arrow tip
-function scr_text_box(_text, _direction, _x_coordinate, _y_coordinate, _offset=0)
+/// @arg {bool} _arrow (optional) whether the arrow is displayed or not
+function scr_text_box(_text, _direction, _x_coordinate, _y_coordinate, _offset=0, _arrow=true)
 {
 	// string_width() doesn't adjust for different fonts, so I'm using the number of characters times the width of my monospace font
 	// the 2 is extra padding for the sides so that the bubble looks better around the text
@@ -17,7 +18,7 @@ function scr_text_box(_text, _direction, _x_coordinate, _y_coordinate, _offset=0
 		// box is above target
 		case ORIENTATION.UP:
 			// draw the arrow marker
-			draw_sprite_ext(spr_even_marker, 0, _x_coordinate, _y_coordinate - _offset, 1, 1, _direction, c_white, _opacity);
+			if(_arrow){draw_sprite_ext(spr_even_marker, 0, _x_coordinate, _y_coordinate - _offset, 1, 1, _direction, c_white, _opacity);}
 			// get center coordinates for the box and text
 			_text_x_center = _x_coordinate;
 			_text_y_center = _y_coordinate - _offset - sprite_get_height(spr_even_marker) - (sprite_get_height(spr_text_box_middle) / 2);
@@ -26,7 +27,7 @@ function scr_text_box(_text, _direction, _x_coordinate, _y_coordinate, _offset=0
 		// box is below target
 		case ORIENTATION.DOWN:
 			// draw the arrow marker
-			draw_sprite_ext(spr_even_marker, 0, _x_coordinate, _y_coordinate + _offset, 1, 1, _direction, c_white, _opacity);
+			if(_arrow){draw_sprite_ext(spr_even_marker, 0, _x_coordinate, _y_coordinate + _offset, 1, 1, _direction, c_white, _opacity);}
 			// get center coordinates for the box and text
 			_text_x_center = _x_coordinate;
 			_text_y_center = _y_coordinate + _offset + sprite_get_height(spr_even_marker) + (sprite_get_height(spr_text_box_middle) / 2);
@@ -35,7 +36,7 @@ function scr_text_box(_text, _direction, _x_coordinate, _y_coordinate, _offset=0
 		// box is left of target
 		case ORIENTATION.LEFT:
 			// draw the arrow marker
-			draw_sprite_ext(spr_even_marker, 0, _x_coordinate - _offset, _y_coordinate, 1, 1, _direction, c_white, _opacity);
+			if(_arrow){draw_sprite_ext(spr_even_marker, 0, _x_coordinate - _offset, _y_coordinate, 1, 1, _direction, c_white, _opacity);}
 			// get center coordinates for the box and text
 			_text_x_center = _x_coordinate - _offset - sprite_get_height(spr_even_marker) - sprite_get_width(spr_text_box_side) - (_text_width / 2);
 			_text_y_center = _y_coordinate;
@@ -44,7 +45,7 @@ function scr_text_box(_text, _direction, _x_coordinate, _y_coordinate, _offset=0
 		// box is right of target
 		case ORIENTATION.RIGHT:
 			// draw the arrow marker
-			draw_sprite_ext(spr_even_marker, 0, _x_coordinate + _offset, _y_coordinate, 1, 1, _direction, c_white, _opacity);
+			if(_arrow){draw_sprite_ext(spr_even_marker, 0, _x_coordinate + _offset, _y_coordinate, 1, 1, _direction, c_white, _opacity);}
 			// get center coordinates for the box and text
 			_text_x_center = _x_coordinate + _offset + sprite_get_height(spr_even_marker) + sprite_get_width(spr_text_box_side) + (_text_width / 2);
 			_text_y_center = _y_coordinate;
