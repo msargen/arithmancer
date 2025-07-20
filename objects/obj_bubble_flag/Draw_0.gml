@@ -2,7 +2,7 @@
 draw_self();
 if(bubble_flag_equation_display)
 {
-	scr_text_box(bubble_flag_text, ORIENTATION.UP, x, y, bubble_flag_equation_offset, 1);
+	scr_text_box(bubble_flag_text, ORIENTATION.UP, x, y, bubble_flag_equation_offset, true);
 }
 else if (bubble_flag_player_nearby)
 {

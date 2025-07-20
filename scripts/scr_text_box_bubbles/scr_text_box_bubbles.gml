@@ -5,29 +5,29 @@
 function scr_text_box_bubbles(_equation_solution, _x_coordinate, _y_coordinate)
 {
 
-	
 	//Generate a random number 1-5 and assign it a positive or negative value not equal to 0
 	var _equation_answer_offset = floor(random_range(1, 5.99));
-	var _equation_answer_offset_sign = 0;
-	do
-	{
-		_equation_answer_offset_sign = sign(random_range(-1,1));
-	}
-	until(_equation_answer_offset_sign != 0);
+	var _equation_answer_offset_sign = choose(-1, 1);
 	
 	//Create variables to randomize which bubble gets the correct answer
 	var _bubble_val_one = 0;
 	var _bubble_val_two = 0;
-	var _coinflip = floor(random_range(0, 1.99));
+	var _coinflip = choose(true, false);
+	var _incorrect_answer = _equation_solution + _equation_answer_offset * _equation_answer_offset_sign;
 	
-	if(_coinflip == 1)
+	if(_incorrect_answer < 0)
+	{
+		 _incorrect_answer = _equation_solution - _equation_answer_offset * _equation_answer_offset_sign;
+	}
+	
+	if(_coinflip == true)
 	{
 		_bubble_val_one = _equation_solution;
-		_bubble_val_two = _equation_solution + _equation_answer_offset * _equation_answer_offset_sign;
+		_bubble_val_two = _incorrect_answer;
 	}
 	else
 	{
-		_bubble_val_one = _equation_solution + _equation_answer_offset * _equation_answer_offset_sign;
+		_bubble_val_one = _incorrect_answer;
 		_bubble_val_two = _equation_solution;
 	}
 
