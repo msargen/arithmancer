@@ -2,12 +2,12 @@
 
 // TODO: this is horrific. Needs to be updated
 //Level 1
-if (global.flags_collected == 1)
+if (global.flags_collected == 3)
 {
 	instance_destroy(inst_13ECB37F);
 }
 
-if (global.flags_collected == 2)
+if (global.flags_collected == 6)
 {
 	instance_destroy(inst_2F06D50F);
 }

@@ -1,3 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-image_xscale = 2;
+if(bubble_timer < bubble_timer_max)
+{
+	bubble_timer++;
+}
