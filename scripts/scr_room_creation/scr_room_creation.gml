@@ -24,7 +24,7 @@ function scr_room_creation(_savestate_index)
 	global.level_time_source = call_later(1, time_source_units_seconds, _time_update, true);
 	
 	// reset collected flags
-	global.flags_collected = 0;
+	global.equations_solved = 0;
 	
 	// load from savestate if flagged to do so
 	if (_savestate_index != 0)

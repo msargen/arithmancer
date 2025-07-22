@@ -16,5 +16,5 @@ if (equation_text_letters >= equation_text_length) && global.key_select && strin
 	instance_destroy();
 	with (obj_camera) camera_tracking = obj_player;
 	instance_destroy(equation_text_flag_id);
-	global.flags_collected++ ;
+	global.equations_solved++ ;
 }

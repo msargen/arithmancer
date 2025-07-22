@@ -13,7 +13,7 @@ if(other.bubble_val == _closest_flag.bubble_flag_equation_solution)
 	instance_destroy(other);
 	instance_destroy(_closest_flag);
 	instance_destroy(instance_nearest(x, y, obj_bubble));
-	global.flags_collected++ ;
+	global.equations_solved++ ;
 }
 else
 {
