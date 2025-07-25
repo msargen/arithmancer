@@ -4,7 +4,10 @@
 layer_x("TitleAssets", min(layer_get_x("TitleAssets") + 1, RES_W * 0.5 - global.camera_buffer));
 
 //Progress Text
-ending_letters += ending_text_speed;
+if (ending_letters < ending_text_max)
+{
+	ending_letters += ending_text_speed;
+}
 ending_text = string_copy(ending_end_text[ending_current_line], 1, floor(ending_letters));
 
 //Next Line

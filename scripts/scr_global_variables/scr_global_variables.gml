@@ -1,7 +1,7 @@
 // Location for all global variable definitions
 
 // Tracker for the amount of flags the player has collected
-global.flags_collected = 0;
+global.equations_solved = 0;
 
 // The current time remaining in the level
 global.time = "";

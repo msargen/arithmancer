@@ -239,7 +239,7 @@ if(player_holding_gem && player_near_socket && (global.key_up))
 		// activate socket
 		player_closest_socket.socket_answer = global.over_9000;
 		player_closest_socket.image_index = 1;
-		global.flags_collected++
+		global.equations_solved++
 	}
 	else
 	{

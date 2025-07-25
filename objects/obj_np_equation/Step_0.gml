@@ -21,8 +21,9 @@ if ((np_equation_num_shown_letters >= np_equation_base_length) && global.key_sel
 		if (np_equation_np_flag_id.np_flag_eq_solved == np_equation_np_flag_id.np_flag_tot_eq)
 		{
 			instance_destroy(np_equation_np_flag_id);
-			global.flags_collected++ ;
 		}
+		// Always increment the number of equastions solved, even if the flag is not destroyed yet
+		global.equations_solved++ ;
 	}
 	else
 	{
