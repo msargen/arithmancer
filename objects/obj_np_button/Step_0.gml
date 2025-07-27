@@ -45,7 +45,7 @@ if (np_button_can_input && np_button_pressed && instance_exists(obj_np_equation)
 	{
 		// Indicate which button the player just hit
 		obj_player.player_enter_button = id;
-		obj_np_equation.np_equation_botton_enter = true;
+		obj_np_equation.np_equation_button_enter = true;
 	}
 	else 
 	{

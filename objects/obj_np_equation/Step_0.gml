@@ -12,9 +12,9 @@ np_equation_all_text = string_insert(string(np_equation_input), np_equation_text
 np_equation_text_current = string_copy(np_equation_all_text, 1, floor(np_equation_num_shown_letters));
 
 // Destroy the equation text bubble when the correct answer has been entered
-if ((np_equation_num_shown_letters >= np_equation_base_length) && np_equation_botton_enter && string_length(np_equation_input) > 0)
+if ((np_equation_num_shown_letters >= np_equation_base_length) && np_equation_button_enter && string_length(np_equation_input) > 0)
 {
-	np_equation_botton_enter = false;
+	np_equation_button_enter = false;
 	if (np_equation_equation_solution == real(np_equation_input))
 	{
 		instance_destroy();
