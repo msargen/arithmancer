@@ -1,5 +1,6 @@
 /// @description Button code
 
+// TODO:
 np_button_can_input = !np_button_pressed;
 
 switch (image_angle)
@@ -39,13 +40,13 @@ if (np_button_can_input && np_button_pressed && instance_exists(obj_np_equation)
 {
 	if (string(np_button_key_value) == "B")
 	{
-		global.key_backspace = true;
+		global.button_backspace = true;
 	}
 	else if (string(np_button_key_value) == "E")
 	{
 		// Indicate which button the player just hit
 		obj_player.player_enter_button = id;
-		global.key_select = true;
+		global.button_enter = true;
 	}
 	else 
 	{

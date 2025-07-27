@@ -13,4 +13,6 @@ function keybind()
 	global.key_pause = keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start) || gamepad_button_check_pressed(0, gp_select);
 	global.key_hold_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_button_check(0, gp_padl) || (gamepad_axis_value(0, gp_axislh) < 0);
 	global.key_hold_right = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_button_check(0, gp_padr) || (gamepad_axis_value(0, gp_axislh) > 0);
+	global.button_enter = false;
+	global.button_backspace = false;
 }
