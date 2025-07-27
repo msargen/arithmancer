@@ -29,4 +29,4 @@ np_equation_base_length = string_length(np_equation_text_base);
 
 // For when the player hits the enter or backspace numpad buttons
 np_equation_button_enter = false;
-np_equation_botton_backspace = false;
+np_equation_button_backspace = false;

@@ -39,7 +39,7 @@ if (np_button_can_input && np_button_pressed && instance_exists(obj_np_equation)
 {
 	if (string(np_button_key_value) == "B")
 	{
-		obj_np_equation.np_equation_botton_backspace = true;
+		obj_np_equation.np_equation_button_backspace = true;
 	}
 	else if (string(np_button_key_value) == "E")
 	{

@@ -33,8 +33,8 @@ if ((np_equation_num_shown_letters >= np_equation_base_length) && np_equation_bu
 	}
 }
 
-if (np_equation_botton_backspace)
+if (np_equation_button_backspace)
 {
 	np_equation_input = string_delete(np_equation_input, string_length(np_equation_input), 1);
-	np_equation_botton_backspace = false;
+	np_equation_button_backspace = false;
 }
