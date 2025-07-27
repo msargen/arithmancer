@@ -1,6 +1,5 @@
 /// @description Button code
 
-// TODO:
 np_button_can_input = !np_button_pressed;
 
 switch (image_angle)
