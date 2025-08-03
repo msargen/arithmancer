@@ -23,6 +23,10 @@ function scr_load_from_ini() {
 		window_set_size(resolution * 16/9, resolution);
 		window_set_fullscreen(bool(is_fullscreen));
 		
+		// Load difficulty options
+		sm_easy_buttons = ini_read_real("Difficulty", "Easy_buttons", false);
+		global.easy_buttons = sm_easy_buttons;
+		
 		// convert to padded strings
 		settings_menu_value[0] = "00" + string(main_volume) + "%";
 		settings_menu_value[0] = string_delete(settings_menu_value[0], 1, (string_length(string(main_volume))-1));
@@ -32,6 +36,7 @@ function scr_load_from_ini() {
 		settings_menu_value[2] = string_delete(settings_menu_value[2], 1, (string_length(string(sfx_volume))-1));
 		settings_menu_value[4] = bool(is_fullscreen) ? "True" : "False";
 		settings_menu_value[5] = string(resolution) + "p";
+		settings_menu_value[7] = sm_easy_buttons ? "True" : "False";
 	}
 	
 	ini_close();
