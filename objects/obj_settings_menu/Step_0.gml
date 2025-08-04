@@ -128,7 +128,7 @@ if (in_settings_menu)
 			}
 			break;
 			
-			// Easy button toggle
+		// Easy button toggle
 		case SETTINGS_MENU.EASY_BUTTON:
 			if (global.key_left || global.key_right)
 			{
@@ -145,6 +145,66 @@ if (in_settings_menu)
 					sm_easy_buttons = true;
 				}
 			}
+			break;
+			
+		// Adjust difficulty for addition problems
+		case SETTINGS_MENU.ADDITION_DIFFICULTY:
+			if (global.key_left && sm_addition_difficulty > 0)
+			{
+				sm_addition_difficulty--;
+			}
+			if (global.key_right && sm_addition_difficulty < 3)
+			{
+				sm_addition_difficulty++;
+			}
+			
+			settings_menu_value[8] = sm_difficulty_option[sm_addition_difficulty];
+			scr_set_addition_function(sm_addition_difficulty);
+			break;
+			
+		// Adjust difficulty for subtraction problems
+		case SETTINGS_MENU.SUBTRACTION_DIFFICULTY:
+			if (global.key_left && sm_subtraction_difficulty > 0)
+			{
+				sm_subtraction_difficulty--;
+			}
+			if (global.key_right && sm_subtraction_difficulty < 3)
+			{
+				sm_subtraction_difficulty++;
+			}
+			
+			settings_menu_value[9] = sm_difficulty_option[sm_subtraction_difficulty];
+			scr_set_subtraction_function(sm_subtraction_difficulty);
+			break;
+			
+		// Adjust difficulty for multiplication problems
+		case SETTINGS_MENU.MULTIPLICATION_DIFFICULTY:
+			if (global.key_left && sm_multiplication_difficulty > 0)
+			{
+				sm_multiplication_difficulty--;
+			}
+			if (global.key_right && sm_multiplication_difficulty < 3)
+			{
+				sm_multiplication_difficulty++;
+			}
+			
+			settings_menu_value[10] = sm_difficulty_option[sm_multiplication_difficulty];
+			scr_set_multiplication_function(sm_multiplication_difficulty);
+			break;
+			
+		// Adjust difficulty for division problems
+		case SETTINGS_MENU.DIVISION_DIFFICULTY:
+			if (global.key_left && sm_division_difficulty > 0)
+			{
+				sm_division_difficulty--;
+			}
+			if (global.key_right && sm_division_difficulty < 3)
+			{
+				sm_division_difficulty++;
+			}
+			
+			settings_menu_value[11] = sm_difficulty_option[sm_division_difficulty];
+			scr_set_division_function(sm_division_difficulty);
 			break;
 		
 		// controller choice

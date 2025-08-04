@@ -57,3 +57,58 @@ function scr_generate_equation(_equation_type = 0){
 	return [_equation_answer, _equation_text];
 
 }
+
+/// @description  Generates an equation (solution, equation text).
+/// @return  Array of length two. First index is the {real} solution answer, second index is the {string} equation text
+function scr_generate_equation2(){
+	var _equation_type = array_length(global.equation_difficulty);
+	
+	//show_debug_message("et1: " + string(_equation_type));
+	
+	if (_equation_type != 0) 
+	{
+		_equation_type = global.equation_difficulty[floor(random_range(0, _equation_type - 0.01))];
+	}
+	
+	//show_debug_message("et1: " + string(_equation_type));
+	
+	var _equation;
+	
+	switch (_equation_type)
+	{
+
+		case EQUATION_TYPE.ADDITION:
+			// Addition
+			_equation = global.addition_difficulty();
+			//show_debug_message("addition solution [" + string(_equation[0]) + "] text [" + string(_equation[1] + "]"));
+			break;
+			
+		case EQUATION_TYPE.SUBTRACTION:
+			// Addition
+			_equation = global.subtraction_difficulty();
+			//show_debug_message("subtraction solution [" + string(_equation[0]) + "] text [" + string(_equation[1] + "]"));
+			break;
+			
+		case EQUATION_TYPE.MULTIPLICATION:
+			// Addition
+			_equation = global.multiplication_difficulty();
+			//show_debug_message("multiplication solution [" + string(_equation[0]) + "] text [" + string(_equation[1] + "]"));
+			break;
+			
+		case EQUATION_TYPE.DIVISION:
+			// Addition
+			_equation = global.division_difficulty();
+			//show_debug_message("division solution [" + string(_equation[0]) + "] text [" + string(_equation[1] + "]"));
+			break;
+			
+		case 0:
+			// Addition
+			_equation = scr_get_default_equation();
+			//show_debug_message("default solution [" + string(_equation[0]) + "] text [" + string(_equation[1] + "]"));
+			break;
+	}
+	
+	//show_debug_message("return solution [" + string(_equation[0]) + "] text [" + string(_equation[1] + "]"));
+	return [_equation[0], _equation[1]];
+
+}

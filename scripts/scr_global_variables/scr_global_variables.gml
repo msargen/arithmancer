@@ -30,3 +30,10 @@ global.over_9000 = -9001
 
 // Indicates if the easy mode for entering answers via numpad buttons should be used
 global.easy_buttons = false;
+
+// For equation difficulty
+global.addition_difficulty = function(){};
+global.subtraction_difficulty = function(){};
+global.multiplication_difficulty = function(){};
+global.division_difficulty = function(){};
+global.equation_difficulty = array_create(0);

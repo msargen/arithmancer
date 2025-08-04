@@ -98,6 +98,7 @@
     {"id":{"name":"scr_controllers","path":"scripts/scr_controllers/scr_controllers.yy",},},
     {"id":{"name":"scr_draw_text","path":"scripts/scr_draw_text/scr_draw_text.yy",},},
     {"id":{"name":"scr_enums","path":"scripts/scr_enums/scr_enums.yy",},},
+    {"id":{"name":"scr_equation_functions","path":"scripts/scr_equation_functions/scr_equation_functions.yy",},},
     {"id":{"name":"scr_generate_equation","path":"scripts/scr_generate_equation/scr_generate_equation.yy",},},
     {"id":{"name":"scr_global_variables","path":"scripts/scr_global_variables/scr_global_variables.yy",},},
     {"id":{"name":"scr_keybinds","path":"scripts/scr_keybinds/scr_keybinds.yy",},},

@@ -25,6 +25,16 @@ function scr_load_from_ini() {
 		
 		// Load difficulty options
 		sm_easy_buttons = ini_read_real("Difficulty", "Easy_buttons", false);
+		sm_addition_difficulty = ini_read_real("Difficulty", "Addision_difficulty", 1);
+		sm_subtraction_difficulty = ini_read_real("Difficulty", "Subtraction_difficulty", 1);
+		sm_multiplication_difficulty = ini_read_real("Difficulty", "Multiplication_difficulty", 1);
+		sm_division_difficulty = ini_read_real("Difficulty", "Division_difficulty", 1);
+		
+		// Set difficulty options
+		scr_set_addition_function(sm_addition_difficulty);
+		scr_set_subtraction_function(sm_subtraction_difficulty);
+		scr_set_multiplication_function(sm_multiplication_difficulty);
+		scr_set_division_function(sm_division_difficulty);
 		
 		// convert to padded strings
 		settings_menu_value[0] = "00" + string(main_volume) + "%";
@@ -36,6 +46,10 @@ function scr_load_from_ini() {
 		settings_menu_value[4] = bool(is_fullscreen) ? "True" : "False";
 		settings_menu_value[5] = string(resolution) + "p";
 		settings_menu_value[7] = sm_easy_buttons ? "True" : "False";
+		settings_menu_value[8] = sm_difficulty_option[sm_addition_difficulty];
+		settings_menu_value[9] = sm_difficulty_option[sm_subtraction_difficulty];
+		settings_menu_value[10] = sm_difficulty_option[sm_multiplication_difficulty];
+		settings_menu_value[11] = sm_difficulty_option[sm_division_difficulty];
 	}
 	
 	ini_close();
