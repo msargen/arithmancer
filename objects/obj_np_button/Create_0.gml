@@ -18,6 +18,3 @@ np_button_timer = 0;
 // The minimum time difference between when the button was pressed and when it should go back to normal.
 // The time is tracked in microseconds (1 millon to each second)
 np_button_time_diff = 300000;
-
-// Indicates if easy mode for entering answers in on
-np_easy_buttons = global.easy_buttons;

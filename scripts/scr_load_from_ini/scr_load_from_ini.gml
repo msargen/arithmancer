@@ -25,7 +25,6 @@ function scr_load_from_ini() {
 		
 		// Load difficulty options
 		sm_easy_buttons = ini_read_real("Difficulty", "Easy_buttons", false);
-		global.easy_buttons = sm_easy_buttons;
 		
 		// convert to padded strings
 		settings_menu_value[0] = "00" + string(main_volume) + "%";

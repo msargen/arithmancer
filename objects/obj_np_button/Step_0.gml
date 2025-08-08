@@ -51,7 +51,7 @@ if (np_button_can_input && np_button_pressed && instance_exists(obj_np_equation)
 	{
 		with (obj_np_equation)
 		{
-			if (other.np_easy_buttons)
+			if (obj_settings_menu.sm_easy_buttons)
 			{
 				// Prevents accessing indixes beyond the length of the solution
 				var _still_input = string_length(string(np_equation_input)) < string_length(string(np_equation_equation_solution))

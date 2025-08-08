@@ -132,17 +132,15 @@ if (in_settings_menu)
 			{
 				if (sm_easy_buttons)
 				{
-					// Toggle fullscreen off
+					// Toggle easy button mode off
 					settings_menu_value[7] = "False";
 					sm_easy_buttons = false;
-					global.easy_buttons = false;
 				}
 				else
 				{
-					// Toggle fullscreen on
+					// Toggle easy button mode on
 					settings_menu_value[7] = "True";
 					sm_easy_buttons = true;
-					global.easy_buttons = true;
 				}
 			}
 			break;
