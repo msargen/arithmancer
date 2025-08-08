@@ -24,6 +24,7 @@ if (global.key_pause)//Toggle Pause
 			//deactivate anything other than this instance
 			instance_deactivate_all(true);
 			instance_activate_object(obj_settings_menu);
+			instance_activate_object(obj_controller);
 		
 			//capture game moment
 			pause_surface = surface_create(RES_W,RES_H);
