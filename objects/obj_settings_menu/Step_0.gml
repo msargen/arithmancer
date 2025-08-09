@@ -17,6 +17,7 @@ if (in_settings_menu)
 				case SETTINGS_MENU.EMPTY_1:
 				case SETTINGS_MENU.EMPTY_2:
 				case SETTINGS_MENU.EMPTY_3:
+				case SETTINGS_MENU.EMPTY_4:
 					settings_menu_cursor_position --;
 					break;
 			}
@@ -35,6 +36,7 @@ if (in_settings_menu)
 				case SETTINGS_MENU.EMPTY_1:
 				case SETTINGS_MENU.EMPTY_2:
 				case SETTINGS_MENU.EMPTY_3:
+				case SETTINGS_MENU.EMPTY_4:
 					settings_menu_cursor_position ++;
 					break;
 			}

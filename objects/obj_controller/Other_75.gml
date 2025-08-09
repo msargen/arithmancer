@@ -24,7 +24,7 @@ else if (ds_map_find_value(async_load, "event_type") == "gamepad lost")
 	controller_selected = controller_total_number;
 	if (controller_total_number == 0)
 	{
-		obj_settings_menu.settings_menu_value[7] = "none";
+		obj_settings_menu.settings_menu_value[SETTINGS_MENU.CONTROLLER] = "none";
 	}
 	else
 	{
