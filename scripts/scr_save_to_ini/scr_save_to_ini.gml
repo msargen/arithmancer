@@ -9,6 +9,7 @@ function scr_save_settings_to_file()
 		ini_write_real("Volume", "SFX", sfx_volume);
 		ini_write_real("Display", "Fullscreen", is_fullscreen);
 		ini_write_real("Display", "Resolution", resolution);
+		ini_write_real("Difficulty", "Easy_buttons", sm_easy_buttons);
 		ini_close();
 	}
 }

@@ -125,6 +125,25 @@ if (in_settings_menu)
 				window_set_size(resolution * 16/9, resolution);
 			}
 			break;
+			
+			// Easy button toggle
+		case SETTINGS_MENU.EASY_BUTTON:
+			if (global.key_left || global.key_right)
+			{
+				if (sm_easy_buttons)
+				{
+					// Toggle easy button mode off
+					settings_menu_value[7] = "False";
+					sm_easy_buttons = false;
+				}
+				else
+				{
+					// Toggle easy button mode on
+					settings_menu_value[7] = "True";
+					sm_easy_buttons = true;
+				}
+			}
+			break;
 		
 		// controller choice
 		case SETTINGS_MENU.CONTROLLER:
