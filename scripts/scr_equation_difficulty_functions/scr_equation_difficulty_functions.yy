@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_equation_functions",
+  "%Name":"scr_equation_difficulty_functions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_equation_functions",
+  "name":"scr_equation_difficulty_functions",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

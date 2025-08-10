@@ -1,22 +1,28 @@
-/// @description  stuff
-function scr_set_addition_function(_equation_difficulty = 0)
+/// @description Generates an addition equation. The passed argument will determine the difficulty of the equation
+/// @arg {Real} _equation_difficulty Must be an enum of type EQUATION_DIFFICULTY. Options are: off, easy, medium, hard
+/// @return Array of length two. First index is the {real} solution answer, second index is the {string} equation text
+function scr_set_addition_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.OFF)
 {
-	var _contains_equation = array_contains(global.equation_difficulty, EQUATION_TYPE.ADDITION);
+	// Indicates if the addition equation type is active
+	var _contains_equation = array_contains(global.active_equation_types, EQUATION_TYPE.ADDITION);
+	
+	// Indicates if the addition equation type should be added to the list of active equations
 	var _should_add = false;
 	
 	switch (_equation_difficulty)
 	{
 		case EQUATION_DIFFICULTY.OFF:
+			// Remove the addition equation type from the list of active equations if it is currently active
 			if (_contains_equation)
 			{
-				array_delete(global.equation_difficulty, array_get_index(global.equation_difficulty, EQUATION_TYPE.ADDITION), 1);
+				array_delete(global.active_equation_types, array_get_index(global.active_equation_types, EQUATION_TYPE.ADDITION), 1);
 			}
 			break;
 
 		case EQUATION_DIFFICULTY.EASY:
 			global.addition_difficulty = function()
 			{
-				// Addition
+				// TODO: Easy addition equation
 				var _equation_x = floor(random_range(1, 50.99));
 				var _equation_y = floor(random_range(1, 50.99));
 				var _equation_answer = _equation_x + _equation_y;
@@ -31,7 +37,7 @@ function scr_set_addition_function(_equation_difficulty = 0)
 
 			global.addition_difficulty = function()
 			{
-				// Addition
+				// TODO: Medium addition equation
 				var _equation_x = floor(random_range(1, 50.99));
 				var _equation_y = floor(random_range(1, 50.99));
 				var _equation_answer = _equation_x + _equation_y;
@@ -45,7 +51,7 @@ function scr_set_addition_function(_equation_difficulty = 0)
 		case EQUATION_DIFFICULTY.HARD:
 			global.addition_difficulty = function()
 			{
-				// Addition
+				// TODO: Hard addition equation
 				var _equation_x = floor(random_range(1, 50.99));
 				var _equation_y = floor(random_range(1, 50.99));
 				var _equation_answer = _equation_x + _equation_y;
@@ -57,32 +63,39 @@ function scr_set_addition_function(_equation_difficulty = 0)
 			break;
 	}
 	
+	// Add the addition equation type to the list of active equations
 	if(!_contains_equation && _should_add)
 	{
-		array_push(global.equation_difficulty, EQUATION_TYPE.ADDITION);
+		array_push(global.active_equation_types, EQUATION_TYPE.ADDITION);
 	}
 	
 }
 
-/// @description  stuff
-function scr_set_subtraction_function(_equation_difficulty = 0)
+/// @description Generates a subtraction equation. The passed argument will determine the difficulty of the equation
+/// @arg {Real} _equation_difficulty Must be an enum of type EQUATION_DIFFICULTY. Options are: off, easy, medium, hard
+/// @return Array of length two. First index is the {real} solution answer, second index is the {string} equation text
+function scr_set_subtraction_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.OFF)
 {
-	var _contains_equation = array_contains(global.equation_difficulty, EQUATION_TYPE.SUBTRACTION);
+	// Indicates if the subtraction equation type is active
+	var _contains_equation = array_contains(global.active_equation_types, EQUATION_TYPE.SUBTRACTION);
+	
+	// Indicates if the subtraction equation type should be added to the list of active equations
 	var _should_add = false;
 	
 	switch (_equation_difficulty)
 	{
 		case EQUATION_DIFFICULTY.OFF:
+			// Remove the subtraction equation type from the list of active equations if it is currently active
 			if (_contains_equation)
 			{
-				array_delete(global.equation_difficulty, array_get_index(global.equation_difficulty, EQUATION_TYPE.SUBTRACTION), 1);
+				array_delete(global.active_equation_types, array_get_index(global.active_equation_types, EQUATION_TYPE.SUBTRACTION), 1);
 			}
 			break;
 
 		case EQUATION_DIFFICULTY.EASY:
 			global.subtraction_difficulty = function()
 			{
-				// Subtraction
+				// TODO: Easy subtraction equation
 				var _equation_text = "";
 				var _equation_answer = 0;
 	
@@ -107,7 +120,7 @@ function scr_set_subtraction_function(_equation_difficulty = 0)
 		case EQUATION_DIFFICULTY.MEDUIM:
 			global.subtraction_difficulty = function()
 			{
-				// Subtraction
+				// TODO: Medium subtraction equation
 				var _equation_text = "";
 				var _equation_answer = 0;
 	
@@ -132,7 +145,7 @@ function scr_set_subtraction_function(_equation_difficulty = 0)
 		case EQUATION_DIFFICULTY.HARD:
 			global.subtraction_difficulty = function()
 			{
-				// Subtraction
+				// TODO: Hard subtraction equation
 				var _equation_text = "";
 				var _equation_answer = 0;
 	
@@ -155,31 +168,38 @@ function scr_set_subtraction_function(_equation_difficulty = 0)
 			break;
 	}
 	
+	// Add the subtraction equation type to the list of active equations
 	if(!_contains_equation && _should_add)
 	{
-		array_push(global.equation_difficulty, EQUATION_TYPE.SUBTRACTION);
+		array_push(global.active_equation_types, EQUATION_TYPE.SUBTRACTION);
 	}
 }
 
-/// @description  stuff
-function scr_set_multiplication_function(_equation_difficulty = 0)
+/// @description Generates a multiplication equation. The passed argument will determine the difficulty of the equation
+/// @arg {Real} _equation_difficulty Must be an enum of type EQUATION_DIFFICULTY. Options are: off, easy, medium, hard
+/// @return Array of length two. First index is the {real} solution answer, second index is the {string} equation text
+function scr_set_multiplication_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.OFF)
 {
-	var _contains_equation = array_contains(global.equation_difficulty, EQUATION_TYPE.MULTIPLICATION);
-	var _should_add = false;
+	// Indicates if the multiplication equation type is active
+	var _contains_equation = array_contains(global.active_equation_types, EQUATION_TYPE.MULTIPLICATION);
+	
+	// Indicates if the multiplication equation type should be added to the list of active equations
+	var _should_add = false;;
 	
 	switch (_equation_difficulty)
 	{
 		case EQUATION_DIFFICULTY.OFF:
+			// Remove the multiplication equation type from the list of active equations if it is currently active
 			if (_contains_equation)
 			{
-				array_delete(global.equation_difficulty, array_get_index(global.equation_difficulty, EQUATION_TYPE.MULTIPLICATION), 1);
+				array_delete(global.active_equation_types, array_get_index(global.active_equation_types, EQUATION_TYPE.MULTIPLICATION), 1);
 			}
 			break;
 
 		case EQUATION_DIFFICULTY.EASY:
 			global.multiplication_difficulty = function()
 			{
-				// Multiplication
+				// TODO: Easy multiplication equation
 				var _equation_x = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_answer = _equation_x * _equation_y;
@@ -193,7 +213,7 @@ function scr_set_multiplication_function(_equation_difficulty = 0)
 		case EQUATION_DIFFICULTY.MEDUIM:
 			global.multiplication_difficulty = function()
 			{
-				// Multiplication
+				// TODO: Medium multiplication equation
 				var _equation_x = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_answer = _equation_x * _equation_y;
@@ -207,7 +227,7 @@ function scr_set_multiplication_function(_equation_difficulty = 0)
 		case EQUATION_DIFFICULTY.HARD:
 			global.multiplication_difficulty = function()
 			{
-				// Multiplication
+				// TODO: Hard multiplication equation
 				var _equation_x = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_answer = _equation_x * _equation_y;
@@ -219,31 +239,38 @@ function scr_set_multiplication_function(_equation_difficulty = 0)
 			break;
 	}
 	
+	// Add the multiplication equation type to the list of active equations
 	if(!_contains_equation && _should_add)
 	{
-		array_push(global.equation_difficulty, EQUATION_TYPE.MULTIPLICATION);
+		array_push(global.active_equation_types, EQUATION_TYPE.MULTIPLICATION);
 	}
 }
 
-/// @description  stuff
-function scr_set_division_function(_equation_difficulty = 0)
+/// @description Generates a division equation. The passed argument will determine the difficulty of the equation
+/// @arg {Real} _equation_difficulty Must be an enum of type EQUATION_DIFFICULTY. Options are: off, easy, medium, hard
+/// @return Array of length two. First index is the {real} solution answer, second index is the {string} equation text
+function scr_set_division_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.OFF)
 {
-	var _contains_equation = array_contains(global.equation_difficulty, EQUATION_TYPE.DIVISION);
+	// Indicates if the division equation type is active
+	var _contains_equation = array_contains(global.active_equation_types, EQUATION_TYPE.DIVISION);
+	
+	// Indicates if the division equation type should be added to the list of active equations
 	var _should_add = false;
 	
 	switch (_equation_difficulty)
 	{
 		case EQUATION_DIFFICULTY.OFF:
+			// Remove the division equation type from the list of active equations if it is currently active
 			if (_contains_equation)
 			{
-				array_delete(global.equation_difficulty, array_get_index(global.equation_difficulty, EQUATION_TYPE.DIVISION), 1);
+				array_delete(global.active_equation_types, array_get_index(global.active_equation_types, EQUATION_TYPE.DIVISION), 1);
 			}
 			break;
 			
 		case EQUATION_DIFFICULTY.EASY:
 			global.division_difficulty = function()
 			{
-				// Division
+				// TODO: Easy division equation
 				var _equation_answer = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_x = _equation_answer * _equation_y;
@@ -257,7 +284,7 @@ function scr_set_division_function(_equation_difficulty = 0)
 		case EQUATION_DIFFICULTY.MEDUIM:
 			global.division_difficulty = function()
 			{
-				// Division
+				// TODO: Medium division equation
 				var _equation_answer = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_x = _equation_answer * _equation_y;
@@ -271,7 +298,7 @@ function scr_set_division_function(_equation_difficulty = 0)
 		case EQUATION_DIFFICULTY.HARD:
 			global.division_difficulty = function()
 			{
-				// Division
+				// TODO: Hard division equation
 				var _equation_answer = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_x = _equation_answer * _equation_y;
@@ -283,12 +310,15 @@ function scr_set_division_function(_equation_difficulty = 0)
 			break;
 	}
 	
+	// Add the division equation type to the list of active equations
 	if(!_contains_equation && _should_add)
 	{
-		array_push(global.equation_difficulty, EQUATION_TYPE.DIVISION);
+		array_push(global.active_equation_types, EQUATION_TYPE.DIVISION);
 	}
 }
 
+/// @description Generates an addition equation. The passed argument will determine the difficulty of the equation
+/// @return Array of length two. First index is the {real} solution answer (always 2), second index is the {string} equation text (always "1+1=?"
 function scr_get_default_equation()
 {
 	var _equation_answer = 2;

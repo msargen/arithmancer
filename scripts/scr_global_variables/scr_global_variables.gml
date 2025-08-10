@@ -33,4 +33,6 @@ global.addition_difficulty = function(){};
 global.subtraction_difficulty = function(){};
 global.multiplication_difficulty = function(){};
 global.division_difficulty = function(){};
-global.equation_difficulty = array_create(0);
+
+// Keeps track of how many (and which type) of equations are not set to "OFF"
+global.active_equation_types = array_create(0);

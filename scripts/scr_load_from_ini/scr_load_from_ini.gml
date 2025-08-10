@@ -31,25 +31,25 @@ function scr_load_from_ini() {
 		sm_division_difficulty = ini_read_real("Difficulty", "Division_difficulty", 1);
 		
 		// Set difficulty options
-		scr_set_addition_function(sm_addition_difficulty);
-		scr_set_subtraction_function(sm_subtraction_difficulty);
-		scr_set_multiplication_function(sm_multiplication_difficulty);
-		scr_set_division_function(sm_division_difficulty);
+		scr_set_addition_difficulty(sm_addition_difficulty);
+		scr_set_subtraction_difficulty(sm_subtraction_difficulty);
+		scr_set_multiplication_difficulty(sm_multiplication_difficulty);
+		scr_set_division_difficulty(sm_division_difficulty);
 		
 		// convert to padded strings
-		settings_menu_value[0] = "00" + string(main_volume) + "%";
-		settings_menu_value[0] = string_delete(settings_menu_value[0], 1, (string_length(string(main_volume))-1));
-		settings_menu_value[1] = "00" + string(music_volume) + "%";
-		settings_menu_value[1] = string_delete(settings_menu_value[1], 1, (string_length(string(music_volume))-1));
-		settings_menu_value[2] = "00" + string(sfx_volume) + "%";
-		settings_menu_value[2] = string_delete(settings_menu_value[2], 1, (string_length(string(sfx_volume))-1));
-		settings_menu_value[4] = bool(is_fullscreen) ? "True" : "False";
-		settings_menu_value[5] = string(resolution) + "p";
-		settings_menu_value[7] = sm_easy_buttons ? "True" : "False";
-		settings_menu_value[8] = sm_difficulty_option[sm_addition_difficulty];
-		settings_menu_value[9] = sm_difficulty_option[sm_subtraction_difficulty];
-		settings_menu_value[10] = sm_difficulty_option[sm_multiplication_difficulty];
-		settings_menu_value[11] = sm_difficulty_option[sm_division_difficulty];
+		settings_menu_value[SETTINGS_MENU.MAIN_VOLUME] = "00" + string(main_volume) + "%";
+		settings_menu_value[SETTINGS_MENU.MAIN_VOLUME] = string_delete(settings_menu_value[SETTINGS_MENU.MAIN_VOLUME], 1, (string_length(string(main_volume))-1));
+		settings_menu_value[SETTINGS_MENU.MUSIC_VOLUME] = "00" + string(music_volume) + "%";
+		settings_menu_value[SETTINGS_MENU.MUSIC_VOLUME] = string_delete(settings_menu_value[SETTINGS_MENU.MUSIC_VOLUME], 1, (string_length(string(music_volume))-1));
+		settings_menu_value[SETTINGS_MENU.SFX_VOLUME] = "00" + string(sfx_volume) + "%";
+		settings_menu_value[SETTINGS_MENU.SFX_VOLUME] = string_delete(settings_menu_value[SETTINGS_MENU.SFX_VOLUME], 1, (string_length(string(sfx_volume))-1));
+		settings_menu_value[SETTINGS_MENU.FULLSCREEN] = bool(is_fullscreen) ? "True" : "False";
+		settings_menu_value[SETTINGS_MENU.RESOLUTION] = string(resolution) + "p";
+		settings_menu_value[SETTINGS_MENU.EASY_BUTTON] = sm_easy_buttons ? "True" : "False";
+		settings_menu_value[SETTINGS_MENU.ADDITION_DIFFICULTY] = sm_difficulty_option[sm_addition_difficulty];
+		settings_menu_value[SETTINGS_MENU.SUBTRACTION_DIFFICULTY] = sm_difficulty_option[sm_subtraction_difficulty];
+		settings_menu_value[SETTINGS_MENU.MULTIPLICATION_DIFFICULTY] = sm_difficulty_option[sm_multiplication_difficulty];
+		settings_menu_value[SETTINGS_MENU.DIVISION_DIFFICULTY] = sm_difficulty_option[sm_division_difficulty];
 	}
 	
 	ini_close();
