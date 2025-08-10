@@ -10,7 +10,9 @@ enum SETTINGS_MENU
 	EMPTY_2 = 6,
 	EASY_BUTTON = 7,
 	EMPTY_3 = 8,
-	EXIT_SETTINGS = 9
+	CONTROLLER = 9,
+	EMPTY_4 = 10,
+	EXIT_SETTINGS = 11
 }
 
 // Enum for orientation. The values are the angles of the object within the room.

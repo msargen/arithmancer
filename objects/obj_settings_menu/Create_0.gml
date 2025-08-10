@@ -29,7 +29,9 @@ settings_menu_option[5] = "Resolution: ";
 settings_menu_option[6] = "";
 settings_menu_option[7] = "Use easy buttons: ";
 settings_menu_option[8] = "";
-settings_menu_option[9] = "Exit Settings";
+settings_menu_option[9] = "Controller: ";
+settings_menu_option[10] = "";
+settings_menu_option[11] = "Exit Settings";
 
 settings_menu_cursor_position = 0;
 
@@ -43,4 +45,6 @@ settings_menu_value[5] = "720p";
 settings_menu_value[6] = "";
 settings_menu_value[7] = "False";
 settings_menu_value[8] = "";
-settings_menu_value[9] = "";
+settings_menu_value[9] = "none";
+settings_menu_value[10] = "";
+settings_menu_value[11] = "";

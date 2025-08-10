@@ -17,6 +17,7 @@ if (in_settings_menu)
 				case SETTINGS_MENU.EMPTY_1:
 				case SETTINGS_MENU.EMPTY_2:
 				case SETTINGS_MENU.EMPTY_3:
+				case SETTINGS_MENU.EMPTY_4:
 					settings_menu_cursor_position --;
 					break;
 			}
@@ -35,6 +36,7 @@ if (in_settings_menu)
 				case SETTINGS_MENU.EMPTY_1:
 				case SETTINGS_MENU.EMPTY_2:
 				case SETTINGS_MENU.EMPTY_3:
+				case SETTINGS_MENU.EMPTY_4:
 					settings_menu_cursor_position ++;
 					break;
 			}
@@ -142,6 +144,22 @@ if (in_settings_menu)
 					settings_menu_value[7] = "True";
 					sm_easy_buttons = true;
 				}
+			}
+			break;
+		
+		// controller choice
+		case SETTINGS_MENU.CONTROLLER:
+			if (global.key_left && (obj_controller.controller_selected > 1)) 
+			{
+				// switch to an earlier controller in the list
+				obj_controller.controller_selected--;
+				scr_settings_menu_controller_update(obj_controller.controller_port_list[obj_controller.controller_selected]);
+			}
+			if (global.key_right && (obj_controller.controller_selected < obj_controller.controller_total_number)) 
+			{
+				// switch to the next controller in the list
+				obj_controller.controller_selected++;
+				scr_settings_menu_controller_update(obj_controller.controller_port_list[obj_controller.controller_selected]);
 			}
 			break;
 		
