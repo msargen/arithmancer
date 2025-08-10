@@ -25,7 +25,9 @@ else if (ds_map_find_value(async_load, "event_type") == "gamepad lost")
 			// remove controller from list
 			array_delete(controller_port_list, _i, 1)
 			controller_total_number--;
-			// if controller in use was removed, switch to last controller in list
+			// if controller not in use was removed, stay on current controller
+			// if controller in use was removed, switch to next controller
+			// if last controller was removed, switch to no controller
 			if ((controller_selected > _i) || (controller_total_number == 0)) {controller_selected--;}
 		}
 	}
@@ -34,3 +36,4 @@ else if (ds_map_find_value(async_load, "event_type") == "gamepad lost")
 	controller_text_message = "controller disconnected";
 	controller_text_opacity = 1;
 }
+
