@@ -28,9 +28,6 @@ global.monotype_font = font_add_sprite(spr_monotype_font, ord("!"), false, 0);
 // Vegeta number for completed sockets
 global.over_9000 = -9001
 
-// Indicates if the easy mode for entering answers via numpad buttons should be used
-global.easy_buttons = false;
-
 // For equation difficulty
 global.addition_difficulty = function(){};
 global.subtraction_difficulty = function(){};
