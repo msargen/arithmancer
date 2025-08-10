@@ -27,3 +27,12 @@ global.monotype_font = font_add_sprite(spr_monotype_font, ord("!"), false, 0);
 
 // Vegeta number for completed sockets
 global.over_9000 = -9001
+
+// For equation difficulty
+global.addition_difficulty = function(){};
+global.subtraction_difficulty = function(){};
+global.multiplication_difficulty = function(){};
+global.division_difficulty = function(){};
+
+// Keeps track of how many (and which type) of equations are not set to "OFF"
+global.active_equation_types = array_create(0);
