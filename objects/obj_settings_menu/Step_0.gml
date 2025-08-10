@@ -155,7 +155,7 @@ if (in_settings_menu)
 				obj_controller.controller_selected--;
 				scr_settings_menu_controller_update(obj_controller.controller_port_list[obj_controller.controller_selected]);
 			}
-			if (global.key_left && (obj_controller.controller_selected < obj_controller.controller_total_number)) 
+			if (global.key_right && (obj_controller.controller_selected < obj_controller.controller_total_number)) 
 			{
 				// switch to the next controller in the list
 				obj_controller.controller_selected++;

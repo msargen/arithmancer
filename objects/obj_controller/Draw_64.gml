@@ -1,5 +1,7 @@
 /// @description Display Controller Connect/Disconnect
 
+// TODO: create a script for displaying system messages
+
 // fade out display message when controller is connected or disconnected
 if (controller_text_opacity > 0)
 {
