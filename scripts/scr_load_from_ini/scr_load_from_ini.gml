@@ -25,10 +25,10 @@ function scr_load_from_ini() {
 		
 		// Load difficulty options
 		sm_easy_buttons = ini_read_real("Difficulty", "Easy_buttons", false);
-		sm_addition_difficulty = ini_read_real("Difficulty", "Addision_difficulty", 1);
-		sm_subtraction_difficulty = ini_read_real("Difficulty", "Subtraction_difficulty", 1);
-		sm_multiplication_difficulty = ini_read_real("Difficulty", "Multiplication_difficulty", 1);
-		sm_division_difficulty = ini_read_real("Difficulty", "Division_difficulty", 1);
+		sm_addition_difficulty = ini_read_real("Difficulty", "Addision_difficulty", EQUATION_DIFFICULTY.EASY);
+		sm_subtraction_difficulty = ini_read_real("Difficulty", "Subtraction_difficulty", EQUATION_DIFFICULTY.EASY);
+		sm_multiplication_difficulty = ini_read_real("Difficulty", "Multiplication_difficulty", EQUATION_DIFFICULTY.EASY);
+		sm_division_difficulty = ini_read_real("Difficulty", "Division_difficulty", EQUATION_DIFFICULTY.EASY);
 		
 		// Set difficulty options
 		scr_set_addition_difficulty(sm_addition_difficulty);

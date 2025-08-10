@@ -13,10 +13,10 @@ adjusted_sfx_volume = 0.5;
 is_fullscreen = 0;
 resolution = 720;
 sm_easy_buttons = false;
-sm_addition_difficulty = 0;
-sm_subtraction_difficulty = 0;
-sm_multiplication_difficulty = 0;
-sm_division_difficulty = 0;
+sm_addition_difficulty = EQUATION_DIFFICULTY.EASY;
+sm_subtraction_difficulty = EQUATION_DIFFICULTY.EASY;
+sm_multiplication_difficulty = EQUATION_DIFFICULTY.EASY;
+sm_division_difficulty = EQUATION_DIFFICULTY.EASY;
 
 // UI adjustments based on display and font size
 settings_menu_font_size = font_get_size(fnt_menu);
