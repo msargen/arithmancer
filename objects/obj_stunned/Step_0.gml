@@ -41,4 +41,6 @@ if (stunned_timer == 0)
 	// Makes the player invincible for a limited time after recovering from being stunned
 	obj_player.player_invincible = true;
 	obj_player.player_invincible_timer = obj_player.player_invincible_timer_base;
+	
+	obj_player.player_button_stun_delay_timer = obj_player.player_button_stun_delay_base;
 }
