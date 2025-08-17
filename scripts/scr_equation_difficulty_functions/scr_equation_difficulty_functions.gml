@@ -26,7 +26,7 @@ function scr_set_addition_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 				var _equation_x = floor(random_range(1, 50.99));
 				var _equation_y = floor(random_range(1, 50.99));
 				var _equation_answer = _equation_x + _equation_y;
-				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=e?";
+				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=?";
 		
 				return [_equation_answer, _equation_text];
 			}
@@ -41,7 +41,7 @@ function scr_set_addition_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 				var _equation_x = floor(random_range(1, 50.99));
 				var _equation_y = floor(random_range(1, 50.99));
 				var _equation_answer = _equation_x + _equation_y;
-				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=m?";
+				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=?";
 		
 				return [_equation_answer, _equation_text];
 			}
@@ -55,7 +55,7 @@ function scr_set_addition_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 				var _equation_x = floor(random_range(1, 50.99));
 				var _equation_y = floor(random_range(1, 50.99));
 				var _equation_answer = _equation_x + _equation_y;
-				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=h?";
+				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=?";
 		
 				return [_equation_answer, _equation_text];
 			}
@@ -103,12 +103,12 @@ function scr_set_subtraction_difficulty(_equation_difficulty = EQUATION_DIFFICUL
 				var _equation_y = floor(random_range(1, 100.99));
 				if (_equation_x >= _equation_y)
 				{
-					_equation_text = string(_equation_x) + "-" + string(_equation_y) + "=e?";
+					_equation_text = string(_equation_x) + "-" + string(_equation_y) + "=?";
 					_equation_answer = _equation_x - _equation_y;
 				}
 				else
 				{
-					_equation_text = string(_equation_y) + "-" + string(_equation_x) + "=e?";
+					_equation_text = string(_equation_y) + "-" + string(_equation_x) + "=?";
 					_equation_answer = _equation_y - _equation_x;
 				}
 	
@@ -128,12 +128,12 @@ function scr_set_subtraction_difficulty(_equation_difficulty = EQUATION_DIFFICUL
 				var _equation_y = floor(random_range(1, 100.99));
 				if (_equation_x >= _equation_y)
 				{
-					_equation_text = string(_equation_x) + "-" + string(_equation_y) + "=m?";
+					_equation_text = string(_equation_x) + "-" + string(_equation_y) + "=?";
 					_equation_answer = _equation_x - _equation_y;
 				}
 				else
 				{
-					_equation_text = string(_equation_y) + "-" + string(_equation_x) + "=m?";
+					_equation_text = string(_equation_y) + "-" + string(_equation_x) + "=?";
 					_equation_answer = _equation_y - _equation_x;
 				}
 	
@@ -153,12 +153,12 @@ function scr_set_subtraction_difficulty(_equation_difficulty = EQUATION_DIFFICUL
 				var _equation_y = floor(random_range(1, 100.99));
 				if (_equation_x >= _equation_y)
 				{
-					_equation_text = string(_equation_x) + "-" + string(_equation_y) + "=h?";
+					_equation_text = string(_equation_x) + "-" + string(_equation_y) + "=?";
 					_equation_answer = _equation_x - _equation_y;
 				}
 				else
 				{
-					_equation_text = string(_equation_y) + "-" + string(_equation_x) + "=h?";
+					_equation_text = string(_equation_y) + "-" + string(_equation_x) + "=?";
 					_equation_answer = _equation_y - _equation_x;
 				}
 	
@@ -203,7 +203,7 @@ function scr_set_multiplication_difficulty(_equation_difficulty = EQUATION_DIFFI
 				var _equation_x = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_answer = _equation_x * _equation_y;
-				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=e?";
+				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=?";
 	
 				return [_equation_answer, _equation_text];
 			}
@@ -217,7 +217,7 @@ function scr_set_multiplication_difficulty(_equation_difficulty = EQUATION_DIFFI
 				var _equation_x = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_answer = _equation_x * _equation_y;
-				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=m?";
+				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=?";
 	
 				return [_equation_answer, _equation_text];
 			}
@@ -231,7 +231,7 @@ function scr_set_multiplication_difficulty(_equation_difficulty = EQUATION_DIFFI
 				var _equation_x = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_answer = _equation_x * _equation_y;
-				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=h?";
+				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=?";
 	
 				return [_equation_answer, _equation_text];
 			}
@@ -274,7 +274,7 @@ function scr_set_division_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 				var _equation_answer = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_x = _equation_answer * _equation_y;
-				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=e?";
+				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=?";
 	
 				return [_equation_answer, _equation_text];
 			}
@@ -288,7 +288,7 @@ function scr_set_division_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 				var _equation_answer = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_x = _equation_answer * _equation_y;
-				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=m?";
+				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=?";
 	
 				return [_equation_answer, _equation_text];
 			}
@@ -302,7 +302,7 @@ function scr_set_division_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 				var _equation_answer = floor(random_range(1, 12.99));
 				var _equation_y = floor(random_range(1, 12.99));
 				var _equation_x = _equation_answer * _equation_y;
-				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=h?";
+				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=?";
 	
 				return [_equation_answer, _equation_text];
 			}
@@ -322,7 +322,7 @@ function scr_set_division_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 function scr_get_default_equation()
 {
 	var _equation_answer = 2;
-	var _equation_text = string(1) + "+" + string(1) + "=d?";
+	var _equation_text = string(1) + "+" + string(1) + "=?";
 		
 	return [_equation_answer, _equation_text];
 }
