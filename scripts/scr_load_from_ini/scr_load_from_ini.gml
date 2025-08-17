@@ -24,7 +24,7 @@ function scr_load_from_ini() {
 		window_set_fullscreen(bool(is_fullscreen));
 		
 		// Load difficulty options
-		sm_easy_buttons = ini_read_real("Difficulty", "Easy_buttons", false);
+		sm_easy_buttons = ini_read_real("Difficulty", "Easy_buttons", true);
 		sm_addition_difficulty = ini_read_real("Difficulty", "Addition_difficulty", EQUATION_DIFFICULTY.EASY);
 		sm_subtraction_difficulty = ini_read_real("Difficulty", "Subtraction_difficulty", EQUATION_DIFFICULTY.EASY);
 		sm_multiplication_difficulty = ini_read_real("Difficulty", "Multiplication_difficulty", EQUATION_DIFFICULTY.EASY);
