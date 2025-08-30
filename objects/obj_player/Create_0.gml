@@ -65,6 +65,6 @@ player_invincible = false;
 // For when the player is flickering after being stunned. So that the opacity goes up and down
 player_flicker_up = false;
 
-// Prevents the player from accidentally pressing a button after returning from a stun
+// Gives the player a time cushion to get off of a button after being stunned without pressing the buttons
 player_button_stun_delay_base = 90;
 player_button_stun_delay_timer = 0;
