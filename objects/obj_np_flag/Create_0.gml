@@ -3,9 +3,6 @@
 // Proximity
 np_flag_player_nearby = false;
 
-// Defaults to 0 for a random assignment of an equation type
-np_flag_operation = 0;
-
 //Equation Variables
 np_flag_equation_solution = 0;
 np_flag_text =0;

@@ -8,7 +8,7 @@ if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y
 	if (global.key_up)
 	{
 		// Generate a new equation
-		var _equation_results = scr_generate_equation(np_flag_operation);
+		var _equation_results = scr_generate_equation();
 		np_flag_equation_solution = _equation_results[0];
 		np_flag_text = _equation_results[1];
 		np_flag_id = instance_nearest(obj_player.x, obj_player.y, obj_np_flag)
@@ -26,7 +26,7 @@ else np_flag_player_nearby = false;
 if (np_flag_eq_solved > 0 && !instance_exists(obj_np_equation))
 {
 	// Generate a new equation
-	var _equation_results = scr_generate_equation(np_flag_operation);
+	var _equation_results = scr_generate_equation();
 	np_flag_equation_solution = _equation_results[0];
 	np_flag_text = _equation_results[1];
 	with (instance_create_layer(x, y - 32, layer, obj_np_equation))

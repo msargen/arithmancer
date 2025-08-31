@@ -181,7 +181,7 @@ function scr_set_multiplication_difficulty(_equation_difficulty = EQUATION_DIFFI
 	var _contains_equation = array_contains(global.active_equation_types, EQUATION_TYPE.MULTIPLICATION);
 	
 	// Indicates if the multiplication equation type should be added to the list of active equations
-	var _should_add = false;;
+	var _should_add = false;
 	
 	switch (_equation_difficulty)
 	{
