@@ -39,21 +39,31 @@ if (np_button_can_input && np_button_pressed && instance_exists(obj_np_equation)
 {
 	if (string(np_button_key_value) == "B")
 	{
-		global.key_backspace = true;
+		obj_np_equation.np_equation_button_backspace = true;
 	}
 	else if (string(np_button_key_value) == "E")
 	{
 		// Indicate which button the player just hit
 		obj_player.player_enter_button = id;
-		global.key_select = true;
+		obj_np_equation.np_equation_button_enter = true;
 	}
 	else 
 	{
 		with (obj_np_equation)
 		{
+			if (obj_settings_menu.sm_easy_buttons)
+			{
+				// Prevents accessing indixes beyond the length of the solution
+				var _still_input = string_length(string(np_equation_input)) < string_length(string(np_equation_equation_solution))
+				// Only enter the numpad value if it matches the correct answer
+				if(_still_input && string_char_at(string(np_equation_equation_solution), string_length(string(np_equation_input)) + 1) == other.np_button_key_value)
+				{
+					np_equation_input += string_digits(other.np_button_key_value); 
+				}
+			}
 			// Prevents the diplayed text from being cut off due too there being more player input
 			// than what can be displayed
-			if (string_length(np_equation_text_current) < np_equation_shown_letters_cap)
+			else if (string_length(np_equation_text_current) < np_equation_shown_letters_cap)
 			{
 				np_equation_input += string_digits(other.np_button_key_value);
 			}
