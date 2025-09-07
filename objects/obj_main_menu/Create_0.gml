@@ -16,12 +16,22 @@ main_menu_committed = -1;
 
 main_menu_control = true;
 
-main_menu_options[5] = "Settings";
-main_menu_options[4] = "Level 3";
-main_menu_options[3] = "Level 2";
-main_menu_options[2] = "Level 1";
-main_menu_options[1] = "Continue";
-main_menu_options[0] = "Quit";
+// Temporary values for an easier way to add rooms for testing
+main_menu_lvl_list_selector = 0;
+main_menu_lvl_list_names[2] = "lvl_three";
+main_menu_lvl_list_names[1] = "lvl_two";
+main_menu_lvl_list_names[0] = "lvl_one";
+main_menu_tmp_lvl_list[2] = rm_lvl_three;
+main_menu_tmp_lvl_list[1] = rm_lvl_two;
+main_menu_tmp_lvl_list[0] = rm_lvl_one;
+main_menu_options[MAIN_MENU.LEVEL_LIST] = main_menu_lvl_list_names[main_menu_lvl_list_selector];
 
-main_menu_items = array_length(main_menu_options);
-main_menu_cursor = 2;
+main_menu_options[MAIN_MENU.SETTINGS] = "Settings";
+main_menu_options[MAIN_MENU.LEVEL_THREE] = "Level 3";
+main_menu_options[MAIN_MENU.LEVEL_TWO] = "Level 2";
+main_menu_options[MAIN_MENU.LEVEL_ONE] = "Level 1";
+main_menu_options[MAIN_MENU.CONTINUE] = "Continue";
+main_menu_options[MAIN_MENU.QUIT] = "Quit";
+
+main_menu_items = array_length(main_menu_options) - 1;
+main_menu_cursor = MAIN_MENU.LEVEL_ONE;

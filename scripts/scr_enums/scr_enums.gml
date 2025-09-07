@@ -46,3 +46,15 @@ enum EQUATION_DIFFICULTY
 	MEDUIM = 2,
 	HARD = 3
 }
+
+// Enum for navigating the main menu
+enum MAIN_MENU
+{
+	QUIT = 0,
+	CONTINUE = 1,
+	LEVEL_ONE = 2,
+	LEVEL_TWO = 3,
+	LEVEL_THREE = 4,
+	SETTINGS = 5,
+	LEVEL_LIST = 6
+}
