@@ -7,8 +7,8 @@ function scr_main_volume_adjustment(_volume_up)
 		// adjust volume level
 		main_volume += _volume_up;
 		// update display text
-		settings_menu_value[0] = "00" + string(main_volume) + "%";
-		settings_menu_value[0] = string_delete(settings_menu_value[0], 1, (string_length(string(main_volume))-1));
+		settings_menu_value[SETTINGS_MENU.MAIN_VOLUME] = "00" + string(main_volume) + "%";
+		settings_menu_value[SETTINGS_MENU.MAIN_VOLUME] = string_delete(settings_menu_value[SETTINGS_MENU.MAIN_VOLUME], 1, (string_length(string(main_volume))-1));
 		// update adjusted volume levels
 		scr_update_adjusted_volume_levels();
 	}
@@ -25,8 +25,8 @@ function scr_music_volume_adjustment(_volume_up)
 		// adjust volume level
 		music_volume += _volume_up;
 		// update display text
-		settings_menu_value[1] = "00" + string(music_volume) + "%";
-		settings_menu_value[1] = string_delete(settings_menu_value[1], 1, (string_length(string(music_volume))-1));
+		settings_menu_value[SETTINGS_MENU.MUSIC_VOLUME] = "00" + string(music_volume) + "%";
+		settings_menu_value[SETTINGS_MENU.MUSIC_VOLUME] = string_delete(settings_menu_value[SETTINGS_MENU.MUSIC_VOLUME], 1, (string_length(string(music_volume))-1));
 		// update adjusted volume levels
 		scr_update_adjusted_volume_levels();
 	}
@@ -42,8 +42,8 @@ function scr_sfx_volume_adjustment(_volume_up)
 		// adjust volume level
 		sfx_volume += _volume_up;
 		// update display text
-		settings_menu_value[2] = "00" + string(sfx_volume) + "%";
-		settings_menu_value[2] = string_delete(settings_menu_value[2], 1, (string_length(string(sfx_volume))-1));
+		settings_menu_value[SETTINGS_MENU.SFX_VOLUME] = "00" + string(sfx_volume) + "%";
+		settings_menu_value[SETTINGS_MENU.SFX_VOLUME] = string_delete(settings_menu_value[SETTINGS_MENU.SFX_VOLUME], 1, (string_length(string(sfx_volume))-1));
 		// update adjusted volume levels
 		scr_update_adjusted_volume_levels();
 	}

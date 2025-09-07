@@ -70,6 +70,7 @@
     {"name":"scr_controllers","order":16,"path":"scripts/scr_controllers/scr_controllers.yy",},
     {"name":"scr_draw_text","order":2,"path":"scripts/scr_draw_text/scr_draw_text.yy",},
     {"name":"scr_enums","order":6,"path":"scripts/scr_enums/scr_enums.yy",},
+    {"name":"scr_equation_difficulty_functions","order":16,"path":"scripts/scr_equation_difficulty_functions/scr_equation_difficulty_functions.yy",},
     {"name":"scr_generate_equation","order":14,"path":"scripts/scr_generate_equation/scr_generate_equation.yy",},
     {"name":"scr_global_variables","order":5,"path":"scripts/scr_global_variables/scr_global_variables.yy",},
     {"name":"scr_keybinds","order":13,"path":"scripts/scr_keybinds/scr_keybinds.yy",},

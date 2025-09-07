@@ -95,7 +95,7 @@ if (in_settings_menu)
 				if (bool(is_fullscreen))
 				{
 					// Toggle fullscreen off
-					settings_menu_value[4] = "False";
+					settings_menu_value[SETTINGS_MENU.FULLSCREEN] = "False";
 					is_fullscreen = 0;
 					window_set_fullscreen(false);
 					window_set_size(resolution * 16/9, resolution);
@@ -103,7 +103,7 @@ if (in_settings_menu)
 				else
 				{
 					// Toggle fullscreen on
-					settings_menu_value[4] = "True";
+					settings_menu_value[SETTINGS_MENU.FULLSCREEN] = "True";
 					is_fullscreen = 1;
 					window_set_fullscreen(true);
 				}
@@ -116,35 +116,95 @@ if (in_settings_menu)
 			{
 				// adjust resolution down
 				resolution = resolution - RES_H;
-				settings_menu_value[5] = string(resolution) + "p"
+				settings_menu_value[SETTINGS_MENU.RESOLUTION] = string(resolution) + "p"
 				window_set_size(resolution * 16/9, resolution);
 			}
 			if (global.key_right && (resolution < 2159)) //4k, the highest resolution for people who want windowed 4k for some reason?
 			{
 				// adjust resolution up
 				resolution = resolution + RES_H;
-				settings_menu_value[5] = string(resolution) + "p"
+				settings_menu_value[SETTINGS_MENU.RESOLUTION] = string(resolution) + "p"
 				window_set_size(resolution * 16/9, resolution);
 			}
 			break;
 			
-			// Easy button toggle
+		// Easy button toggle
 		case SETTINGS_MENU.EASY_BUTTON:
 			if (global.key_left || global.key_right)
 			{
 				if (sm_easy_buttons)
 				{
 					// Toggle easy button mode off
-					settings_menu_value[7] = "False";
+					settings_menu_value[SETTINGS_MENU.EASY_BUTTON] = "False";
 					sm_easy_buttons = false;
 				}
 				else
 				{
 					// Toggle easy button mode on
-					settings_menu_value[7] = "True";
+					settings_menu_value[SETTINGS_MENU.EASY_BUTTON] = "True";
 					sm_easy_buttons = true;
 				}
 			}
+			break;
+			
+		// Adjust difficulty for addition problems
+		case SETTINGS_MENU.ADDITION_DIFFICULTY:
+			if (global.key_left && sm_addition_difficulty > EQUATION_DIFFICULTY.OFF)
+			{
+				sm_addition_difficulty--;
+			}
+			if (global.key_right && sm_addition_difficulty < EQUATION_DIFFICULTY.HARD)
+			{
+				sm_addition_difficulty++;
+			}
+			
+			settings_menu_value[SETTINGS_MENU.ADDITION_DIFFICULTY] = sm_difficulty_option[sm_addition_difficulty];
+			scr_set_addition_difficulty(sm_addition_difficulty);
+			break;
+			
+		// Adjust difficulty for subtraction problems
+		case SETTINGS_MENU.SUBTRACTION_DIFFICULTY:
+			if (global.key_left && sm_subtraction_difficulty > EQUATION_DIFFICULTY.OFF)
+			{
+				sm_subtraction_difficulty--;
+			}
+			if (global.key_right && sm_subtraction_difficulty < EQUATION_DIFFICULTY.HARD)
+			{
+				sm_subtraction_difficulty++;
+			}
+			
+			settings_menu_value[SETTINGS_MENU.SUBTRACTION_DIFFICULTY] = sm_difficulty_option[sm_subtraction_difficulty];
+			scr_set_subtraction_difficulty(sm_subtraction_difficulty);
+			break;
+			
+		// Adjust difficulty for multiplication problems
+		case SETTINGS_MENU.MULTIPLICATION_DIFFICULTY:
+			if (global.key_left && sm_multiplication_difficulty > EQUATION_DIFFICULTY.OFF)
+			{
+				sm_multiplication_difficulty--;
+			}
+			if (global.key_right && sm_multiplication_difficulty < EQUATION_DIFFICULTY.HARD)
+			{
+				sm_multiplication_difficulty++;
+			}
+			
+			settings_menu_value[SETTINGS_MENU.MULTIPLICATION_DIFFICULTY] = sm_difficulty_option[sm_multiplication_difficulty];
+			scr_set_multiplication_difficulty(sm_multiplication_difficulty);
+			break;
+			
+		// Adjust difficulty for division problems
+		case SETTINGS_MENU.DIVISION_DIFFICULTY:
+			if (global.key_left && sm_division_difficulty > EQUATION_DIFFICULTY.OFF)
+			{
+				sm_division_difficulty--;
+			}
+			if (global.key_right && sm_division_difficulty < EQUATION_DIFFICULTY.HARD)
+			{
+				sm_division_difficulty++;
+			}
+			
+			settings_menu_value[SETTINGS_MENU.DIVISION_DIFFICULTY] = sm_difficulty_option[sm_division_difficulty];
+			scr_set_division_difficulty(sm_division_difficulty);
 			break;
 		
 		// controller choice

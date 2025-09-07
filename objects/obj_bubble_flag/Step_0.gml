@@ -8,7 +8,7 @@ if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y
 	if (global.key_up)
 	{
 		// Generate equation
-		var _equation_results = scr_generate_equation(bubble_flag_operation);
+		var _equation_results = scr_generate_equation();
 
 		//Equation Variables
 		bubble_flag_equation_solution = _equation_results[0];

@@ -3,10 +3,6 @@
 // Proximity
 bubble_flag_player_nearby = false;
 
-// Defaults to 0 for random assignment of an equation type
-bubble_flag_operation = 0;
-
-
 //Equation Variables
 bubble_flag_equation_solution = 0;
 bubble_flag_text = 0;
