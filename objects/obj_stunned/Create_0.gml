@@ -10,7 +10,8 @@ scr_screen_shake(8, 90)
 audio_play_sound(snd_death, 10, false);
 with (obj_camera) camera_tracking = other.id;
 
-stunned_timer = 180;
+// 1.5 seconds
+stunned_timer = 90;
 
 stunned_player_spawn_x = 0;
 stunned_player_spawn_y = 0;

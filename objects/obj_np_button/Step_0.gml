@@ -2,6 +2,11 @@
 
 np_button_can_input = !np_button_pressed;
 
+if (instance_exists(obj_player) && obj_player.player_button_stun_delay_timer > 0)
+{
+	return;
+}
+
 switch (image_angle)
 {
 	case ORIENTATION.DOWN:

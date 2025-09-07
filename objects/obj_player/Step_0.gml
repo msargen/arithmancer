@@ -253,6 +253,7 @@ if (player_invincible)
 {
 	
 	player_invincible_timer--;
+	player_button_stun_delay_timer--;
 	
 	// Flicker the player until they are no longer invincible
 	// The mod 3 sets the flicker to a good pace
