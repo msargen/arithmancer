@@ -9,3 +9,9 @@ bubble_timer = 0;
 
 //Set Maximum time before answer bubbles can be interacted with
 bubble_timer_max = 60;
+
+//Set flag ID which created bubble object
+bubble_creation_flag_id = 0;
+
+//Set bubble instance ID
+bubble_id = id;

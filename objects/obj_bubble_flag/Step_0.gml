@@ -13,12 +13,11 @@ if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y
 		//Equation Variables
 		bubble_flag_equation_solution = _equation_results[0];
 		bubble_flag_text = _equation_results[1];
-		bubble_flag_id = instance_nearest(obj_player.x, obj_player.y, obj_np_flag)
 		bubble_flag_equation_display = true;
 	
 		
 		// Call Script to generate Bubble Answers
-		scr_text_box_bubbles(bubble_flag_equation_solution, x, y);
+		bubble_object_ids = scr_text_box_bubbles(bubble_flag_equation_solution, x, y, bubble_flag_id);
 		
 	}
 }

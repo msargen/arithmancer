@@ -13,3 +13,7 @@ bubble_flag_equation_display = false;
 
 // The offset for the indicator and the equation box for the flag
 bubble_flag_equation_offset = 22;
+
+// Array of bubble object IDs
+
+bubble_object_ids = array_create(0);

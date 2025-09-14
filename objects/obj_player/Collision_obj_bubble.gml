@@ -1,18 +1,22 @@
 /// @description Select Answer and stop player when colliding with answer bubble
 
-var _closest_flag = instance_nearest(x, y, obj_bubble_flag);
+var _creation_flag = other.bubble_creation_flag_id;
+
 //Does not allow bubble to trigger immediatly
 if(other.bubble_timer < other.bubble_timer_max)
 {
 	return;
 }
-if(other.bubble_val == _closest_flag.bubble_flag_equation_solution)
+if(other.bubble_val == _creation_flag.bubble_flag_equation_solution)
 {
 	//For correct bubble stop upward motion, remove equation flag and increment flags collected
 	player_vertical_speed = 0;
-	instance_destroy(other);
-	instance_destroy(_closest_flag);
-	instance_destroy(instance_nearest(x, y, obj_bubble));
+	
+	for(var _i = 0; _i < array_length(_creation_flag.bubble_object_ids); _i++)
+	{
+		instance_destroy(_creation_flag.bubble_object_ids[_i]);
+	}
+	instance_destroy(_creation_flag);
 	global.equations_solved++ ;
 }
 else
