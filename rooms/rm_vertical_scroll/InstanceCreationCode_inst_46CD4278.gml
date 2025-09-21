@@ -1,0 +1,1 @@
+auto_scroll_vertical_speed = -0.1;

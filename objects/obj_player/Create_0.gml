@@ -70,3 +70,6 @@ player_flicker_up = false;
 // Gives the player a time cushion to get off of a button after being stunned without pressing the buttons
 player_button_stun_delay_base = 90;
 player_button_stun_delay_timer = 0;
+
+// Indicates if the player is within the camera viewport
+player_on_screen = true;

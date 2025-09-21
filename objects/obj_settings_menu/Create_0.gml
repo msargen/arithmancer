@@ -42,6 +42,7 @@ settings_menu_option[SETTINGS_MENU.EMPTY_4] = "";
 settings_menu_option[SETTINGS_MENU.EXIT_SETTINGS] = "Exit Settings";
 
 settings_menu_cursor_position = 0;
+settings_menu_total_items = array_length(settings_menu_option) - 1;
 
 // strings for menu option values
 settings_menu_value[SETTINGS_MENU.MAIN_VOLUME] = "70%";

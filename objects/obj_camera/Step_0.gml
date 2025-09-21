@@ -26,7 +26,6 @@ x += random_range(-camera_shake_remain, camera_shake_remain);
 y += random_range(-camera_shake_remain, camera_shake_remain);
 camera_shake_remain = max(0, camera_shake_remain - ((1/camera_shake_length) * camera_shake_magnitude));
 
-
 //Update camera view
 camera_set_view_pos(camera_view, x - camera_view_width_half, y - camera_view_height_half);
 
