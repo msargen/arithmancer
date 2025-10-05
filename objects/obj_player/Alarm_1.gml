@@ -9,7 +9,15 @@ var _bottom = _top + camera_get_view_height(view_camera[0]);
 // Check if the player is still outside the view
 if(point_in_rectangle(x, y, _left, _top, _right, _bottom))
 {
-	player_on_screen = true;
+	player_should_check_position = true;
+	return;
+}
+
+// If the player is too high, that is probably ok (for now) and shouldn't result in a failure state
+if(y < _top)
+{
+	player_should_check_position = true;
+	show_debug_message("Player is above the screen");
 	return;
 }
 

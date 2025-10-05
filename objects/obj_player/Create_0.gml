@@ -71,5 +71,5 @@ player_flicker_up = false;
 player_button_stun_delay_base = 90;
 player_button_stun_delay_timer = 0;
 
-// Indicates if the player is within the camera viewport
-player_on_screen = true;
+// Indicates if the game should check where the player is
+player_should_check_position = true;
