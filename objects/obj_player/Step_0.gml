@@ -1,124 +1,131 @@
 #region //Get player input
 
-// TODO: the player can still jump WAAAAAAAAAAAAAY after they have "fallen" might want to reduce that
-
-if (player_has_control)
+if (!player_has_control)
 {
-	player_key_left = global.key_hold_left;
-	player_key_right = global.key_hold_right;
-	player_key_jump = global.key_jump;
-}
-else
-{
-	player_key_right = 0;
-	player_key_left = 0;
-	player_key_jump = 0;
+	global.key_hold_left = 0;
+	global.key_hold_right = 0;
+	global.key_jump = 0;
 }
 
 #endregion
 
 #region //Calculate Horizontal Movement
-player_wall_jump_delay = max(player_wall_jump_delay - 1, 0);
+// lock player input for a few frames after a wall jump
+if (player_wall_jump_delay > 0) {player_wall_jump_delay--;}
 if (player_wall_jump_delay == 0)
 {
-	var _dir = player_key_right - player_key_left;
+	// accelerate player in direction of pressed key(s)
+	var _dir = global.key_hold_right - global.key_hold_left;
 	player_horizontal_speed += _dir * player_horizontal_speed_acc;
+	// apply friction if no directional input
 	if (_dir == 0)
 	{
 		var _horizontal_speed_fric_final = player_horizontal_speed_fric_ground;
 		if (!player_on_ground) _horizontal_speed_fric_final = player_horizontal_speed_fric_air;
 		player_horizontal_speed = scr_approach(player_horizontal_speed, 0, _horizontal_speed_fric_final);
 	}
-	player_horizontal_speed = clamp(player_horizontal_speed, -player_horizontal_speed_walk, player_horizontal_speed_walk);
+	// clamp speed to +/- max speed
+	player_horizontal_speed = clamp(player_horizontal_speed, -player_horizontal_speed_max, player_horizontal_speed_max);
 }
+
 //Wall Jump
-if (player_on_wall != 0) && (!player_on_ground) && (player_key_jump)
+if (player_on_wall != 0) && (!player_on_ground) && (global.key_jump)
 {
+	// lock player input for a few frames after a wall jump
 	player_wall_jump_delay = player_wall_jump_delay_max;
-	
+	// launch player upward and away from the wall
 	player_horizontal_speed = -player_on_wall * player_horizontal_speed_wall_jump;
 	player_vertical_speed = player_vertical_speed_wall_jump;
-	
-	player_horizontal_speed_frac = 0;
-	player_vertical_speed_frac = 0;
+	player_on_wall = 0;
 }
 
 #endregion
 
 #region //Calculate Vertical Movement
-var _grv_final = player_gravity;
-var _vertical_speed_max_final = player_vertical_speed_max;
+// if player is sliding down a wall, use wall gravity and speed
 if ((player_on_wall != 0) && (player_vertical_speed > 0))
 {
-	_grv_final = player_gravity_wall;
-	_vertical_speed_max_final = player_vertical_speed_max_wall
+	player_gravity_final = player_gravity_wall;
+	player_vertical_speed_max_final = player_vertical_speed_max_wall;
 }
-player_vertical_speed += _grv_final;
-player_vertical_speed = clamp(player_vertical_speed, -_vertical_speed_max_final, _vertical_speed_max_final);
+// otherwise use normal gravity and speed
+else
+{
+	player_gravity_final = player_gravity;
+	player_vertical_speed_max_final = player_vertical_speed_max;
+}
+// apply gravity and clamp speed to appropriate value
+player_vertical_speed += player_gravity_final;
+player_vertical_speed = clamp(player_vertical_speed, -player_vertical_speed_max_final, player_vertical_speed_max_final);
 
 //Ground Jumping
+// give the player a few frames of forgiveness to jump when walking off a ledge
+if (player_on_ground) {player_jump_buffer = player_jump_buffer_max;}
 if (player_jump_buffer > 0)
 {
 	player_jump_buffer--;
-	if(player_key_jump)
+	if(global.key_jump)
 	{
+		// set buffer to 0 to prevent double jumping
 		player_jump_buffer = 0;
 		player_vertical_speed = player_vertical_speed_jump;
-		player_vertical_speed_frac = 0;
 	}
 }
-player_vertical_speed = clamp(player_vertical_speed, -player_vertical_speed_max, player_vertical_speed_max);
-
-#endregion
-
-#region //Dump fractions and get final integer speeds
-player_horizontal_speed += player_horizontal_speed_frac;
-player_vertical_speed += player_vertical_speed_frac;
-player_horizontal_speed_frac = frac(player_horizontal_speed);
-player_vertical_speed_frac = frac(player_vertical_speed);
-player_horizontal_speed -= player_horizontal_speed_frac;
-player_vertical_speed -= player_vertical_speed_frac
 
 #endregion
 
 #region // Horizontal + Vertical Collision
-var _horizontal_collision = place_meeting(x + player_horizontal_speed, y, obj_wall)
-var _vertical_collision = place_meeting(x, y + player_vertical_speed, obj_wall)
-var _diagonal_collision = place_meeting(x + player_horizontal_speed, y + player_vertical_speed, obj_wall)
+var _horizontal_collision = place_meeting(player_horizontal_position + player_horizontal_speed, player_vertical_position, obj_wall)
+var _vertical_collision = place_meeting(player_horizontal_position, player_vertical_position + player_vertical_speed, obj_wall)
+var _diagonal_collision = place_meeting(player_horizontal_position + player_horizontal_speed, player_vertical_position + player_vertical_speed, obj_wall)
 if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 {
 	// move 1/10 of the distance at a time until collision
-	// iteration of 10 chosen to move player by less than 1 pixel per loop with buffer against things that might cause the player to move faster than max speed of 6
+	// collision happens when there is more than a 0.5 pixel overlap
+	// since the player is usually moving at 5 speed or less, 10 iterations keeps the movement near or less than 0.5 per loop
+	// 10 will also buffer against things that might cause the player to move faster than max speed of 6
 	for (var _i = 0; _i < 10; _i++)
 	{
-		if (!place_meeting(x + player_horizontal_speed/10.0, y, obj_wall)) {x += player_horizontal_speed/10.0;}
-		if (!place_meeting(x, y + player_vertical_speed/10.0, obj_wall)) {y += player_vertical_speed/10.0;}
-	}
-	// set horizontal and/or vertical speed to 0 if collision was reached
-	if (place_meeting(x + player_horizontal_speed/10.0, y, obj_wall))
-	{
-		player_horizontal_speed = 0;
-		player_horizontal_speed_frac = 0;
-	}
-	if (place_meeting(x, y + player_vertical_speed/10.0, obj_wall))
-	{
-		player_vertical_speed = 0;
-		player_vertical_speed_frac = 0;
+		// horizontal collision
+		if (place_meeting(player_horizontal_position + player_horizontal_speed / 10.0, player_vertical_position, obj_wall))
+		{
+			// at horizontal collision, stop horizontal speed and back player away from collision
+			player_horizontal_position -= player_horizontal_speed / 10.0;
+			player_horizontal_speed = 0;
+		}
+		else
+		{
+			player_horizontal_position += player_horizontal_speed / 10.0;
+		}
+		//vertical collision
+		if (place_meeting(player_horizontal_position, player_vertical_position + player_vertical_speed / 10.0, obj_wall))
+		{
+			// at vertical collision, stop vertical speed and back player away from collision
+			player_vertical_position -= player_vertical_speed / 10.0;
+			player_vertical_speed = 0;
+		}
+		else
+		{
+			player_vertical_position += player_vertical_speed / 10.0;
+		}
 	}
 }
 else
 {
 	// move normally
-	x += player_horizontal_speed;
-	y += player_vertical_speed;
+	player_horizontal_position += player_horizontal_speed;
+	player_vertical_position += player_vertical_speed;
 }
+
+// round actual player position to the even pixel
+x = round(player_horizontal_position);
+y = round(player_vertical_position);
 
 #endregion
 
 #region //Calculate Current Status
 player_on_ground = place_meeting(x, y + 1, obj_wall);
 player_on_wall = place_meeting(x + 1, y, obj_wall) - place_meeting(x - 1, y, obj_wall);
-if (player_on_ground) player_jump_buffer = 6;
 
 // Update the player spawn location (only if they are on the ground and not on a flying object)
 if (player_on_ground && !place_meeting(x, y + 1, obj_flying_object_base))
@@ -130,7 +137,7 @@ if (player_on_ground && !place_meeting(x, y + 1, obj_flying_object_base))
 #endregion
 
 #region //Animations
-if (!place_meeting(x, y + 1, obj_wall))
+if (!player_on_ground)
 {
 	if (player_on_wall != 0)
 	{
