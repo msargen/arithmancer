@@ -80,33 +80,32 @@ var _vertical_collision = place_meeting(player_horizontal_position, player_verti
 var _diagonal_collision = place_meeting(player_horizontal_position + player_horizontal_speed, player_vertical_position + player_vertical_speed, obj_wall)
 if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 {
-	// move 1/10 of the distance at a time until collision
-	// collision happens when there is more than a 0.5 pixel overlap
-	// since the player is usually moving at 5 speed or less, 10 iterations keeps the movement near or less than 0.5 per loop
-	// 10 will also buffer against things that might cause the player to move faster than max speed of 6
-	for (var _i = 0; _i < 10; _i++)
+	// iterate through distance until collision, which happens when there is more than half a pixel overlap
+	// after collision, back off one iteration to ensure no rounding errors
+	var _iterations = global.collision_lerp
+	for (var _i = 0; _i < _iterations; _i++)
 	{
 		// horizontal collision
-		if (place_meeting(player_horizontal_position + player_horizontal_speed / 10.0, player_vertical_position, obj_wall))
+		if (place_meeting(player_horizontal_position + player_horizontal_speed / _iterations, player_vertical_position, obj_wall))
 		{
 			// at horizontal collision, stop horizontal speed and back player away from collision
-			player_horizontal_position -= player_horizontal_speed / 10.0;
+			player_horizontal_position -= player_horizontal_speed / _iterations;
 			player_horizontal_speed = 0;
 		}
 		else
 		{
-			player_horizontal_position += player_horizontal_speed / 10.0;
+			player_horizontal_position += player_horizontal_speed / _iterations;
 		}
-		//vertical collision
-		if (place_meeting(player_horizontal_position, player_vertical_position + player_vertical_speed / 10.0, obj_wall))
+		// vertical collision
+		if (place_meeting(player_horizontal_position, player_vertical_position + player_vertical_speed / _iterations, obj_wall))
 		{
 			// at vertical collision, stop vertical speed and back player away from collision
-			player_vertical_position -= player_vertical_speed / 10.0;
+			player_vertical_position -= player_vertical_speed / _iterations;
 			player_vertical_speed = 0;
 		}
 		else
 		{
-			player_vertical_position += player_vertical_speed / 10.0;
+			player_vertical_position += player_vertical_speed / _iterations;
 		}
 	}
 }
