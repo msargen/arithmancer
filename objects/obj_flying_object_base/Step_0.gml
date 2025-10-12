@@ -103,7 +103,7 @@ if (fob_player_contact)
 		{
 			if(!place_meeting(x + other.fob_horizontal_speed, y, obj_wall))
 			{
-				x += other.fob_horizontal_speed;
+				player_horizontal_position += other.fob_horizontal_speed;
 			}
 		}
 	}
@@ -119,7 +119,7 @@ if (fob_player_contact)
 			}
 			else
 			{
-				x += other.fob_horizontal_speed;
+				player_horizontal_position += other.fob_horizontal_speed;
 				player_pinched = false;
 			}
 		}
@@ -142,7 +142,7 @@ if (fob_player_contact)
 	{
 		// If the player is on the left/right side of the platform, or on top and the platform is moving downward,
 		// the player should be moved normally in relation with the platform
-		obj_player.y += fob_vertical_speed;
+		obj_player.player_vertical_position += fob_vertical_speed;
 	}
 	else if ((_top && sign(fob_vertical_speed < 0)) || (_bottom && sign(fob_vertical_speed > 0)))
 	{
@@ -157,7 +157,7 @@ if (fob_player_contact)
 			}
 			else
 			{
-				y += other.fob_vertical_speed;
+				player_vertical_position += other.fob_vertical_speed;
 				player_pinched = false;
 			}
 		}
