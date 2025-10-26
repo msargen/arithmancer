@@ -17,7 +17,6 @@ if(point_in_rectangle(x, y, _left, _top, _right, _bottom))
 if(y < _top)
 {
 	player_should_check_position = true;
-	show_debug_message("Player is above the screen");
 	return;
 }
 

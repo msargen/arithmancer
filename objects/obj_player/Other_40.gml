@@ -1,4 +1,4 @@
-/// @description TDB
+/// @description Checks if the player is not withing the viewport
 
 if (instance_exists(obj_auto_scroll) && player_should_check_position)
 {
