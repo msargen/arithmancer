@@ -15,7 +15,7 @@ if (pause_is_paused)  //draw frozen image to screen while paused
 
 if (global.key_pause)//Toggle Pause
 {
-	if (room != rm_title_screen && room != rm_menu && room != rm_ending)
+	if (scr_room_is_level(room))
 	{
 		if (!pause_is_paused) //pause now
 		{

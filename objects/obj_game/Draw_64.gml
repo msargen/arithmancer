@@ -1,5 +1,6 @@
 /// @description Live Timer and Equations Completed Counter
-if (room != rm_menu && room != rm_title_screen && !obj_settings_menu.in_settings_menu)
+// only display if the current room is a level, and if the settings menu is inactive
+if (scr_room_is_level(room) && !obj_settings_menu.in_settings_menu)
 {
 	{
 		scr_draw_set_text(c_black, fnt_menu, fa_right, fa_top);
