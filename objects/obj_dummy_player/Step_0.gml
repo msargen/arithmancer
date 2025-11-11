@@ -81,10 +81,3 @@ if (dp_on_node && (dp_direction == CARDINAL.NEUTRAL) && global.key_select)
 {
 	scr_slide_transition(TRANS_MODE.GOTO, dp_closest_node.mn_room);
 }
-
-
-
-// node 68, 68
-// 108, 68
-// 108, 76
-// node 140, 76
