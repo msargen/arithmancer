@@ -58,3 +58,13 @@ enum MAIN_MENU
 	SETTINGS = 5,
 	LEVEL_LIST = 6
 }
+
+// Enum for cardinal directions
+enum CARDINAL
+{
+	NEUTRAL = 0,
+	NORTH = 1,
+	EAST = 2,
+	SOUTH = 3,
+	WEST = 4
+}
