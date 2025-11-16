@@ -25,6 +25,10 @@ if (dp_direction == CARDINAL.NEUTRAL) // waiting at node
 	{
 		dp_direction = CARDINAL.WEST;
 	}
+	else if (global.key_select) // select level at current position
+	{
+		scr_slide_transition(TRANS_MODE.GOTO, dp_closest_node.mn_room);
+	}
 	
 	// check node for permission to leave
 	dp_direction = dp_closest_node.mn_routing[dp_direction];
@@ -74,10 +78,4 @@ else // moving between nodes
 			dp_direction = dp_closest_node.mn_routing[dp_direction];
 		}
 	}
-}
-
-// select level at current position
-if (dp_on_node && (dp_direction == CARDINAL.NEUTRAL) && global.key_select)
-{
-	scr_slide_transition(TRANS_MODE.GOTO, dp_closest_node.mn_room);
 }
