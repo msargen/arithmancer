@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_wire",
+  "%Name":"obj_exposed_wire",
   "eventList":[],
   "managed":true,
-  "name":"obj_wire",
+  "name":"obj_exposed_wire",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
