@@ -37,5 +37,5 @@ global.division_difficulty = function(){};
 // Keeps track of how many (and which type) of equations are not set to "OFF"
 global.active_equation_types = array_create(0);
 
-// Number of iterations for collision detection, should always be equal to or higher than the maximum player speed
-global.collision_lerp = 6.0
+// Number of iterations for collision detection, should always be higher than the maximum player speed
+global.collision_lerp = 7.0

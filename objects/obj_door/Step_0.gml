@@ -1,42 +1,6 @@
-/// @description Destroy Door
+/// @description Destroy door when enough equations have been solved
 
-// TODO: this is horrific. Needs to be updated
-//Level 1
-if (global.equations_solved == 3)
+if (global.equations_solved == door_equations_to_solve)
 {
-	instance_destroy(inst_13ECB37F);
+	instance_destroy();
 }
-
-if (global.equations_solved == 6)
-{
-	instance_destroy(inst_2F06D50F);
-}
-
-
-//Level 2
-if (global.equations_solved == 1)
-{
-	instance_destroy(inst_206CE49A);
-}
-
-if (global.equations_solved == 3)
-{
-	instance_destroy(inst_17C2CB84);
-}
-
-if (global.equations_solved == 7)
-{
-	instance_destroy(inst_18ED2B30);
-}
-
-//Level 3
-if (global.equations_solved == 1)
-{
-	instance_destroy(inst_5D96A977);
-}
-
-if (global.equations_solved == 4)
-{
-	instance_destroy(inst_6FE29F91);
-}
-

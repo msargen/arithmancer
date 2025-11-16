@@ -8,7 +8,13 @@ image_speed = 0;
 image_index = 0;
 scr_screen_shake(8, 90)
 audio_play_sound(snd_death, 10, false);
-with (obj_camera) camera_tracking = other.id;
+with (obj_camera) 
+{
+	if (!instance_exists(camera_tracking))
+	{
+		camera_tracking = other.id;
+	}
+}
 
 // 1.5 seconds
 stunned_timer = 90;
