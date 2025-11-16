@@ -2,9 +2,9 @@
   "$GMProject":"v1",
   "%Name":"arithmancer",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"audiogroup_music","name":"audiogroup_music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"audiogroup_sfx","name":"audiogroup_sfx","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_music","exportDir":"","name":"audiogroup_music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_sfx","exportDir":"","name":"audiogroup_sfx","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -39,7 +39,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.14.0.207",
   },
   "name":"arithmancer",
   "resources":[
@@ -58,6 +58,7 @@
     {"id":{"name":"obj_ending","path":"objects/obj_ending/obj_ending.yy",},},
     {"id":{"name":"obj_enemy_base","path":"objects/obj_enemy_base/obj_enemy_base.yy",},},
     {"id":{"name":"obj_equation_text","path":"objects/obj_equation_text/obj_equation_text.yy",},},
+    {"id":{"name":"obj_exposed_wire","path":"objects/obj_exposed_wire/obj_exposed_wire.yy",},},
     {"id":{"name":"obj_flag","path":"objects/obj_flag/obj_flag.yy",},},
     {"id":{"name":"obj_flying_enemy_base","path":"objects/obj_flying_enemy_base/obj_flying_enemy_base.yy",},},
     {"id":{"name":"obj_flying_object_base","path":"objects/obj_flying_object_base/obj_flying_object_base.yy",},},
@@ -136,6 +137,7 @@
     {"id":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},},
     {"id":{"name":"spr_dust","path":"sprites/spr_dust/spr_dust.yy",},},
     {"id":{"name":"spr_even_marker","path":"sprites/spr_even_marker/spr_even_marker.yy",},},
+    {"id":{"name":"spr_exposed_wire","path":"sprites/spr_exposed_wire/spr_exposed_wire.yy",},},
     {"id":{"name":"spr_flag","path":"sprites/spr_flag/spr_flag.yy",},},
     {"id":{"name":"spr_gem_socket","path":"sprites/spr_gem_socket/spr_gem_socket.yy",},},
     {"id":{"name":"spr_gem","path":"sprites/spr_gem/spr_gem.yy",},},

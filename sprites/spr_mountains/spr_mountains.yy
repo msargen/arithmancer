@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_mountains",
   "bboxMode":0,
   "bbox_bottom":239,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"24cef22e-b53b-4052-b88c-61feb3293f1f","name":"24cef22e-b53b-4052-b88c-61feb3293f1f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"24cef22e-b53b-4052-b88c-61feb3293f1f","name":"24cef22e-b53b-4052-b88c-61feb3293f1f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
