@@ -75,6 +75,9 @@ if (np_button_can_input && np_button_pressed && instance_exists(obj_np_equation)
 		}
 	}
 	np_button_can_input = false;
-
 }
-
+else if (instance_exists(obj_np_equation) && instance_exists(obj_player) && obj_player.player_enter_button == id && !np_button_pressed)
+{
+	// When the player is off the previously pressed enter button
+	obj_np_equation.np_equation_button_enter = false;
+}

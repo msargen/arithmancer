@@ -91,8 +91,10 @@ if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 		// horizontal collision
 		if (place_meeting(player_horizontal_position + player_horizontal_speed / _iterations, player_vertical_position, obj_wall))
 		{
-			// at horizontal collision, stop horizontal speed and back player away from collision
+			// Needed to prevent the player getting stuck in corners
 			player_horizontal_position -= player_horizontal_speed / _iterations;
+			// at horizontal collision, stop horizontal speed and back player away from collision (rouding to the closest whole pixel)
+			player_horizontal_position = (sign(player_horizontal_speed) == 1) ? floor(player_horizontal_position) : ceil(player_horizontal_position);
 			player_horizontal_speed = 0;
 		}
 		else
@@ -118,6 +120,9 @@ else
 	player_horizontal_position += player_horizontal_speed;
 	player_vertical_position += player_vertical_speed;
 }
+
+// Prevents the case of visuals getting affected by half pixel positions from air friction and changing direction
+player_horizontal_position = round(player_horizontal_position);
 
 // Set object position to calculated position
 x = player_horizontal_position;
