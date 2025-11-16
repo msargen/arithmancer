@@ -1,0 +1,1 @@
+door_equations_to_solve = 6;

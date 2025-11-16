@@ -55,8 +55,11 @@ else
 	player_vertical_speed_max_final = player_vertical_speed_max;
 }
 // apply gravity and clamp speed to appropriate value
-player_vertical_speed += player_gravity_final;
-player_vertical_speed = clamp(player_vertical_speed, -player_vertical_speed_max_final, player_vertical_speed_max_final);
+if (!player_on_ground)
+{
+	player_vertical_speed += player_gravity_final;
+	player_vertical_speed = clamp(player_vertical_speed, -player_vertical_speed_max_final, player_vertical_speed_max_final);
+}
 
 //Ground Jumping
 // give the player a few frames of forgiveness to jump when walking off a ledge
@@ -80,7 +83,7 @@ var _vertical_collision = place_meeting(player_horizontal_position, player_verti
 var _diagonal_collision = place_meeting(player_horizontal_position + player_horizontal_speed, player_vertical_position + player_vertical_speed, obj_wall)
 if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 {
-	// iterate through distance until collision, which happens when there is more than half a pixel overlap
+	// iterate through distance until collision, which happens when there is roughly around half a pixel overlap
 	// after collision, back off one iteration to ensure no rounding errors
 	var _iterations = global.collision_lerp
 	for (var _i = 0; _i < _iterations; _i++)
@@ -88,8 +91,10 @@ if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 		// horizontal collision
 		if (place_meeting(player_horizontal_position + player_horizontal_speed / _iterations, player_vertical_position, obj_wall))
 		{
-			// at horizontal collision, stop horizontal speed and back player away from collision
+			// Needed to prevent the player getting stuck in corners
 			player_horizontal_position -= player_horizontal_speed / _iterations;
+			// at horizontal collision, stop horizontal speed and back player away from collision (rouding to the closest whole pixel)
+			player_horizontal_position = (sign(player_horizontal_speed) == 1) ? floor(player_horizontal_position) : ceil(player_horizontal_position);
 			player_horizontal_speed = 0;
 		}
 		else
@@ -99,8 +104,8 @@ if (_horizontal_collision || _vertical_collision || _diagonal_collision)
 		// vertical collision
 		if (place_meeting(player_horizontal_position, player_vertical_position + player_vertical_speed / _iterations, obj_wall))
 		{
-			// at vertical collision, stop vertical speed and back player away from collision
-			player_vertical_position -= player_vertical_speed / _iterations;
+			// at vertical collision, stop vertical speed and back player away from collision (rouding to the closest whole pixel)
+			player_vertical_position = (sign(player_vertical_speed) == 1) ? floor(player_vertical_position) : ceil(player_vertical_position);
 			player_vertical_speed = 0;
 		}
 		else
@@ -116,9 +121,12 @@ else
 	player_vertical_position += player_vertical_speed;
 }
 
-// round actual player position to the even pixel
-x = round(player_horizontal_position);
-y = round(player_vertical_position);
+// Prevents the case of visuals getting affected by half pixel positions from air friction and changing direction
+player_horizontal_position = round(player_horizontal_position);
+
+// Set object position to calculated position
+x = player_horizontal_position;
+y = player_vertical_position;
 
 #endregion
 

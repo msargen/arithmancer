@@ -8,38 +8,44 @@ if (in_settings_menu)
 	// move up
 	if (global.key_up)
 	{
-		if (settings_menu_cursor_position > 0)
+		settings_menu_cursor_position --;
+		// skip past empty spots
+		switch (settings_menu_cursor_position)
 		{
-			settings_menu_cursor_position --;
-			// skip past empty spots
-			switch (settings_menu_cursor_position)
-			{
-				case SETTINGS_MENU.EMPTY_1:
-				case SETTINGS_MENU.EMPTY_2:
-				case SETTINGS_MENU.EMPTY_3:
-				case SETTINGS_MENU.EMPTY_4:
-					settings_menu_cursor_position --;
-					break;
-			}
+			case SETTINGS_MENU.EMPTY_1:
+			case SETTINGS_MENU.EMPTY_2:
+			case SETTINGS_MENU.EMPTY_3:
+			case SETTINGS_MENU.EMPTY_4:
+				settings_menu_cursor_position --;
+				break;
+		}
+		
+		// Loop to other end of settings options
+		if (settings_menu_cursor_position < 0)
+		{
+			settings_menu_cursor_position = settings_menu_total_items;
 		}
 	}
 	
 	// move down
 	if (global.key_down)
 	{
-		if (settings_menu_cursor_position < (array_length(settings_menu_option) - 1))
+		settings_menu_cursor_position++;
+		// skip past empty spots
+		switch (settings_menu_cursor_position)
 		{
-			settings_menu_cursor_position ++;
-			// skip past empty spots
-			switch (settings_menu_cursor_position)
-			{
-				case SETTINGS_MENU.EMPTY_1:
-				case SETTINGS_MENU.EMPTY_2:
-				case SETTINGS_MENU.EMPTY_3:
-				case SETTINGS_MENU.EMPTY_4:
-					settings_menu_cursor_position ++;
-					break;
-			}
+			case SETTINGS_MENU.EMPTY_1:
+			case SETTINGS_MENU.EMPTY_2:
+			case SETTINGS_MENU.EMPTY_3:
+			case SETTINGS_MENU.EMPTY_4:
+				settings_menu_cursor_position++;
+				break;
+		}
+		
+		// Loop to other end of settings options
+		if (settings_menu_cursor_position > settings_menu_total_items)
+		{
+			settings_menu_cursor_position = 0;
 		}
 	}
 	
