@@ -17,10 +17,12 @@ main_menu_committed = -1;
 main_menu_control = true;
 
 // Temporary values for an easier way to add rooms for testing
-main_menu_lvl_list_selector = 0;
+main_menu_lvl_list_selector = 3;
+main_menu_lvl_list_names[3] = "vertical_scroll";
 main_menu_lvl_list_names[2] = "lvl_three";
 main_menu_lvl_list_names[1] = "lvl_two";
 main_menu_lvl_list_names[0] = "lvl_one";
+main_menu_tmp_lvl_list[3] = rm_vertical_scroll;
 main_menu_tmp_lvl_list[2] = rm_lvl_three;
 main_menu_tmp_lvl_list[1] = rm_lvl_two;
 main_menu_tmp_lvl_list[0] = rm_lvl_one;

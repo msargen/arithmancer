@@ -48,6 +48,7 @@
     {"id":{"name":"fnt_sign","path":"fonts/fnt_sign/fnt_sign.yy",},},
     {"id":{"name":"o_gmtl_demo_draw","path":"objects/o_gmtl_demo_draw/o_gmtl_demo_draw.yy",},},
     {"id":{"name":"o_gmtl_demo_timer","path":"objects/o_gmtl_demo_timer/o_gmtl_demo_timer.yy",},},
+    {"id":{"name":"obj_auto_scroll","path":"objects/obj_auto_scroll/obj_auto_scroll.yy",},},
     {"id":{"name":"obj_bubble_flag","path":"objects/obj_bubble_flag/obj_bubble_flag.yy",},},
     {"id":{"name":"obj_bubble","path":"objects/obj_bubble/obj_bubble.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
@@ -85,6 +86,7 @@
     {"id":{"name":"rm_lvl_two","path":"rooms/rm_lvl_two/rm_lvl_two.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_title_screen","path":"rooms/rm_title_screen/rm_title_screen.yy",},},
+    {"id":{"name":"rm_vertical_scroll","path":"rooms/rm_vertical_scroll/rm_vertical_scroll.yy",},},
     {"id":{"name":"FeatherIgnore","path":"scripts/FeatherIgnore/FeatherIgnore.yy",},},
     {"id":{"name":"GMTL_core_test_events","path":"scripts/GMTL_core_test_events/GMTL_core_test_events.yy",},},
     {"id":{"name":"GMTL_core_test_setup","path":"scripts/GMTL_core_test_setup/GMTL_core_test_setup.yy",},},
@@ -168,6 +170,7 @@
     {"roomId":{"name":"rm_lvl_three","path":"rooms/rm_lvl_three/rm_lvl_three.yy",},},
     {"roomId":{"name":"rm_ending","path":"rooms/rm_ending/rm_ending.yy",},},
     {"roomId":{"name":"r_gmtl_demo","path":"rooms/r_gmtl_demo/r_gmtl_demo.yy",},},
+    {"roomId":{"name":"rm_vertical_scroll","path":"rooms/rm_vertical_scroll/rm_vertical_scroll.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
