@@ -1,7 +1,7 @@
 /// @description Control Settings Menu
 
 // get closest node
-dp_closest_node = instance_nearest(x, y + (sprite_height(spr_player) / 2), obj_map_node);
+dp_closest_node = instance_nearest(x, y + (sprite_get_height(spr_player) / 2), obj_map_node);
 
 if (dp_direction == CARDINAL.NEUTRAL) // waiting at node
 {
@@ -64,7 +64,7 @@ else // moving between nodes
 	}
 	
 	// interactions when the dummy player arrives at a node
-	dp_on_node = ((x == dp_closest_node.x) && ((y + (sprite_height(spr_player) / 2)) == dp_closest_node.y));
+	dp_on_node = ((x == dp_closest_node.x) && ((y + (sprite_get_height(spr_player) / 2)) == dp_closest_node.y));
 	if (dp_on_node)
 	{
 		// stop if arriving at a stop node
@@ -79,3 +79,4 @@ else // moving between nodes
 		}
 	}
 }
+
