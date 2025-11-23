@@ -32,14 +32,16 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
+  "ForcedPrefabProjectReferences":[
+    {"link":"io.gamemaker.gm_filter_zoom_blur-1.0.0","name":"io.gamemaker.gm_filter_zoom_blur-1.0.0","path":"io.gamemaker.gm_filter_zoom_blur-1.0.0.yyp",},
+  ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":".gitkeep","CopyToMask":-1,"filePath":"datafiles","name":".gitkeep","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.0.207",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"arithmancer",
   "resources":[
@@ -74,6 +76,7 @@
     {"id":{"name":"obj_pause","path":"objects/obj_pause/obj_pause.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_ram","path":"objects/obj_ram/obj_ram.yy",},},
+    {"id":{"name":"obj_reset_hazard","path":"objects/obj_reset_hazard/obj_reset_hazard.yy",},},
     {"id":{"name":"obj_savestate_data","path":"objects/obj_savestate_data/obj_savestate_data.yy",},},
     {"id":{"name":"obj_settings_menu","path":"objects/obj_settings_menu/obj_settings_menu.yy",},},
     {"id":{"name":"obj_stunned","path":"objects/obj_stunned/obj_stunned.yy",},},
@@ -152,6 +155,7 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_ram_running","path":"sprites/spr_ram_running/spr_ram_running.yy",},},
     {"id":{"name":"spr_ram","path":"sprites/spr_ram/spr_ram.yy",},},
+    {"id":{"name":"spr_reset_hazard","path":"sprites/spr_reset_hazard/spr_reset_hazard.yy",},},
     {"id":{"name":"spr_text_box_middle","path":"sprites/spr_text_box_middle/spr_text_box_middle.yy",},},
     {"id":{"name":"spr_text_box_side","path":"sprites/spr_text_box_side/spr_text_box_side.yy",},},
     {"id":{"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},},
