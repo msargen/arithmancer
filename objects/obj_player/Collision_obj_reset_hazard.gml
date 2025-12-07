@@ -1,14 +1,14 @@
 /// @description Handles collison with hazards that rest position with no knockback
 
 //Checks if player spawn position is within the position of the hazard
-while(place_meeting(player_x_spawn, player_y_spawn, obj_reset_hazard))
+while (place_meeting(player_x_spawn, player_y_spawn, obj_reset_hazard))
 {
 	//Shift the player to left if speed is positive or right if speed is negative	
-	if(player_horizontal_speed > 0)
+	if (player_horizontal_speed > 0)
 	{
 		player_x_spawn--;
 	}
-	else if(player_horizontal_speed < 0)
+	else if (player_horizontal_speed < 0)
 	{
 		player_x_spawn++;
 	}
