@@ -9,8 +9,8 @@
   "name":"obj_gem_socket",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Gem and Socket",
+    "path":"folders/Objects/Gem and Socket.yy",
   },
   "parentObjectId":null,
   "persistent":false,
