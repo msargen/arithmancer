@@ -58,5 +58,7 @@ if (!walking_enemy_is_grounded)
 }
 else
 {
+	// Regular animation when not falling
 	image_speed = 1;
+
 }
