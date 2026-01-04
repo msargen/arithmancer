@@ -8,8 +8,8 @@
   "name":"obj_map_node",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"World Select",
+    "path":"folders/Objects/World Select.yy",
   },
   "parentObjectId":null,
   "persistent":false,

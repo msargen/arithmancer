@@ -9,8 +9,8 @@
   "name":"obj_dummy_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"World Select",
+    "path":"folders/Objects/World Select.yy",
   },
   "parentObjectId":null,
   "persistent":false,
