@@ -1,8 +1,11 @@
 // Check if walking enemy is on solid ground
 walking_enemy_is_grounded = place_meeting(x, y + 1, obj_wall)
 
+// Check if the walking enemy is about to walk off a ledge, 0.75 chosen as an estimated ratio between hitbox and sprite width
+walking_enemy_approaching_ledge = !place_meeting(x + sign(walking_enemy_horizontal_speed) * sprite_get_width(sprite_index) * 0.75, y + 1, obj_wall)
+
 // Don't walk off edges (toggled by walking_enemy_stay_on_platform)
-if (walking_enemy_is_grounded && walking_enemy_stay_on_platform && (!place_meeting(x + sign(walking_enemy_horizontal_speed) * sprite_get_width(sprite_index) * 0.75, y + 1, obj_wall)))
+if (walking_enemy_is_grounded && walking_enemy_stay_on_platform && walking_enemy_approaching_ledge)
 {
 	// Reverse speed and image facing
 	walking_enemy_horizontal_speed = -walking_enemy_horizontal_speed;
@@ -62,3 +65,4 @@ else
 	image_speed = 1;
 
 }
+
