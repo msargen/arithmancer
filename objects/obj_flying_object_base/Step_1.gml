@@ -10,22 +10,6 @@ var _right = place_meeting(x + 1, y, obj_player);
 var _top = place_meeting(x, y - 1, obj_player);
 var _bottom = place_meeting(x, y + 1, obj_player);
 
-// If the platform should change directions for linear momement
-if (fob_change_direction_x) 
-{
-	fob_horizontal_speed_base *= -1;
-	fob_horizontal_speed = fob_horizontal_speed_base;
-	fob_change_direction_x = false;
-}
-
-// If the platform should change directions for linear momement
-if (fob_change_direction_y) 
-{
-	fob_vertical_speed_base *= -1;
-	fob_vertical_speed = fob_vertical_speed_base;
-	fob_change_direction_y = false;
-}
-
 
 // Sinusoidal movement (in either/both x/y directions)
 if (fob_cos_move_x || fob_sin_move_y)
