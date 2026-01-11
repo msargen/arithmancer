@@ -123,6 +123,7 @@ else
 
 // Prevents the case of visuals getting affected by half pixel positions from air friction and changing direction
 player_horizontal_position = round(player_horizontal_position);
+player_vertical_position = round(player_vertical_position);
 
 // Set object position to calculated position
 x = player_horizontal_position;
