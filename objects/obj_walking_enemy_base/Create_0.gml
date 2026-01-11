@@ -9,3 +9,4 @@ walking_enemy_max_fall_speed = 6;
 
 walking_enemy_is_grounded = false;
 walking_enemy_stay_on_platform = true;
+walking_enemy_approaching_ledge = false;
