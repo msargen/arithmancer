@@ -1,9 +1,6 @@
 // Note: This code only works under the assumption that no moving platforms ever overlap in their movement
 // or event touch each other
 
-// TODO: when landing on a circular sinusoid there is lots of landing
-// TODO: can moonwalk sideways when pinched...
-
 // Is the player touching the platform in any way
 fob_player_contact = place_meeting(x, y - 1, obj_player) || place_meeting(x, y + 1, obj_player) || place_meeting(x + 1, y, obj_player) || place_meeting(x - 1, y, obj_player);
 
@@ -139,7 +136,7 @@ if (fob_player_contact)
 			{
 				// The player would be pinched and thus should not be moved
 				player_pinched = true;
-				player_pinched_by = id;
+				player_pinched_by = other.id;
 			}
 			else
 			{
@@ -179,7 +176,7 @@ if (fob_player_contact)
 			{
 				// The player iw pinched above or below the platform
 				player_pinched = true;
-				player_pinched_by = id;
+				player_pinched_by = other.id;
 			}
 			else
 			{
@@ -206,6 +203,7 @@ if (!fob_player_contact)
 {
 	if (instance_exists(obj_player) && obj_player.player_pinched_by == id) 
 	{
-		obj_player.player_pinched = false;	
+		obj_player.player_pinched = false;
+		obj_player.player_pinched_by = noone;
 	}
 }

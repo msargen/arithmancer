@@ -39,6 +39,12 @@ if (player_on_wall != 0) && (!player_on_ground) && (global.key_jump)
 	player_on_wall = 0;
 }
 
+// Prevents the player from moonwalking when pinched in a moving platform
+if (player_pinched)
+{
+	player_horizontal_speed = 0;	
+}
+
 #endregion
 
 #region //Calculate Vertical Movement
