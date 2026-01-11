@@ -39,6 +39,12 @@ if (player_on_wall != 0) && (!player_on_ground) && (global.key_jump)
 	player_on_wall = 0;
 }
 
+// Prevents the player from moonwalking when pinched in a moving platform
+if (player_pinched)
+{
+	player_horizontal_speed = 0;	
+}
+
 #endregion
 
 #region //Calculate Vertical Movement
@@ -123,6 +129,7 @@ else
 
 // Prevents the case of visuals getting affected by half pixel positions from air friction and changing direction
 player_horizontal_position = round(player_horizontal_position);
+player_vertical_position = round(player_vertical_position);
 
 // Set object position to calculated position
 x = player_horizontal_position;
