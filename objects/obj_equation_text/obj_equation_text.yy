@@ -10,8 +10,8 @@
   "name":"obj_equation_text",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Mapbuilding",
+    "path":"folders/Objects/Mapbuilding.yy",
   },
   "parentObjectId":null,
   "persistent":false,

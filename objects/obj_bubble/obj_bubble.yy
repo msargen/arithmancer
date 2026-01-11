@@ -10,8 +10,8 @@
   "name":"obj_bubble",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Bubble Flag",
+    "path":"folders/Objects/Bubble Flag.yy",
   },
   "parentObjectId":null,
   "persistent":false,

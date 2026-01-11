@@ -10,8 +10,8 @@
   "name":"obj_flag",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Mapbuilding",
+    "path":"folders/Objects/Mapbuilding.yy",
   },
   "parentObjectId":null,
   "persistent":false,
