@@ -41,7 +41,7 @@ function scr_generate_equation(){
 			_equation = global.division_difficulty();
 			break;
 			
-		case 0:
+		case EQUATION_TYPE.SIMPLE:
 			// Always returns 1 + 1 = 2
 			_equation = scr_get_default_equation();
 			break;

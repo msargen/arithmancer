@@ -21,9 +21,9 @@ function scr_set_addition_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 		case EQUATION_DIFFICULTY.EASY:
 			global.addition_difficulty = function()
 			{
-				// TODO: Easy addition equation
-				var _equation_x = floor(random_range(1, 50.99));
-				var _equation_y = floor(random_range(1, 50.99));
+				// Easy addition equations use numbers: 1-20
+				var _equation_x = floor(random_range(1, 20.99));
+				var _equation_y = floor(random_range(1, 20.99));
 				var _equation_answer = _equation_x + _equation_y;
 				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=?";
 		
@@ -36,9 +36,9 @@ function scr_set_addition_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 
 			global.addition_difficulty = function()
 			{
-				// TODO: Medium addition equation
-				var _equation_x = floor(random_range(1, 50.99));
-				var _equation_y = floor(random_range(1, 50.99));
+				// Medium addition equations use numbers: 1-100
+				var _equation_x = floor(random_range(1, 100.99));
+				var _equation_y = floor(random_range(1, 100.99));
 				var _equation_answer = _equation_x + _equation_y;
 				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=?";
 		
@@ -50,9 +50,9 @@ function scr_set_addition_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 		case EQUATION_DIFFICULTY.HARD:
 			global.addition_difficulty = function()
 			{
-				// TODO: Hard addition equation
-				var _equation_x = floor(random_range(1, 50.99));
-				var _equation_y = floor(random_range(1, 50.99));
+				// Hard addition equations use numbers: 1-1000
+				var _equation_x = floor(random_range(1, 1000.99));
+				var _equation_y = floor(random_range(1, 1000.99));
 				var _equation_answer = _equation_x + _equation_y;
 				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=?";
 		
@@ -93,12 +93,12 @@ function scr_set_subtraction_difficulty(_equation_difficulty = EQUATION_DIFFICUL
 		case EQUATION_DIFFICULTY.EASY:
 			global.subtraction_difficulty = function()
 			{
-				// TODO: Easy subtraction equation
+				// Easy subtraction equations use numbers: 1-20
 				var _equation_text = "";
 				var _equation_answer = 0;
 	
-				var _equation_x = floor(random_range(1, 100.99));
-				var _equation_y = floor(random_range(1, 100.99));
+				var _equation_x = floor(random_range(1, 20.99));
+				var _equation_y = floor(random_range(1, 20.99));
 				if (_equation_x >= _equation_y)
 				{
 					_equation_text = string(_equation_x) + "-" + string(_equation_y) + "=?";
@@ -118,7 +118,7 @@ function scr_set_subtraction_difficulty(_equation_difficulty = EQUATION_DIFFICUL
 		case EQUATION_DIFFICULTY.MEDUIM:
 			global.subtraction_difficulty = function()
 			{
-				// TODO: Medium subtraction equation
+				// Medium subtraction equations use numbers: 1-100
 				var _equation_text = "";
 				var _equation_answer = 0;
 	
@@ -143,12 +143,12 @@ function scr_set_subtraction_difficulty(_equation_difficulty = EQUATION_DIFFICUL
 		case EQUATION_DIFFICULTY.HARD:
 			global.subtraction_difficulty = function()
 			{
-				// TODO: Hard subtraction equation
+				// Hard subtraction equations use numbers: 1-1000
 				var _equation_text = "";
 				var _equation_answer = 0;
 	
-				var _equation_x = floor(random_range(1, 100.99));
-				var _equation_y = floor(random_range(1, 100.99));
+				var _equation_x = floor(random_range(1, 1000.99));
+				var _equation_y = floor(random_range(1, 1000.99));
 				if (_equation_x >= _equation_y)
 				{
 					_equation_text = string(_equation_x) + "-" + string(_equation_y) + "=?";
@@ -196,9 +196,9 @@ function scr_set_multiplication_difficulty(_equation_difficulty = EQUATION_DIFFI
 		case EQUATION_DIFFICULTY.EASY:
 			global.multiplication_difficulty = function()
 			{
-				// TODO: Easy multiplication equation
-				var _equation_x = floor(random_range(1, 12.99));
-				var _equation_y = floor(random_range(1, 12.99));
+				// Easy multiplication equations use numbers: 1-5
+				var _equation_x = floor(random_range(1, 5.99));
+				var _equation_y = floor(random_range(1, 5.99));
 				var _equation_answer = _equation_x * _equation_y;
 				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=?";
 	
@@ -210,9 +210,9 @@ function scr_set_multiplication_difficulty(_equation_difficulty = EQUATION_DIFFI
 		case EQUATION_DIFFICULTY.MEDUIM:
 			global.multiplication_difficulty = function()
 			{
-				// TODO: Medium multiplication equation
-				var _equation_x = floor(random_range(1, 12.99));
-				var _equation_y = floor(random_range(1, 12.99));
+				// Medium multiplication equations use numbers: 1-10
+				var _equation_x = floor(random_range(1, 10.99));
+				var _equation_y = floor(random_range(1, 10.99));
 				var _equation_answer = _equation_x * _equation_y;
 				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=?";
 	
@@ -224,9 +224,9 @@ function scr_set_multiplication_difficulty(_equation_difficulty = EQUATION_DIFFI
 		case EQUATION_DIFFICULTY.HARD:
 			global.multiplication_difficulty = function()
 			{
-				// TODO: Hard multiplication equation
-				var _equation_x = floor(random_range(1, 12.99));
-				var _equation_y = floor(random_range(1, 12.99));
+				// Hard multiplication equations use numbers: 1-15
+				var _equation_x = floor(random_range(1, 15.99));
+				var _equation_y = floor(random_range(1, 15.99));
 				var _equation_answer = _equation_x * _equation_y;
 				var _equation_text = string(_equation_x) + "X" + string(_equation_y) + "=?";
 	
@@ -266,9 +266,9 @@ function scr_set_division_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 		case EQUATION_DIFFICULTY.EASY:
 			global.division_difficulty = function()
 			{
-				// TODO: Easy division equation
-				var _equation_answer = floor(random_range(1, 12.99));
-				var _equation_y = floor(random_range(1, 12.99));
+				// Easy division equations use numbers: 1-5
+				var _equation_answer = floor(random_range(1, 5.99));
+				var _equation_y = floor(random_range(1, 5.99));
 				var _equation_x = _equation_answer * _equation_y;
 				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=?";
 	
@@ -280,9 +280,9 @@ function scr_set_division_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 		case EQUATION_DIFFICULTY.MEDUIM:
 			global.division_difficulty = function()
 			{
-				// TODO: Medium division equation
-				var _equation_answer = floor(random_range(1, 12.99));
-				var _equation_y = floor(random_range(1, 12.99));
+				// Medium division equations use numbers: 1-10
+				var _equation_answer = floor(random_range(1, 10.99));
+				var _equation_y = floor(random_range(1, 10.99));
 				var _equation_x = _equation_answer * _equation_y;
 				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=?";
 	
@@ -294,9 +294,9 @@ function scr_set_division_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 		case EQUATION_DIFFICULTY.HARD:
 			global.division_difficulty = function()
 			{
-				// TODO: Hard division equation
-				var _equation_answer = floor(random_range(1, 12.99));
-				var _equation_y = floor(random_range(1, 12.99));
+				// Hard division equations use numbers: 1-15
+				var _equation_answer = floor(random_range(1, 15.99));
+				var _equation_y = floor(random_range(1, 15.99));
 				var _equation_x = _equation_answer * _equation_y;
 				var _equation_text = string(_equation_x) + "/" + string(_equation_y) + "=?";
 	
