@@ -108,6 +108,7 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"r_gmtl_demo","path":"rooms/r_gmtl_demo/r_gmtl_demo.yy",},},
     {"id":{"name":"rm_ending","path":"rooms/rm_ending/rm_ending.yy",},},
+    {"id":{"name":"rm_lvl_moving_platform","path":"rooms/rm_lvl_moving_platform/rm_lvl_moving_platform.yy",},},
     {"id":{"name":"rm_lvl_one","path":"rooms/rm_lvl_one/rm_lvl_one.yy",},},
     {"id":{"name":"rm_lvl_three","path":"rooms/rm_lvl_three/rm_lvl_three.yy",},},
     {"id":{"name":"rm_lvl_two","path":"rooms/rm_lvl_two/rm_lvl_two.yy",},},
@@ -212,6 +213,7 @@
     {"roomId":{"name":"r_gmtl_demo","path":"rooms/r_gmtl_demo/r_gmtl_demo.yy",},},
     {"roomId":{"name":"rm_world_select","path":"rooms/rm_world_select/rm_world_select.yy",},},
     {"roomId":{"name":"rm_lvl_vertical_scroll","path":"rooms/rm_lvl_vertical_scroll/rm_lvl_vertical_scroll.yy",},},
+    {"roomId":{"name":"rm_lvl_moving_platform","path":"rooms/rm_lvl_moving_platform/rm_lvl_moving_platform.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

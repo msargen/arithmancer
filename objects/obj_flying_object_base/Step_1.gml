@@ -1,3 +1,6 @@
+// Note: This code only works under the assumption that no moving platforms ever overlap in their movement
+// or event touch each other
+
 // Is the player touching the platform in any way
 fob_player_contact = place_meeting(x, y - 1, obj_player) || place_meeting(x, y + 1, obj_player) || place_meeting(x + 1, y, obj_player) || place_meeting(x - 1, y, obj_player);
 
@@ -6,6 +9,7 @@ var _left = place_meeting(x - 1, y, obj_player);
 var _right = place_meeting(x + 1, y, obj_player);
 var _top = place_meeting(x, y - 1, obj_player);
 var _bottom = place_meeting(x, y + 1, obj_player);
+
 
 // Sinusoidal movement (in either/both x/y directions)
 if (fob_cos_move_x || fob_sin_move_y)
@@ -116,11 +120,13 @@ if (fob_player_contact)
 			{
 				// The player would be pinched and thus should not be moved
 				player_pinched = true;
+				player_pinched_by = other.id;
 			}
 			else
 			{
 				player_horizontal_position += other.fob_horizontal_speed;
 				player_pinched = false;
+				player_pinched_by = noone;
 			}
 		}
 	}
@@ -154,11 +160,13 @@ if (fob_player_contact)
 			{
 				// The player iw pinched above or below the platform
 				player_pinched = true;
+				player_pinched_by = other.id;
 			}
 			else
 			{
 				player_vertical_position += other.fob_vertical_speed;
 				player_pinched = false;
+				player_pinched_by = noone;
 			}
 		}
 	}
@@ -174,8 +182,12 @@ if (fob_change_direction_y)
 	fob_change_direction_y = false;
 }
 
-// Ensure that the player doesn't get left in the pinched state when no longer in contact with the platform
+ //Ensure that the player doesn't get left in the pinched state when no longer in contact with the platform
 if (!fob_player_contact)
 {
-	if (instance_exists(obj_player)) obj_player.player_pinched = false;	
+	if (instance_exists(obj_player) && obj_player.player_pinched_by == id) 
+	{
+		obj_player.player_pinched = false;
+		obj_player.player_pinched_by = noone;
+	}
 }

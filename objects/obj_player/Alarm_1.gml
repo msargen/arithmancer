@@ -1,4 +1,6 @@
-/// @description Restart the room
+/// @description For scrolling levels
+
+// Check if the player has fallen behind the scroll
 
 // Get the viewbox for the camera
 var _left = camera_get_view_x(view_camera[0]);

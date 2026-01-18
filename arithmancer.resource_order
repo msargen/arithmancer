@@ -74,6 +74,7 @@
     {"name":"obj_wall","order":7,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"r_gmtl_demo","order":4,"path":"rooms/r_gmtl_demo/r_gmtl_demo.yy",},
     {"name":"rm_ending","order":4,"path":"rooms/rm_ending/rm_ending.yy",},
+    {"name":"rm_lvl_moving_platform","order":7,"path":"rooms/rm_lvl_moving_platform/rm_lvl_moving_platform.yy",},
     {"name":"rm_lvl_one","order":2,"path":"rooms/rm_lvl_one/rm_lvl_one.yy",},
     {"name":"rm_lvl_three","order":3,"path":"rooms/rm_lvl_three/rm_lvl_three.yy",},
     {"name":"rm_lvl_two","order":1,"path":"rooms/rm_lvl_two/rm_lvl_two.yy",},
