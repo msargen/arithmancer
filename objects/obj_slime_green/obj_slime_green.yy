@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_jumping_enemy_base",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_slime_green",
+  "eventList":[],
   "managed":true,
-  "name":"obj_jumping_enemy_base",
+  "name":"obj_slime_green",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
     "path":"folders/Objects/Enemies.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_base",
-    "path":"objects/obj_enemy_base/obj_enemy_base.yy",
+    "name":"obj_jumping_enemy_base",
+    "path":"objects/obj_jumping_enemy_base/obj_jumping_enemy_base.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_slime_green",
+    "path":"sprites/spr_slime_green/spr_slime_green.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

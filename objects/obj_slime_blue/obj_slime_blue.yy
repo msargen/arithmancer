@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_slime",
-  "eventList":[],
+  "%Name":"obj_slime_blue",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_slime",
+  "name":"obj_slime_blue",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
@@ -30,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_slime_blue",
+    "path":"sprites/spr_slime_blue/spr_slime_blue.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
