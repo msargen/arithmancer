@@ -5,7 +5,7 @@ jumping_enemy_is_grounded = place_meeting(x, y + 1, obj_wall)
 if (jumping_enemy_is_grounded)
 {
 	// Advance jump timer
-	jumping_enemy_timer ++;
+	jumping_enemy_timer++;
 	
 	// Slow idle animation
 	if (jumping_enemy_timer < jumping_enemy_slow_idle_time)
@@ -81,4 +81,5 @@ if (jumping_enemy_is_grounded)
 	// Movement only happens in the air
 	x += jumping_enemy_horizontal_speed;
 	y += jumping_enemy_vertical_speed;
+
 }
