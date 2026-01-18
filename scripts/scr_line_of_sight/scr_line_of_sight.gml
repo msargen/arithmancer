@@ -3,7 +3,6 @@
 
 function line_of_sight(_target_object)
 {
-	// checks for walls on the collision line between the two objects
-	return (collision_line(x, y, _target_object.x, _target_object.y, obj_wall, false, true) == noone)
-
+	// checks for wall collisions on the line between the two objects, returns true if no collisions
+	return (collision_line(x, y, _target_object.x, _target_object.y, obj_wall, false, true) == noone);
 }
