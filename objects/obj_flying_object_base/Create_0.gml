@@ -1,8 +1,5 @@
 /// @description Set flying object base variables
 
-// TODO: look at the function lerp and see if that helps.
-// TODO: Clamping the player position to a whole pixel is going to mess with interactions with this object. Need to smooth out the movement of the platform as well.
-
 // Can set here --> 
 
 // These need to be initialized to extremes so that directions we don't want the platform to move are ignored

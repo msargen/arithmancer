@@ -57,6 +57,8 @@ player_enter_button = 0;
 
 // Keeps track if the player is currently pinched between two walls/moving platforms
 player_pinched = false;
+// Which specific moving platform is pinching the player
+player_pinched_by = noone;
 
 // The base duration of invincibility
 player_invincible_timer_base = 180;
