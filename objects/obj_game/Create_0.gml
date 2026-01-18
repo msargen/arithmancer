@@ -19,4 +19,4 @@ audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_sfx);
 
 // Set the game fps
-game_set_speed(60, gamespeed_fps);
+game_set_speed(global.framerate, gamespeed_fps);

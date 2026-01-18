@@ -29,8 +29,7 @@ if (jumping_enemy_is_grounded)
 	else
 	{
 		// Check for line of sight on player
-		// Collision == -4 means that no instance of obj_wall was detected in line of sight
-		if (instance_exists(obj_player) && jumping_enemy_chase_player && (collision_line(x, y, obj_player.x, obj_player.y, obj_wall, false, true) == -4))
+		if (instance_exists(obj_player) && jumping_enemy_chase_player && line_of_sight(obj_player))
 		{
 			// Orient next jump towards player
 			jumping_enemy_horizontal_speed = sign(obj_player.x - x) * abs(jumping_enemy_horizontal_speed);

@@ -10,10 +10,10 @@ jumping_enemy_jump_speed = -5;
 
 jumping_enemy_is_grounded = false;
 
-// times are in cumulative frames
+// times are in parts of a second
 jumping_enemy_timer = 0;
-jumping_enemy_slow_idle_time = 32;
-jumping_enemy_fast_idle_time = 64;
-jumping_enemy_crouch_time = 80;
+jumping_enemy_slow_idle_time = global.framerate * (0.5);
+jumping_enemy_fast_idle_time = global.framerate * (1.0);
+jumping_enemy_crouch_time = global.framerate * (1.25);
 
 jumping_enemy_chase_player = false;
