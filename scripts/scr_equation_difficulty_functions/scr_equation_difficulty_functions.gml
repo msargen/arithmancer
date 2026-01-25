@@ -21,9 +21,9 @@ function scr_set_addition_difficulty(_equation_difficulty = EQUATION_DIFFICULTY.
 		case EQUATION_DIFFICULTY.EASY:
 			global.addition_difficulty = function()
 			{
-				// Easy addition equations use numbers: 1-20
-				var _equation_x = floor(random_range(1, 20.99));
-				var _equation_y = floor(random_range(1, 20.99));
+				// Easy addition equations use numbers: 1-10
+				var _equation_x = floor(random_range(1, 10.99));
+				var _equation_y = floor(random_range(1, 10.99));
 				var _equation_answer = _equation_x + _equation_y;
 				var _equation_text = string(_equation_x) + "+" + string(_equation_y) + "=?";
 		
