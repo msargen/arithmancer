@@ -1,2 +1,5 @@
 /// @description For dev only. Easy quit for the game
-game_end()
+if (global.dev_build)
+{
+	game_end();
+}
