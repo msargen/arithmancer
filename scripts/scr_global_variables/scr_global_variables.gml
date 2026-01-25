@@ -26,7 +26,7 @@ global.interact_distance = 32;
 global.monotype_font = font_add_sprite(spr_monotype_font, ord("!"), false, 0);
 
 // Vegeta number for completed sockets
-global.over_9000 = -9001
+global.over_9000 = -9001;
 
 // For equation difficulty
 global.addition_difficulty = function(){};
@@ -38,4 +38,7 @@ global.division_difficulty = function(){};
 global.active_equation_types = array_create(0);
 
 // Number of iterations for collision detection, should always be higher than the maximum player speed
-global.collision_lerp = 7.0
+global.collision_lerp = 7.0;
+
+// Global framerate is set to 60
+global.framerate = 60;
