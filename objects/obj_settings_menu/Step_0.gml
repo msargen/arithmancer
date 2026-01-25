@@ -1,7 +1,7 @@
 /// @description Control Settings Menu
 
 //set keybindings
-keybind();
+scr_keybind();
 
 if (in_settings_menu)
 {

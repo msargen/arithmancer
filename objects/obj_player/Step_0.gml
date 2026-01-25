@@ -232,7 +232,7 @@ if(player_holding_gem)
 // drop a gem if holding one
 if(player_holding_gem)
 {
-	if(global.key_down)
+	if(global.key_drop)
 	{
 		player_held_gem = 0;
 		player_holding_gem = false;

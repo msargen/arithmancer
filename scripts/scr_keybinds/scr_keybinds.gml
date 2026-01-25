@@ -1,6 +1,6 @@
 //Sets Keybindings and global varibles
 
-function keybind()
+function scr_keybind()
 {
 	// if a controller is being used, keybind for keyboard and controller
 	if (obj_controller.controller_selected != 0)
@@ -18,6 +18,7 @@ function keybind()
 		global.key_hold_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_button_check(_controller, gp_padl) || (gamepad_axis_value(_controller, gp_axislh) < 0);
 		global.key_hold_right = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_button_check(_controller, gp_padr) || (gamepad_axis_value(_controller, gp_axislh) > 0);
 		global.key_interact = 	keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(_controller, gp_face3);
+		global.key_drop = keyboard_check_pressed(ord("Q")) || gamepad_button_check_pressed(_controller, gp_face2);
 	}
 	// if no controller is being used, only keybind for keyboard
 	else
@@ -34,5 +35,6 @@ function keybind()
 		global.key_hold_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 		global.key_hold_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 		global.key_interact = keyboard_check_pressed(ord("E"));
+		global.key_drop = keyboard_check_pressed(ord("Q"));
 	}
 }
