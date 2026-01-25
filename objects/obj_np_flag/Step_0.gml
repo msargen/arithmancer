@@ -5,7 +5,7 @@
 if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y, x, y, global.interact_distance)) && (!instance_exists(obj_np_equation)))
 {
 	np_flag_player_nearby = true;
-	if (global.key_up)
+	if (global.key_interact)
 	{
 		// Generate a new equation
 		var _equation_results = scr_generate_equation();
