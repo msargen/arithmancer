@@ -49,6 +49,18 @@ if (in_settings_menu)
 		}
 	}
 	
+	//Move back one screen
+	if (global.key_back)
+	{
+		//Sets back and pause to false so you can Move from Settings to Pause Menu
+		global.key_back = false;
+		global.key_pause = false;
+		in_settings_menu = false;
+		scr_save_settings_to_file();
+				
+		if(obj_pause.pause_is_paused){obj_pause.pause_in_menu = true;};
+	}
+	
 	// switch for the settings menu options
 	switch (settings_menu_cursor_position)
 	{
@@ -241,4 +253,5 @@ if (in_settings_menu)
 			}
 			break;
 	}
+	
 }

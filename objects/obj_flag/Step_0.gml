@@ -44,7 +44,7 @@ else if (flag_operation == 4)
 if ((instance_exists(obj_player)) && (point_in_circle(obj_player.x, obj_player.y, x, y, global.interact_distance)) && (!instance_exists(obj_equation_text)))
 {
 	flag_player_nearby = true;
-	if (global.key_up)
+	if (global.key_interact)
 	{
 		flag_id = instance_nearest(obj_player.x, obj_player.y, obj_flag)
 		with (instance_create_layer(x, y - 32, layer, obj_equation_text))

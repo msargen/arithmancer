@@ -13,10 +13,11 @@ function keybind()
 		global.key_up = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")) || gamepad_button_check_pressed(_controller, gp_padu);
 		global.key_down = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S")) || gamepad_button_check_pressed(_controller, gp_padd);
 		global.key_select = keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(_controller, gp_face1);
-		global.key_backspace = keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(_controller, gp_face2);
+		global.key_back = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(_controller, gp_face2);
 		global.key_pause = keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(_controller, gp_start) || gamepad_button_check_pressed(_controller, gp_select);
 		global.key_hold_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_button_check(_controller, gp_padl) || (gamepad_axis_value(_controller, gp_axislh) < 0);
 		global.key_hold_right = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_button_check(_controller, gp_padr) || (gamepad_axis_value(_controller, gp_axislh) > 0);
+		global.key_interact = 	keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(_controller, gp_face3);
 	}
 	// if no controller is being used, only keybind for keyboard
 	else
@@ -27,9 +28,11 @@ function keybind()
 		global.key_up = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
 		global.key_down = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
 		global.key_select = keyboard_check_pressed(vk_enter);
+		global.key_back = keyboard_check_pressed(vk_escape);
 		global.key_backspace = keyboard_check_pressed(vk_backspace);
 		global.key_pause = keyboard_check_pressed(vk_pause) || keyboard_check_pressed(vk_escape);
 		global.key_hold_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 		global.key_hold_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+		global.key_interact = keyboard_check_pressed(ord("E"));
 	}
 }

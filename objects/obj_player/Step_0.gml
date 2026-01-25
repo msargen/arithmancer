@@ -209,11 +209,11 @@ if(player_closest_socket) {player_near_socket = point_in_circle(x, y, player_clo
 if(player_near_gem && !player_holding_gem)
 {
 	// pick up gem when up button is pressed
-	if(global.key_up)
+	if(global.key_interact)
 	{
 		player_held_gem = player_closest_gem;
 		player_holding_gem = true;
-		global.key_up = false;
+		global.key_interact = false;
 	}
 }
 
@@ -240,7 +240,7 @@ if(player_holding_gem)
 }
 
 // attempt to socket a gem
-if(player_holding_gem && player_near_socket && (global.key_up))
+if(player_holding_gem && player_near_socket && (global.key_interact))
 {
 	// check if the right gem is at the right socket
 	if(player_closest_socket.socket_answer == player_held_gem.gem_answer)
