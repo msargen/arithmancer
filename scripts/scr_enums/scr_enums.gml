@@ -31,7 +31,7 @@ enum ORIENTATION
 // Enum for equation generation.
 enum EQUATION_TYPE
 {
-	RANDOM = 0,
+	SIMPLE = 0,
 	ADDITION = 1,
 	SUBTRACTION = 2,
 	MULTIPLICATION = 3,
