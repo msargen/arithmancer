@@ -29,7 +29,7 @@ if (jumping_enemy_is_grounded)
 	else
 	{
 		// Check for line of sight on player
-		if (instance_exists(obj_player) && jumping_enemy_chase_player && line_of_sight(obj_player))
+		if (instance_exists(obj_player) && jumping_enemy_chase_player && scr_line_of_sight(obj_player))
 		{
 			// Orient next jump towards player
 			jumping_enemy_horizontal_speed = sign(obj_player.x - x) * abs(jumping_enemy_horizontal_speed);
@@ -83,3 +83,4 @@ if (jumping_enemy_is_grounded)
 	y += jumping_enemy_vertical_speed;
 
 }
+
