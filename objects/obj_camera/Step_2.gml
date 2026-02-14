@@ -29,7 +29,7 @@ camera_shake_remain = max(0, camera_shake_remain - ((1/camera_shake_length) * ca
 //Update camera view
 camera_set_view_pos(camera_view, x - camera_view_width_half, y - camera_view_height_half);
 
-if (room != rm_menu) && (room != rm_ending)
+if (room != rm_main_menu) && (room != rm_ending)
 {
 	if (layer_exists("Mountains"))
 	{

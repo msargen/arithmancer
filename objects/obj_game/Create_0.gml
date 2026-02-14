@@ -20,3 +20,6 @@ audio_group_load(audiogroup_sfx);
 
 // Set the game fps
 game_set_speed(global.framerate, gamespeed_fps);
+
+// Track what the previous room was
+previous_room = rm_loading_screen;

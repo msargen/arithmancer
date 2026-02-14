@@ -34,7 +34,7 @@ if (global.key_select)
 		case 1:
 			scr_unpause();
 			call_cancel(global.level_time_source);
-			scr_slide_transition(TRANS_MODE.GOTO, rm_menu);
+			scr_slide_transition(TRANS_MODE.GOTO, rm_main_menu);
 			break;
 		//Exit Game to Desktop
 		case 2:
