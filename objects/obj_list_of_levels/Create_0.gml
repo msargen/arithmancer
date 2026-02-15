@@ -3,7 +3,6 @@
 lol_list = array_create(0);
 lol_room = room_first;
 
-lol_cursor = 0;
 lol_text_horizontal = RES_W / 2;
 lol_text_vertical = RES_H / 2;
 lol_line_height = font_get_size(global.monotype_font) * 1.5;
@@ -23,3 +22,4 @@ while (lol_room != room_last)
 }
 
 lol_list_count = array_length(lol_list);
+lol_cursor = lol_list_count - 1;
