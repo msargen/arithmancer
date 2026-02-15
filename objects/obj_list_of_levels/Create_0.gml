@@ -22,4 +22,4 @@ while (lol_room != room_last)
 }
 
 lol_list_count = array_length(lol_list);
-lol_cursor = lol_list_count;
+lol_cursor = lol_list_count - 1;
