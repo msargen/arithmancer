@@ -8,7 +8,7 @@ if (!obj_settings_menu.in_settings_menu)
 	// Move up
 	if (global.key_up)
 	{
-		main_menu_cursor ++;
+		main_menu_cursor++;
 		// Loop to the bottom option
 		if (main_menu_cursor > main_menu_items)
 		{
@@ -19,7 +19,7 @@ if (!obj_settings_menu.in_settings_menu)
 	// Move down
 	if (global.key_down)
 	{
-		main_menu_cursor --;
+		main_menu_cursor--;
 		// Loop to the top option
 		if (main_menu_cursor < 0) {main_menu_cursor = main_menu_items;}
 	}

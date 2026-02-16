@@ -4,7 +4,7 @@
 function scr_slide_transition()
 {
 	// Update previous room variable
-	obj_game.previous_room = room;
+	obj_game.game_previous_room = room;
 	
 	with (obj_transition)
 	{

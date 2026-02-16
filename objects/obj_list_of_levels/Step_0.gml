@@ -3,7 +3,7 @@
 // Move up
 if (global.key_up)
 {
-	lol_cursor --;
+	lol_cursor--;
 	lol_text_vertical -= lol_line_height;
 }
 
@@ -17,7 +17,7 @@ if (lol_cursor < 0)
 // Move down
 if (global.key_down)
 {
-	lol_cursor ++;
+	lol_cursor++;
 	lol_text_vertical += lol_line_height;
 }
 
@@ -31,6 +31,7 @@ if (lol_cursor == lol_list_count)
 // Slide the text when moving up and down
 if (abs(lol_text_vertical - RES_H / 2) > 1)
 {
+	// Move 1/5 of the distance/frame for smoothing
 	lol_text_vertical -= (lol_text_vertical - RES_H / 2) / 5
 }
 
