@@ -51,12 +51,10 @@ enum EQUATION_DIFFICULTY
 enum MAIN_MENU
 {
 	QUIT = 0,
-	CONTINUE = 1,
-	LEVEL_ONE = 2,
-	LEVEL_TWO = 3,
-	LEVEL_THREE = 4,
-	SETTINGS = 5,
-	LEVEL_LIST = 6
+	SETTINGS = 1,
+	WORLD_SELECT = 2,
+	QUICK_PLAY = 3,
+	LEVEL_LIST = 4
 }
 
 // Enum for cardinal directions

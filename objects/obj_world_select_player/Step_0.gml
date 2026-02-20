@@ -80,3 +80,8 @@ else // moving between nodes
 	}
 }
 
+// Escape world select
+if (global.key_back)
+{
+	scr_slide_transition(TRANS_MODE.GOTO, rm_main_menu);
+}

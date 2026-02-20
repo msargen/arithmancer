@@ -1,8 +1,11 @@
 /// @description scr_slide_transition(mode, targetroom)
 /// @arg Mode sets transition mode between next, restart, and goto.
 /// @arg Target sets target room when using the goto mode.
-function scr_slide_transition() {
-
+function scr_slide_transition()
+{
+	// Update previous room variable
+	obj_game.game_previous_room = room;
+	
 	with (obj_transition)
 	{
 		transition_mode = argument[0];

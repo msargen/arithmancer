@@ -12,32 +12,15 @@ main_menu_y = main_menu_gui_height - main_menu_gui_margin;
 main_menu_x_target = main_menu_gui_width - main_menu_gui_margin;
 main_menu_speed = 25; //lower is faster
 main_menu_item_height = font_get_size(fnt_menu);
-main_menu_committed = -1;
 
-main_menu_control = true;
-
-// Temporary values for an easier way to add rooms for testing
-main_menu_lvl_list_selector = 5;
-main_menu_lvl_list_names[5] = "moving_platform";
-main_menu_lvl_list_names[4] = "vertical_scroll";
-main_menu_lvl_list_names[3] = "lvl_three";
-main_menu_lvl_list_names[2] = "lvl_two";
-main_menu_lvl_list_names[1] = "lvl_one";
-main_menu_lvl_list_names[0] = "world select";
-main_menu_tmp_lvl_list[5] = rm_lvl_moving_platform;
-main_menu_tmp_lvl_list[4] = rm_lvl_vertical_scroll;
-main_menu_tmp_lvl_list[3] = rm_lvl_three;
-main_menu_tmp_lvl_list[2] = rm_lvl_two;
-main_menu_tmp_lvl_list[1] = rm_lvl_one;
-main_menu_tmp_lvl_list[0] = rm_world_select;
-main_menu_options[MAIN_MENU.LEVEL_LIST] = main_menu_lvl_list_names[main_menu_lvl_list_selector];
-
+if (global.dev_build)
+{
+	main_menu_options[MAIN_MENU.LEVEL_LIST] = "Level List (Dev)";
+}
+main_menu_options[MAIN_MENU.QUICK_PLAY] = "Quick Play";
+main_menu_options[MAIN_MENU.WORLD_SELECT] = "World Select";
 main_menu_options[MAIN_MENU.SETTINGS] = "Settings";
-main_menu_options[MAIN_MENU.LEVEL_THREE] = "Level 3";
-main_menu_options[MAIN_MENU.LEVEL_TWO] = "Level 2";
-main_menu_options[MAIN_MENU.LEVEL_ONE] = "Level 1";
-main_menu_options[MAIN_MENU.CONTINUE] = "Continue";
 main_menu_options[MAIN_MENU.QUIT] = "Quit";
 
 main_menu_items = array_length(main_menu_options) - 1;
-main_menu_cursor = MAIN_MENU.LEVEL_ONE;
+main_menu_cursor = MAIN_MENU.QUICK_PLAY;
