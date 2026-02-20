@@ -24,7 +24,7 @@ function scr_load_from_ini() {
 		window_set_fullscreen(bool(is_fullscreen));
 		
 		// Load difficulty options
-		sm_easy_buttons = ini_read_real("Difficulty", "Easy_buttons", true);
+		sm_safe_buttons = ini_read_real("Difficulty", "Safe_buttons", true);
 		sm_addition_difficulty = ini_read_real("Difficulty", "Addition_difficulty", EQUATION_DIFFICULTY.EASY);
 		sm_subtraction_difficulty = ini_read_real("Difficulty", "Subtraction_difficulty", EQUATION_DIFFICULTY.EASY);
 		sm_multiplication_difficulty = ini_read_real("Difficulty", "Multiplication_difficulty", EQUATION_DIFFICULTY.EASY);
@@ -45,7 +45,7 @@ function scr_load_from_ini() {
 		settings_menu_value[SETTINGS_MENU.SFX_VOLUME] = string_delete(settings_menu_value[SETTINGS_MENU.SFX_VOLUME], 1, (string_length(string(sfx_volume))-1));
 		settings_menu_value[SETTINGS_MENU.FULLSCREEN] = bool(is_fullscreen) ? "True" : "False";
 		settings_menu_value[SETTINGS_MENU.RESOLUTION] = string(resolution) + "p";
-		settings_menu_value[SETTINGS_MENU.EASY_BUTTON] = sm_easy_buttons ? "True" : "False";
+		settings_menu_value[SETTINGS_MENU.SAFE_BUTTON] = sm_safe_buttons ? "True" : "False";
 		settings_menu_value[SETTINGS_MENU.ADDITION_DIFFICULTY] = sm_difficulty_option[sm_addition_difficulty];
 		settings_menu_value[SETTINGS_MENU.SUBTRACTION_DIFFICULTY] = sm_difficulty_option[sm_subtraction_difficulty];
 		settings_menu_value[SETTINGS_MENU.MULTIPLICATION_DIFFICULTY] = sm_difficulty_option[sm_multiplication_difficulty];

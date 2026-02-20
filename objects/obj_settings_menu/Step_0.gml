@@ -146,21 +146,21 @@ if (in_settings_menu)
 			}
 			break;
 			
-		// Easy button toggle
-		case SETTINGS_MENU.EASY_BUTTON:
+		// Safe button toggle
+		case SETTINGS_MENU.SAFE_BUTTON:
 			if (global.key_left || global.key_right)
 			{
-				if (sm_easy_buttons)
+				if (sm_safe_buttons)
 				{
-					// Toggle easy button mode off
-					settings_menu_value[SETTINGS_MENU.EASY_BUTTON] = "False";
-					sm_easy_buttons = false;
+					// Toggle safe button mode off
+					settings_menu_value[SETTINGS_MENU.SAFE_BUTTON] = "False";
+					sm_safe_buttons = false;
 				}
 				else
 				{
-					// Toggle easy button mode on
-					settings_menu_value[SETTINGS_MENU.EASY_BUTTON] = "True";
-					sm_easy_buttons = true;
+					// Toggle safe button mode on
+					settings_menu_value[SETTINGS_MENU.SAFE_BUTTON] = "True";
+					sm_safe_buttons = true;
 				}
 			}
 			break;
