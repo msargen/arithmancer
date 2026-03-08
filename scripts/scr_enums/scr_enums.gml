@@ -66,3 +66,12 @@ enum CARDINAL
 	SOUTH = 3,
 	WEST = 4
 }
+
+// Enum for pause menu
+enum PAUSE_MENU
+{
+	SETTINGS =0,
+	MAIN_MENU = 1,
+	QUIT = 2,
+	UNPAUSE = 3
+}
