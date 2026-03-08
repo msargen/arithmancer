@@ -46,6 +46,7 @@
     {"name":"obj_bubble_flag","order":1,"path":"objects/obj_bubble_flag/obj_bubble_flag.yy",},
     {"name":"obj_camera","order":1,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_controller","order":2,"path":"objects/obj_controller/obj_controller.yy",},
+    {"name":"obj_dialogue_box","order":8,"path":"objects/obj_dialogue_box/obj_dialogue_box.yy",},
     {"name":"obj_door","order":2,"path":"objects/obj_door/obj_door.yy",},
     {"name":"obj_equation_text","order":4,"path":"objects/obj_equation_text/obj_equation_text.yy",},
     {"name":"obj_exposed_wire","order":4,"path":"objects/obj_exposed_wire/obj_exposed_wire.yy",},
