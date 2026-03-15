@@ -36,4 +36,3 @@ else if (ds_map_find_value(async_load, "event_type") == "gamepad lost")
 	controller_text_message = "controller disconnected";
 	controller_text_opacity = 1;
 }
-

@@ -3,7 +3,7 @@
 //Set visual priority
 depth = -1500;
 
-// variables
+// Values
 in_settings_menu = false;
 main_volume = 70;
 music_volume = 70;
@@ -18,12 +18,7 @@ sm_subtraction_difficulty = EQUATION_DIFFICULTY.EASY;
 sm_multiplication_difficulty = EQUATION_DIFFICULTY.EASY;
 sm_division_difficulty = EQUATION_DIFFICULTY.EASY;
 
-// UI adjustments based on display and font size
-settings_menu_font_size = font_get_size(fnt_menu);
-settings_menu_menu_y_offset = floor(display_get_gui_height()/10.0);
-settings_menu_menu_x_offset = floor(display_get_gui_width()/10.0);
-
-// menu options
+// Menu options
 settings_menu_option[SETTINGS_MENU.MAIN_VOLUME] = "Main Volume: ";
 settings_menu_option[SETTINGS_MENU.MUSIC_VOLUME] = "Music Volume: ";
 settings_menu_option[SETTINGS_MENU.SFX_VOLUME] = "Sound Effects: ";
@@ -44,7 +39,7 @@ settings_menu_option[SETTINGS_MENU.EXIT_SETTINGS] = "Exit Settings";
 settings_menu_cursor_position = 0;
 settings_menu_total_items = array_length(settings_menu_option) - 1;
 
-// strings for menu option values
+// Strings for menu option values
 settings_menu_value[SETTINGS_MENU.MAIN_VOLUME] = "70%";
 settings_menu_value[SETTINGS_MENU.MUSIC_VOLUME] = "70%";
 settings_menu_value[SETTINGS_MENU.SFX_VOLUME] = "70%";
@@ -67,3 +62,8 @@ sm_difficulty_option[EQUATION_DIFFICULTY.OFF] = "Off";
 sm_difficulty_option[EQUATION_DIFFICULTY.EASY] = "Easy";
 sm_difficulty_option[EQUATION_DIFFICULTY.MEDUIM] = "Medium";
 sm_difficulty_option[EQUATION_DIFFICULTY.HARD] = "Hard";
+
+// UI adjustments based on display and font size
+settings_menu_font_size = font_get_size(global.menu_font)
+settings_menu_menu_x_offset = display_get_gui_width() / 10.0;
+settings_menu_menu_y_offset = display_get_gui_height() / 10.0;

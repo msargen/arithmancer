@@ -34,7 +34,7 @@ if (stunned_done == 0)
 stunned_timer--;
 if (stunned_timer == 0)
 {
-	instance_change(obj_player, true)
+	instance_create_layer(x, y, "Player", obj_player)
 	obj_player.player_x_spawn = stunned_player_spawn_x;
 	obj_player.player_y_spawn = stunned_player_spawn_y;
 	
@@ -42,5 +42,8 @@ if (stunned_timer == 0)
 	obj_player.player_invincible = true;
 	obj_player.player_invincible_timer = obj_player.player_invincible_timer_base;
 	
+	// Prevent player from immediately pushing a button after coming unstunned
 	obj_player.player_button_stun_delay_timer = obj_player.player_button_stun_delay_base;
+	
+	instance_destroy(obj_stunned);
 }
