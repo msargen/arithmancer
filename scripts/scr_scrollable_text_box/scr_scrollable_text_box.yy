@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_scrolling_text_box",
+  "%Name":"scr_scrollable_text_box",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_scrolling_text_box",
+  "name":"scr_scrollable_text_box",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
