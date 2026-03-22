@@ -30,8 +30,10 @@ function scr_scrollable_text_box(_array, _selected, _x1, _y1, _x2, _y2, _h_align
 	var _view_width = _x2 - _x1;
 	var _view_height = _y2 - _y1;
 	var _total_height = array_length(_array) * font_get_size(_font);
+	if (_view_height > _total_height) {_view_height = _total_height - 3;};
+	var _scrollbar_space = 5;
 	var _text_alignment = string_width("> ");
-	if (_h_align == fa_right) {_text_alignment = _view_width - string_width(" <");};
+	if (_h_align == fa_right) {_text_alignment = _view_width - string_width(" < ") - _scrollbar_space;};
 	
 	// Create surface if the surface does not currently exist
 	if (!surface_exists(_scrollable_surface))
@@ -44,7 +46,7 @@ function scr_scrollable_text_box(_array, _selected, _x1, _y1, _x2, _y2, _h_align
 	draw_clear_alpha(c_black, 0);
 	
 	// Draw the array of elements
-	for (var _i = 0; _i < array_length(settings_menu_option); _i++)
+	for (var _i = 0; _i < array_length(_array); _i++)
 	{
 		// Adjustments for the selected element
 		if (_i == _selected)
@@ -52,7 +54,7 @@ function scr_scrollable_text_box(_array, _selected, _x1, _y1, _x2, _y2, _h_align
 			// Draw " <" to the right of the element if h_align is right
 			if (_h_align == fa_right)
 			{
-				draw_text_colour(_view_width, _i * font_get_size(_font), _array[_i] + " <", c_white, c_white, c_white, c_white, 1);
+				draw_text_colour(_view_width - _scrollbar_space, _i * font_get_size(_font), _array[_i] + " < ", c_white, c_white, c_white, c_white, 1);
 			}
 			else
 			// Draw "> " to the left of the element otherwise
@@ -69,7 +71,7 @@ function scr_scrollable_text_box(_array, _selected, _x1, _y1, _x2, _y2, _h_align
 	// Shift the view of the surface down when the cursor gets one from the bottom
 	if ((_selected * font_get_size(_font)) > (_view_top + _view_height - 2 * font_get_size(_font)))
 	{
-		_view_target = (2 + _selected) * font_get_size(_font) - _view_height;
+		_view_target = (2 + _selected) * font_get_size(_font) - _view_height - 3;
 	}
 	
 	// Shift the view of the surface up when the cursor gets one from the top
@@ -79,12 +81,24 @@ function scr_scrollable_text_box(_array, _selected, _x1, _y1, _x2, _y2, _h_align
 	}
 	
 	// Set bounds and slide the view towards the target position
-	_view_target = clamp(_view_target, 0, _total_height - _view_height);
+	_view_target = clamp(_view_target, 0, _total_height - _view_height - 3);
 	_view_top += (_view_target - _view_top) / 5;
 	
 	// Stop drawing to the surface and draw part of it to the screen
 	surface_reset_target();
-	draw_surface_part_ext(_scrollable_surface, 0, _view_top, _view_width, _view_height, _x1, _y1, 1, 1, c_white, _opacity);
+	draw_surface_part_ext(_scrollable_surface, 0, _view_top, _view_width, _view_height + 1, _x1, _y1, 1, 1, c_white, _opacity);
+	
+	// Scrollbar math
+	var _scrollbar_spine_x = _x2 - ceil(_scrollbar_space / 2);
+	var _scrollbar_spine_top = _y1+ ceil(_scrollbar_space / 2);
+	var _scrollbar_spine_height = _y2 - _y1 - ceil(_scrollbar_space * 1.5) - 1;
+	var _scrollbar_height = (_view_height / _total_height) * _scrollbar_spine_height;
+	var _scrollbar_top = _scrollbar_spine_top + (_scrollbar_spine_height - _scrollbar_height) * _view_top / (_total_height - _view_height - 3);
+	
+	// Draw scrollbar
+	draw_rectangle(_scrollbar_spine_x, _scrollbar_spine_top, _scrollbar_spine_x, _scrollbar_spine_top + _scrollbar_spine_height, false);
+	draw_set_colour(c_white);
+	draw_rectangle(_scrollbar_spine_x - 1, _scrollbar_top, _scrollbar_spine_x + 1, _scrollbar_top + _scrollbar_height, false);
 	
 	// _short_delay is a 2 frame delay to call this script without arguments to free the surface when no longer needed
 	time_source_reset(_short_delay);
