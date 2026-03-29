@@ -7,7 +7,6 @@ if (instance_exists(obj_player))
 
 // Note: remember when counting pixels to count the starting value (because pixel space is zero indexed)
 	
-// Note: These are not the confirmed fixed numbers for this box
 // When RES_W = 320 (0-319) and RES_H = 180 (0-179)
 // W: 12-307 = 296 wide
 // H: 8-51 = 44 high
