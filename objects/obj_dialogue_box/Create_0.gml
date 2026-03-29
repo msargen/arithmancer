@@ -4,6 +4,8 @@
 
 // The current amount of chars that can comfortably fix in a single line in the box (at the moment)
 dialogue_box_max_line_chars = 75;
+// The maximum number of pixels per line (does not include padding)
+dialogue_box_max_line_pixels = 246;
 // Max lines of dialogue to show in a box at once. The box can technically fit up to 5 (right now), but that looks too busy
 dialogue_box_max_lines = 3;
 
@@ -25,7 +27,10 @@ dialogue_box_text_crawl = 0;
 // The current line of dialogue being shown
 dialogue_box_current_line = 0;
 
-// TODO: update all formatting values after pulling in Joels changes
+// TODO: dialoge box text scale. Adjust once we figure out the exact font we want to use
+dialogue_box_text_scale = 0.6;
+
+// TODO: find the dialogue text font and scaling we want
 // TODO: figure out how to flip the portrait side and how that will affect text location.
 // TODO: Figure out if a struct or a ds_map will be better for long term dialogue use. Also general storage location of dialogue. And how we will progress through the dialogue options throughout the game.
 // TODO: Update the box and the scripts for conversations (right now it just works as a monologue).

@@ -7,8 +7,8 @@ mentor_interact_offset = 15;
 
 mentor_intro_dialogue[0] = "Hello there!";
 mentor_intro_dialogue[1] = "Hello there my good friend who brought me food!";
-mentor_intro_dialogue[2] = "Hello there my good friend who brought me food and a large amount of money!";
-mentor_intro_dialogue[3] = "Hello there my good friend who brought me food and a large amount of money but put it in a bad box!"; // 75
+mentor_intro_dialogue[2] = "Hello there my good friend who brought me food and a large amount of money!"; // 75
+mentor_intro_dialogue[3] = "Hello there my good friend who brought me food and a large amount of money but put it in a bad box!"; // 99
 mentor_intro_dialogue[4] = "Hello there my good friend who brought me food and a large amount of money but put it in a bad box! I do say, that is quite a shocking turn of events!"; // 150
 mentor_intro_dialogue[5] = "Hello there my good friend who brought me food and a large amount of money but put it in a bad box! I do say, that is quite a shocking turn of events! Who could have seen this coming? I didn't thats for sure."; // 208
 
