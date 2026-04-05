@@ -2,29 +2,10 @@
 
 if (in_settings_menu)
 {
-	// draw blue background
-	scr_draw_set_text(c_blue, global.menu_font, fa_left, fa_top);
-	draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
+	// Draw blue background
+	draw_roundrect_colour(settings_menu_box_x_offset, settings_menu_box_y_offset, RES_W - settings_menu_box_x_offset, RES_H - settings_menu_box_y_offset, c_blue, c_blue, false);
 	
-	// loop through drawing the array of menu options
-	for (var _i = 0; _i < array_length(settings_menu_option); _i++)
-	{
-		// set display text
-		var _display_text = settings_menu_option[_i] + settings_menu_value[_i];
-		var _menu_entry_color = c_grey;
-		var _text_x_position = settings_menu_menu_x_offset;
-		
-		// hightlight selected menu option
-		if (settings_menu_cursor_position == _i)
-		{
-			_menu_entry_color = c_white;
-			_text_x_position = settings_menu_menu_x_offset - settings_menu_font_size;
-			_display_text = "> " + settings_menu_option[_i] + settings_menu_value[_i] + " <";
-		}
-	
-		// draw menu option
-		var _text_y_position = settings_menu_menu_y_offset + _i * settings_menu_font_size;
-		draw_set_color(_menu_entry_color);
-		draw_text(_text_x_position, _text_y_position, _display_text);
-	}
+	// Draw settings menu
+	scr_scrollable_text_box(settings_menu_option, settings_menu_cursor_position, settings_menu_text_x_offset, settings_menu_text_y_offset, RES_W - settings_menu_text_x_offset, RES_H - settings_menu_text_y_offset, fa_left, global.menu_font, c_grey, 1);
+	scr_scrollable_text_box(settings_menu_value, settings_menu_cursor_position, settings_menu_text_x_offset, settings_menu_text_y_offset, RES_W - settings_menu_text_x_offset, RES_H - settings_menu_text_y_offset, fa_right, global.menu_font, c_grey, 1);
 }

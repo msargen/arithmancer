@@ -63,7 +63,8 @@ sm_difficulty_option[EQUATION_DIFFICULTY.EASY] = "Easy";
 sm_difficulty_option[EQUATION_DIFFICULTY.MEDUIM] = "Medium";
 sm_difficulty_option[EQUATION_DIFFICULTY.HARD] = "Hard";
 
-// UI adjustments based on display and font size
-settings_menu_font_size = font_get_size(global.menu_font)
-settings_menu_menu_x_offset = display_get_gui_width() / 10.0;
-settings_menu_menu_y_offset = display_get_gui_height() / 10.0;
+// UI adjustments
+settings_menu_box_x_offset = 16;
+settings_menu_box_y_offset = 16;
+settings_menu_text_x_offset = 32;
+settings_menu_text_y_offset = 24;
