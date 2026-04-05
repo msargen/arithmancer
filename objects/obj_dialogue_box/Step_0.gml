@@ -6,7 +6,8 @@ if (dialogue_box_text_crawl < dialogue_box_text_line_length[dialogue_box_current
 	dialogue_box_text_crawl += dialogue_box_text_speed;
 }
 dialogue_box_shown_text = string_copy(dialogue_box_text_list[dialogue_box_current_line], 1, floor(dialogue_box_text_crawl));
-	
+
+// Allows for the player to go through the dialogue faster (skips the text crawl)
 if ((dialogue_box_text_crawl < dialogue_box_text_line_length[dialogue_box_current_line]) && global.key_interact)
 {
 	dialogue_box_shown_text = dialogue_box_text_list[dialogue_box_current_line];

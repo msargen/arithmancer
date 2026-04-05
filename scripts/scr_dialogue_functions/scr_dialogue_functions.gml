@@ -5,13 +5,13 @@ function scr_display_dialogue(_text_list)
 	// x and y will be irrelevant since the text box is transparent and drawn in gui
 	// layer will be the layer of the calling object
 	with (instance_create_layer(x, y, layer, obj_dialogue_box))
-		{
-			var _dialogue = scr_format_dialogue_box_text(_text_list, dialogue_box_max_line_pixels, dialogue_box_max_lines, dialogue_box_text_scale);
-			dialogue_box_text_list = _dialogue[0];
-			dialogue_box_text_line_length = _dialogue[1];
-			dialogue_box_show_line_x = _dialogue[2];
-			dialogue_box_show_line_y = _dialogue[3];
-		}
+	{
+		var _dialogue = scr_format_dialogue_box_text(_text_list, dialogue_box_max_line_pixels, dialogue_box_max_lines, dialogue_box_text_scale);
+		dialogue_box_text_list = _dialogue[0];
+		dialogue_box_text_line_length = _dialogue[1];
+		dialogue_box_show_line_x = _dialogue[2];
+		dialogue_box_show_line_y = _dialogue[3];
+	}
 }
 
 // Note: Do not preemptively put "\n" in your dialogue lines. Let this script find it.
@@ -24,7 +24,7 @@ function scr_display_dialogue(_text_list)
 /// @return An array of arrays. Index 0: The formatted list of dialogue lines. Index 1: The length of each dialogue line. Index 2: The starting X position for each line. Index 3: The starting Y position for each line.
 function scr_format_dialogue_box_text(_text_list, _max_line_pix, _max_lines, _scale_text) 
 {
-	// TODO: Figure out the font we want to use and maybe make it an arge?
+	// TODO: Figure out the font we want to use and maybe make it an arg
 	draw_set_font(global.menu_font);
 	var _font_height = sprite_get_height(spr_menu_font);
 	
@@ -72,7 +72,6 @@ function scr_format_dialogue_box_text(_text_list, _max_line_pix, _max_lines, _sc
 					// The line frag is larger than max line length
 					_new_line_lol = string_trim_end(_new_line_lol);
 					_new_line_lol += "\n" + _words[_j] + " ";
-					//_longest_fragment = _max_line_pix;
 					_line_frag_length -= ceil(string_width(_words[_j]) * _scale_text);
 					if (_line_frag_length > _longest_fragment) _longest_fragment = _line_frag_length;
 					_line_frag_length = ceil((string_width(_words[_j]) + string_width(" ")) * _scale_text);
