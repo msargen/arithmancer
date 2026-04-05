@@ -52,9 +52,9 @@ function scr_format_dialogue_box_text(_text_list, _max_line_pix, _max_lines, _sc
 			var _words = string_split(_text_list[_i], " ");
 			var _new_line_lol = "";
 			var _line_frag_length = 0;
+			// Loop through list of words and find where the "\n" needs to be
 			for (var _j = 0; _j < array_length(_words); ++_j)
 			{
-				// The + 1 is for the added space after the word
 				_line_frag_length += ceil(string_width(_words[_j]) * _scale_text);
 				if (_line_frag_length <= _split_length)
 				{
