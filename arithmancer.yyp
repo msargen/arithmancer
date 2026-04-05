@@ -153,7 +153,7 @@
     {"id":{"name":"scr_save_to_ini","path":"scripts/scr_save_to_ini/scr_save_to_ini.yy",},},
     {"id":{"name":"scr_savestate_save_load","path":"scripts/scr_savestate_save_load/scr_savestate_save_load.yy",},},
     {"id":{"name":"scr_screen_shake","path":"scripts/scr_screen_shake/scr_screen_shake.yy",},},
-    {"id":{"name":"scr_scrolling_text_box","path":"scripts/scr_scrolling_text_box/scr_scrolling_text_box.yy",},},
+    {"id":{"name":"scr_scrollable_text_box","path":"scripts/scr_scrollable_text_box/scr_scrollable_text_box.yy",},},
     {"id":{"name":"scr_slide_transition","path":"scripts/scr_slide_transition/scr_slide_transition.yy",},},
     {"id":{"name":"scr_stun_player","path":"scripts/scr_stun_player/scr_stun_player.yy",},},
     {"id":{"name":"scr_text_box_bubbles","path":"scripts/scr_text_box_bubbles/scr_text_box_bubbles.yy",},},
