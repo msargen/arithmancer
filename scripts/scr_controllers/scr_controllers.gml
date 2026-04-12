@@ -19,7 +19,8 @@ function scr_settings_menu_controller_update(_controller_slot)
 			settings_menu_value[SETTINGS_MENU.CONTROLLER] = "port " + string(_controller_slot) + ": " + _controller_name[0];
 			
 			// Look for PS or PLAYSTATION in the controller name
-			if (string_starts_with(_controller_name[0], "PS") || string_starts_with(_controller_name[0], "PLAYSTATION"))
+			var _upper_name = string_upper(_controller_name[0])
+			if (string_starts_with(_upper_name, "PS") || string_starts_with(_upper_name, "PLAYSTATION"))
 			{
 				sm_symbols = SYMBOLS.PLAYSTATION;
 			}
