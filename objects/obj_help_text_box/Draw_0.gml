@@ -1,1 +1,1 @@
-scr_help_text_box(help_tb_text, x, y, help_tb_symbol);
+scr_help_text_box(help_tb_list, x, y);

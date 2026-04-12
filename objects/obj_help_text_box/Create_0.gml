@@ -4,3 +4,5 @@
 help_tb_text = "";
 // The symbol to show at the end of the text
 help_tb_symbol = spr_tmp_xbox_Y;
+
+help_tb_list = array_create(0);
