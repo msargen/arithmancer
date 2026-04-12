@@ -13,12 +13,11 @@ if (instance_exists(obj_player) && _player_nearby && !instance_exists(obj_help_t
 	with (instance_create_layer(x, y - help_sp_text_offset, layer, obj_help_text_box))
 	{
 		other.help_sp_text_id = id;
-		help_tb_text = other.help_sp_text_list[other.help_sp_list_index];
-		help_tb_symbol = other.help_sp_symbol_list[other.help_sp_list_index];
+		help_tb_list = other.help_sp_list[other.help_sp_list_index];
 	}
 	
 	help_sp_list_index++;
-	if (help_sp_list_index >= array_length(help_sp_text_list))
+	if (help_sp_list_index >= array_length(help_sp_list))
 	{
 		help_sp_list_index = 0;
 	}

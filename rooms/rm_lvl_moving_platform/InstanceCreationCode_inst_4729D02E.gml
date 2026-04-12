@@ -1,7 +1,2 @@
-array_push(help_sp_text_list, "Jump: ");
-array_push(help_sp_text_list, "Jump: ");
-array_push(help_sp_text_list, "Jump: ");
-
-array_push(help_sp_symbol_list, spr_tmp_xbox_A);
-array_push(help_sp_symbol_list, spr_tmp_playstation_cross);
-array_push(help_sp_symbol_list, spr_tmp_kb_space);
+array_push(help_sp_list, ["Move: ", spr_tmp_kb_A, " or ", spr_tmp_kb_D]);
+array_push(help_sp_list, [spr_tmp_arrow_left, " or ", spr_tmp_arrow_right]);
