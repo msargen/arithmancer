@@ -23,5 +23,5 @@ scr_draw_set_text(c_white, global.menu_font, fa_left, fa_top);
 draw_text_transformed(dialogue_box_show_line_x[dialogue_box_current_line], dialogue_box_show_line_y[dialogue_box_current_line], dialogue_box_shown_text, dialogue_box_text_scale, dialogue_box_text_scale, 0);
 
 
-// Draw interract button/key
+// Draw interact button/key
 draw_sprite_ext(spr_tmp_kb_E, 0, 300, 44, 0.5, 0.5, 0, c_white, 1);

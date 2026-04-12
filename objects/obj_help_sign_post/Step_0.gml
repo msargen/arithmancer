@@ -1,4 +1,4 @@
-/// @description Showing show help tip whenever the player is nearby
+/// @description Show help tip whenever the player is nearby
 
 // Note: (to be changed later probably) Currently will loop through the list of text and symbols each time
 //       the player leaves then enters the check radius.
