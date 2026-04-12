@@ -14,6 +14,3 @@ help_sp_text_list = array_create(0);
 help_sp_symbol_list = array_create(0);
 // The current index in the list
 help_sp_list_index = 0;
-
-
-// TODO: comment all the stuff
