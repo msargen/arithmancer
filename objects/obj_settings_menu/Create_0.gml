@@ -1,8 +1,5 @@
 /// @description Initialize Settings Menu
 
-//Set visual priority
-depth = -1500;
-
 // Values
 in_settings_menu = false;
 main_volume = 70;
@@ -17,6 +14,7 @@ sm_addition_difficulty = EQUATION_DIFFICULTY.EASY;
 sm_subtraction_difficulty = EQUATION_DIFFICULTY.EASY;
 sm_multiplication_difficulty = EQUATION_DIFFICULTY.EASY;
 sm_division_difficulty = EQUATION_DIFFICULTY.EASY;
+sm_symbols = SYMBOLS.KEYBOARD;
 
 // Menu options
 settings_menu_option[SETTINGS_MENU.MAIN_VOLUME] = "Main Volume: ";
@@ -33,6 +31,7 @@ settings_menu_option[SETTINGS_MENU.MULTIPLICATION_DIFFICULTY] = "Multiplication 
 settings_menu_option[SETTINGS_MENU.DIVISION_DIFFICULTY] = "Division difficulty: "
 settings_menu_option[SETTINGS_MENU.EMPTY_3] = "";
 settings_menu_option[SETTINGS_MENU.CONTROLLER] = "Controller: ";
+settings_menu_option[SETTINGS_MENU.SYMBOLS] = "Game Symbols: ";
 settings_menu_option[SETTINGS_MENU.EMPTY_4] = "";
 settings_menu_option[SETTINGS_MENU.EXIT_SETTINGS] = "Exit Settings";
 
@@ -54,6 +53,7 @@ settings_menu_value[SETTINGS_MENU.MULTIPLICATION_DIFFICULTY] = "Easy";
 settings_menu_value[SETTINGS_MENU.DIVISION_DIFFICULTY] = "Easy";
 settings_menu_value[SETTINGS_MENU.EMPTY_3] = "";
 settings_menu_value[SETTINGS_MENU.CONTROLLER] = "none";
+settings_menu_value[SETTINGS_MENU.SYMBOLS] = "Keyboard";
 settings_menu_value[SETTINGS_MENU.EMPTY_4] = "";
 settings_menu_value[SETTINGS_MENU.EXIT_SETTINGS] = "";
 

@@ -142,7 +142,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":95.0,
+    "length":94.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -152,7 +152,7 @@
     },
     "name":"spr_monotype_font",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

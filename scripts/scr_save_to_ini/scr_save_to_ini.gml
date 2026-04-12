@@ -14,6 +14,7 @@ function scr_save_settings_to_file()
 		ini_write_real("Difficulty", "Subtraction_difficulty", sm_subtraction_difficulty);
 		ini_write_real("Difficulty", "Multiplication_difficulty", sm_multiplication_difficulty);
 		ini_write_real("Difficulty", "Division_difficulty", sm_division_difficulty);
+		ini_write_real("Controls", "Symbols", sm_symbols);
 		ini_close();
 	}
 }

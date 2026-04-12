@@ -1,22 +1,22 @@
 /// @description Control Settings Menu
 
-//set keybindings
+// Set keybindings
 scr_keybind();
 
 if (in_settings_menu)
 {
-	// move up
+	// Move up
 	if (global.key_up)
 	{
-		settings_menu_cursor_position --;
-		// skip past empty spots
+		settings_menu_cursor_position--;
+		// Skip past empty spots
 		switch (settings_menu_cursor_position)
 		{
 			case SETTINGS_MENU.EMPTY_1:
 			case SETTINGS_MENU.EMPTY_2:
 			case SETTINGS_MENU.EMPTY_3:
 			case SETTINGS_MENU.EMPTY_4:
-				settings_menu_cursor_position --;
+				settings_menu_cursor_position--;
 				break;
 		}
 		
@@ -27,11 +27,11 @@ if (in_settings_menu)
 		}
 	}
 	
-	// move down
+	// Move down
 	if (global.key_down)
 	{
 		settings_menu_cursor_position++;
-		// skip past empty spots
+		// Skip past empty spots
 		switch (settings_menu_cursor_position)
 		{
 			case SETTINGS_MENU.EMPTY_1:
@@ -49,10 +49,10 @@ if (in_settings_menu)
 		}
 	}
 	
-	//Move back one screen
+	// Move back one screen
 	if (global.key_back)
 	{
-		//Sets back and pause to false so you can Move from Settings to Pause Menu
+		// Sets back and pause to false so you can move from Settings to Pause Menu
 		global.key_back = false;
 		global.key_pause = false;
 		in_settings_menu = false;
@@ -61,52 +61,52 @@ if (in_settings_menu)
 		if(obj_pause.pause_is_paused){obj_pause.pause_in_menu = true;};
 	}
 	
-	// switch for the settings menu options
+	// Switch for the settings menu options
 	switch (settings_menu_cursor_position)
 	{
-		// main volume
+		// Main volume
 		case SETTINGS_MENU.MAIN_VOLUME:
 			if (global.key_left && (main_volume > 0))
 			{
-				// adjust volume level down
+				// Adjust volume level down
 				scr_main_volume_adjustment(-10);
 			}
 			if (global.key_right && (main_volume < 100))
 			{
-				// adjust volume level up
+				// Adjust volume level up
 				scr_main_volume_adjustment(10);
 			}
 			break;
 		
-		// music volume
+		// Music volume
 		case SETTINGS_MENU.MUSIC_VOLUME:
 			if (global.key_left && (music_volume > 0))
 			{
-				// adjust volume level down
+				// Adjust volume level down
 				scr_music_volume_adjustment(-10);
 			}
 			if (global.key_right && (music_volume < 100))
 			{
-				// adjust volume level up
+				// Adjust volume level up
 				scr_music_volume_adjustment(10);
 			}
 			break;
 		
-		// sfx volume
+		// Sfx volume
 		case SETTINGS_MENU.SFX_VOLUME:
 			if (global.key_left && (sfx_volume > 0))
 			{
-				// adjust volume level down
+				// Adjust volume level down
 				scr_sfx_volume_adjustment(-10);
 			}
 			if (global.key_right && (sfx_volume < 100))
 			{
-				// adjust volume level up
+				// Adjust volume level up
 				scr_sfx_volume_adjustment(10);
 			}
 			break;
 		
-		// fullscreen toggle
+		// Fullscreen toggle
 		case SETTINGS_MENU.FULLSCREEN:
 			if (global.key_left || global.key_right)
 			{
@@ -128,18 +128,18 @@ if (in_settings_menu)
 			}
 			break;
 		
-		// display resolution
+		// Display resolution
 		case SETTINGS_MENU.RESOLUTION:
 			if (global.key_left && (resolution > 361)) //360p, the lowest resolution at 2X base of 180X320
 			{
-				// adjust resolution down
+				// Adjust resolution down
 				resolution = resolution - RES_H;
 				settings_menu_value[SETTINGS_MENU.RESOLUTION] = string(resolution) + "p"
 				window_set_size(resolution * 16/9, resolution);
 			}
 			if (global.key_right && (resolution < 2159)) //4k, the highest resolution for people who want windowed 4k for some reason?
 			{
-				// adjust resolution up
+				// Adjust resolution up
 				resolution = resolution + RES_H;
 				settings_menu_value[SETTINGS_MENU.RESOLUTION] = string(resolution) + "p"
 				window_set_size(resolution * 16/9, resolution);
@@ -225,23 +225,51 @@ if (in_settings_menu)
 			scr_set_division_difficulty(sm_division_difficulty);
 			break;
 		
-		// controller choice
+		// Controller choice
 		case SETTINGS_MENU.CONTROLLER:
-			if (global.key_left && (obj_controller.controller_selected > 1)) 
+			if (global.key_left && (obj_controller.controller_selected != 0)) 
 			{
-				// switch to an earlier controller in the list
+				// Switch to an earlier controller in the list
 				obj_controller.controller_selected--;
+				// Loop back to end of list if needed
+				if (obj_controller.controller_selected < 1) {obj_controller.controller_selected = obj_controller.controller_total_number;};
+				// Update settings menu
 				scr_settings_menu_controller_update(obj_controller.controller_port_list[obj_controller.controller_selected]);
 			}
-			if (global.key_right && (obj_controller.controller_selected < obj_controller.controller_total_number)) 
+			if (global.key_right && (obj_controller.controller_selected != 0)) 
 			{
-				// switch to the next controller in the list
+				// Switch to the next controller in the list
 				obj_controller.controller_selected++;
+				// Loop back to beginning of list if needed
+				if (obj_controller.controller_selected > obj_controller.controller_total_number) {obj_controller.controller_selected = 1;};
+				// Update settings menu
 				scr_settings_menu_controller_update(obj_controller.controller_port_list[obj_controller.controller_selected]);
 			}
 			break;
 		
-		// exit menu
+		// Displayed symbols choice
+		case SETTINGS_MENU.SYMBOLS:
+			if (global.key_left) 
+			{
+				// Switch to an earlier symbol option
+				sm_symbols--;
+				// Loop back around
+				if (sm_symbols < SYMBOLS.KEYBOARD) {sm_symbols =SYMBOLS.XBOX;};
+				// Update value
+				scr_settings_symbol_value_update(sm_symbols);
+			}
+			if (global.key_right) 
+			{
+				// Switch to a later symbol option
+				sm_symbols++;
+				// Loop back around
+				if (sm_symbols > SYMBOLS.XBOX) {sm_symbols =SYMBOLS.KEYBOARD;};
+				// Update value
+				scr_settings_symbol_value_update(sm_symbols);
+			}
+			break;
+		
+		// Exit menu
 		case SETTINGS_MENU.EXIT_SETTINGS:
 			if (global.key_select)
 			{

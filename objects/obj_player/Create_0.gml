@@ -1,4 +1,3 @@
-depth = -200;
 
 player_horizontal_speed = 0;
 player_vertical_speed = 0;
