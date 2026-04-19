@@ -1,4 +1,4 @@
-// enum for obj_settings_menu
+// Enum for obj_settings_menu
 enum SETTINGS_MENU
 {
 	MAIN_VOLUME = 0,
@@ -15,8 +15,9 @@ enum SETTINGS_MENU
 	DIVISION_DIFFICULTY = 11,
 	EMPTY_3 = 12,
 	CONTROLLER = 13,
-	EMPTY_4 = 14,
-	EXIT_SETTINGS = 15
+	SYMBOLS = 14,
+	EMPTY_4 = 15,
+	EXIT_SETTINGS = 16
 }
 
 // Enum for orientation. The values are the angles of the object within the room.
@@ -70,8 +71,16 @@ enum CARDINAL
 // Enum for pause menu
 enum PAUSE_MENU
 {
-	SETTINGS =0,
+	SETTINGS = 0,
 	MAIN_MENU = 1,
 	QUIT = 2,
 	UNPAUSE = 3
+}
+
+// Enum for which symbols to display
+enum SYMBOLS
+{
+	KEYBOARD = 0,
+	PLAYSTATION = 1,
+	XBOX = 2
 }
