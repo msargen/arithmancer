@@ -37,6 +37,7 @@ if (toast_count > 0)
 			array_delete(toast_notification_array, _i, 1);
 			array_delete(toast_notification_timers, _i, 1);
 			toast_count--;
+			_i--;
 		}
 	}
 }
