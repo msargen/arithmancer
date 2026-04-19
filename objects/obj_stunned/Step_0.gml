@@ -3,7 +3,7 @@ if (stunned_done == 0)
 {
 	stunned_vertical_speed = stunned_vertical_speed + stunned_gravity;
 
-	//horizontal collision
+	// Horizontal collision
 	if (place_meeting(x + stunned_horizontal_speed, y, obj_wall))
 	{
 		while (!place_meeting(x + sign(stunned_horizontal_speed), y, obj_wall))
@@ -14,7 +14,7 @@ if (stunned_done == 0)
 	}
 	x = x + stunned_horizontal_speed;
 
-	//vertical collision
+	// Vertical collision
 	if (place_meeting(x, y + stunned_vertical_speed, obj_wall))
 	{
 		if (stunned_vertical_speed > 0)
@@ -34,6 +34,7 @@ if (stunned_done == 0)
 stunned_timer--;
 if (stunned_timer == 0)
 {
+	// Create the player object in the player layer
 	instance_create_layer(x, y, "Player", obj_player)
 	obj_player.player_x_spawn = stunned_player_spawn_x;
 	obj_player.player_y_spawn = stunned_player_spawn_y;
@@ -45,5 +46,9 @@ if (stunned_timer == 0)
 	// Prevent player from immediately pushing a button after coming unstunned
 	obj_player.player_button_stun_delay_timer = obj_player.player_button_stun_delay_base;
 	
+	// Focus the camera on the player
+	obj_camera.camera_tracking = obj_player;
+	
+	// Remove the stunned player object
 	instance_destroy(obj_stunned);
 }
