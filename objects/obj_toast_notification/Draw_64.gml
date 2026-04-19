@@ -6,7 +6,7 @@ scr_draw_set_text(c_white, toast_font, fa_center, fa_top)
 // Draw active toasts
 if (toast_count > 0)
 {
-	for (var _i = toast_count; _i >= 1; _i--)
+	for (var _i = toast_count - 1; _i >= 0; _i--)
 	{
 		 // Get width of the toast
 		 toast_width = string_width(toast_notification_array[_i]) + 2 * toast_padding;

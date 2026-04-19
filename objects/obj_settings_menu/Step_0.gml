@@ -254,7 +254,7 @@ if (in_settings_menu)
 				// Switch to an earlier symbol option
 				sm_symbols--;
 				// Loop back around
-				if (sm_symbols < SYMBOLS.KEYBOARD) {sm_symbols =SYMBOLS.XBOX;};
+				if (sm_symbols < SYMBOLS.KEYBOARD) {sm_symbols = SYMBOLS.XBOX;};
 				// Update value
 				scr_settings_symbol_value_update(sm_symbols);
 			}
@@ -263,7 +263,7 @@ if (in_settings_menu)
 				// Switch to a later symbol option
 				sm_symbols++;
 				// Loop back around
-				if (sm_symbols > SYMBOLS.XBOX) {sm_symbols =SYMBOLS.KEYBOARD;};
+				if (sm_symbols > SYMBOLS.XBOX) {sm_symbols = SYMBOLS.KEYBOARD;};
 				// Update value
 				scr_settings_symbol_value_update(sm_symbols);
 			}
