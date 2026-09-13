@@ -3,7 +3,7 @@
 mentor_player_nearby = false;
 
 // The offset for the indicator
-mentor_interact_offset = 15;
+mentor_interact_offset = 18;
 
 mentor_intro_dialogue[0] = "Hello there!";
 mentor_intro_dialogue[1] = "Hello there my good friend who brought me food!";
@@ -31,3 +31,12 @@ enum MENTOR_DIALOGUE
 	LOOP = 1,
 	AHH = 3
 }
+
+
+// TODO: for tutorial
+// Make the numpads be able to hardcode what side of the button the number is displayed
+// Make the tutorial level force safe buttons?
+    // I think this needs to be a creation field flag for the buttons that will override the settings menu option. aka, where there is the check for safe buttons, add an or (||) that checks the _force_safe field
+// Make the mentor have better dialogue looping. Or just figure out a good way to set that for each mentor guy
+// Figure out a way to end the tutorial
+// Indicate in the create steps for objects that need to have fields set in each instance create which fields are the ones that need to be set in the creation code.

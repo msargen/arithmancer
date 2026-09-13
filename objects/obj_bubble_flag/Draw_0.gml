@@ -6,5 +6,5 @@ if(bubble_flag_equation_display)
 }
 else if (bubble_flag_player_nearby)
 {
-	draw_sprite_ext(spr_marker, 0, x, y - 20, 1, -1, 0, c_white, 1);
+	draw_sprite_ext(spr_tmp_xbox_Y, 0, x, y - bubble_flag_interract_offset, 1, 1, 0, c_white, 1);
 }

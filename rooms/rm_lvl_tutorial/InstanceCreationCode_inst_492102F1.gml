@@ -1,0 +1,1 @@
+array_push(help_sp_list, [spr_gem, " - Pick up/deposit: ", spr_tmp_xbox_Y, ". Put down: ", spr_tmp_xbox_B]);

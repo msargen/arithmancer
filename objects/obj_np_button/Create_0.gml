@@ -1,7 +1,11 @@
 /// @description The numpad buttons
 
+#region // Creation code fields
 // The value of the particular button. Can be (0-9) or (B, E)
 np_button_key_value = 0;
+#endregion
+
+// To here
 
 // Denotes if the player is currently pressing the button
 np_button_pressed = false;

@@ -71,20 +71,24 @@ else
 // Find the shortest overall distance to get out of the wall and move the player that way
 if (_move_horizontal == 0)
 {
-	y += _move_vertical;
+	player_vertical_position += _move_vertical;
 }
 else if (_move_vertical == 0)
 {
-	x +=_move_horizontal;
+	player_horizontal_position +=_move_horizontal;
 }
 else
 {
 	if (abs(_move_horizontal) < abs(_move_vertical))
 	{
-		x += _move_horizontal;
+		player_horizontal_position += _move_horizontal;
 	}
 	else 
 	{
-		y += _move_vertical;
+		player_vertical_position += _move_vertical;
 	}
 }
+
+// Set object position to calculated position
+x = player_horizontal_position;
+y = player_vertical_position;

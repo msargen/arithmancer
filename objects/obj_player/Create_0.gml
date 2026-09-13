@@ -52,7 +52,7 @@ player_near_socket = false;
 player_x_spawn = x;
 player_y_spawn = y;
 
-// The id for the enter button on the stage
+// The id for the enter button (to know which direction to launch the player for incorrect answers)
 player_enter_button = 0;
 
 // Keeps track if the player is currently pinched between two walls/moving platforms

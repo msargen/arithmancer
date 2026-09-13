@@ -3,6 +3,11 @@
 // Note: (to be changed later probably) Currently will loop through the list of text and symbols each time
 //       the player leaves then enters the check radius.
 
+if (!instance_exists(obj_player))
+{
+    return;   
+}
+
 // Proximity check
 var _player_nearby = point_in_circle(obj_player.x, obj_player.y, x, y, global.interact_distance);
 

@@ -44,6 +44,8 @@ if (stunned_timer == 0)
 	
 	// Prevent player from immediately pushing a button after coming unstunned
 	obj_player.player_button_stun_delay_timer = obj_player.player_button_stun_delay_base;
+    
+    obj_camera.camera_tracking = obj_player;
 	
 	instance_destroy(obj_stunned);
 }

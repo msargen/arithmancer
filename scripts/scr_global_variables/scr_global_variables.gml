@@ -47,4 +47,4 @@ global.collision_lerp = 7.0;
 global.framerate = 60;
 
 // For accessing dev features in the game. Defaults to false in all pushed code
-global.dev_build = false;
+global.dev_build = true;

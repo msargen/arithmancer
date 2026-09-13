@@ -30,13 +30,13 @@ switch (image_angle)
 if (np_button_pressed && !np_button_sprite_button_pressed)
 {
 	np_button_timer = get_timer();
-	sprite_index = spr_np_button_pressed;
+    image_index = 1;
 	np_button_sprite_button_pressed = true;
 }
 else if (!np_button_pressed && get_timer() - np_button_timer > np_button_time_diff)
 {
 	np_button_sprite_button_pressed = false;
-	sprite_index = spr_np_button;
+    image_index = 0;
 }
 
 

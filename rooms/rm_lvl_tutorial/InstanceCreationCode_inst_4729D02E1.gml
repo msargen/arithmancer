@@ -1,0 +1,1 @@
+array_push(help_sp_list, ["Jump: ", spr_tmp_xbox_A]);

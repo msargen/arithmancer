@@ -1,8 +1,16 @@
 // Script for generating an equation
 
+// TODO:
 /// @description  Generates an equation (solution, equation text) dependent on the difficulty for each equation type
 /// @return  Array of length two. First index is the {real} solution answer, second index is the {string} equation text
-function scr_generate_equation(){
+function scr_generate_equation(_force_equation = false, _forced_solution = 0, _forced_text = ""){
+    // TODO: 
+    if (_force_equation)
+    {
+        return [_forced_solution, _forced_text];
+    }
+    
+    
 	// Gets the total number of equation types not set to "OFF"
 	var _active_equations = array_length(global.active_equation_types);
 	
@@ -55,7 +63,7 @@ function scr_generate_equation(){
 /// @arg {Real} _equation_type Must be an integer between 0-4 (random, addition, subtraction, multiplication, division)
 /// @return  Array of length two. First index is the {real} solution answer, second index is the {string} equation text
 function scr_generate_tutorial_equation(_equation_type = 0){
-	if (_equation_type == 0) 
+	if (_equation_type == EQUATION_TYPE.SIMPLE) 
 	{
 		_equation_type = floor(random_range(1, 4.99));
 	}
@@ -65,7 +73,7 @@ function scr_generate_tutorial_equation(_equation_type = 0){
 	var _equation_y = 0;
 	var _equation_text = "";
 	
-	if (_equation_type == 1)
+	if (_equation_type == EQUATION_TYPE.ADDITION)
 	{
 		// Addition
 		_equation_x = floor(random_range(1, 50.99));
@@ -73,7 +81,7 @@ function scr_generate_tutorial_equation(_equation_type = 0){
 		_equation_answer = _equation_x + _equation_y;
 		_equation_text = string(_equation_x) + "+" + string(_equation_y) + "=?";
 	}
-	else if (_equation_type == 2)
+	else if (_equation_type == EQUATION_TYPE.SUBTRACTION)
 	{
 		// Subtraction
 		_equation_x = floor(random_range(1, 100.99));
@@ -89,7 +97,7 @@ function scr_generate_tutorial_equation(_equation_type = 0){
 			_equation_answer = _equation_y - _equation_x;
 		}
 	}
-	else if (_equation_type == 3)
+	else if (_equation_type == EQUATION_TYPE.MULTIPLICATION)
 	{
 		// Multiplication
 		_equation_x = floor(random_range(1, 12.99));
@@ -97,7 +105,7 @@ function scr_generate_tutorial_equation(_equation_type = 0){
 		_equation_answer = _equation_x * _equation_y;
 		_equation_text = string(_equation_x) + "X" + string(_equation_y) + "=?";
 	}
-	else if (_equation_type == 4)
+	else if (_equation_type == EQUATION_TYPE.DIVISION)
 	{
 		// Division
 		_equation_answer = floor(random_range(1, 12.99));

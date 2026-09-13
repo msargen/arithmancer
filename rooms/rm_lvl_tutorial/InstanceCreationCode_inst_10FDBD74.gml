@@ -1,0 +1,1 @@
+array_push(help_sp_list, ["Watch out for enemies and traps!"]);

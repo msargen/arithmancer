@@ -1,0 +1,1 @@
+array_push(help_sp_list, [spr_tmp_arrow_right, " + (", spr_tmp_xbox_A, " + ", spr_tmp_xbox_A, " + ... )"]);
